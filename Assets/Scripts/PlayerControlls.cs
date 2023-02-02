@@ -7,6 +7,7 @@ public class PlayerControlls : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 10;
+    private int jumpForce = 12;
     public bool canJump = false;
 
     private Rigidbody2D rb;
@@ -45,7 +46,7 @@ public class PlayerControlls : MonoBehaviour
     {
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             Debug.Log("Jumped");
         }
     }
