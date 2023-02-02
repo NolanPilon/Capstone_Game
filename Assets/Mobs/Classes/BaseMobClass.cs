@@ -8,12 +8,14 @@ public class BaseMobClass : MonoBehaviour
 
     //THE PLAYER
     public GameObject player;
+
     //Mob stats
-    private int Health = 66;
-    private float Speed;
+    private int health = 999;
+    private float speed;
     private int damage;
     private bool dead = false;
 
+    public float maxRange = 0.8f;
 
     void Start()
     {
@@ -27,40 +29,56 @@ public class BaseMobClass : MonoBehaviour
     }
 
     //Returns the  health
-    public int getHealth()
+    public int GetHealth()
     {
-        return Health;
+        return health;
     }
 
     //Intakes damage done to the mob
-    void takeDamage(int dmgTaken)
+    void TakeDamage(int dmgTaken)
     {
         //should probably intake damage from play - Heatlh
-        Health -= dmgTaken;
+        health -= dmgTaken;
     }
 
-    public float getSpeed()
+    public float GetSpeed()
     {
         //should probably intake damage from play - Heatlh
-        return Speed;
+        return speed;
     }
 
     //Returns the Mobs Damage 
-    public int getDamage()
+    public int GetDamage()
     {
         return damage;
     }
 
     //allows the mob to attack
-    void attack()
+    void Attack()
     {
         //will use the damage value
         //Different mobs will have different attack info
         //Add delay to the attack so that the mob can 1shot player   
     }
 
+
+    //checks if the player is within range of the mob(range of attack)
+    bool isInRange(float maxRange)
+    {
+        Vector2 distance = player.transform.position - this.transform.position;
+
+        if (distance.magnitude <= maxRange)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     //will kill the mob
-    void die()
+    void Die()
     {  
         //play death animation
 
