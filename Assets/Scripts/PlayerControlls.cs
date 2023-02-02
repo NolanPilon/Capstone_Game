@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,7 +8,11 @@ public class PlayerControlls : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 10;
-    public bool canJump = false;
+    private int jumpForce = 12;
+    private float jumpBuffer = 0.1f;
+    private bool canJump = false;
+    private bool grounded = false;
+    private bool jumped = false;
 
     private Rigidbody2D rb;
     void Awake()
@@ -25,14 +30,16 @@ public class PlayerControlls : MonoBehaviour
     {
         if (collision.tag == "Ground") 
         {
-            canJump= true;
+            jumpBuffer = 0.1f;
+            jumped = false;
+            grounded = true;
         } 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Ground")
         {
-            canJump = false;
+            grounded = false;
         }
     }
 
@@ -43,9 +50,30 @@ public class PlayerControlls : MonoBehaviour
 
     void Jump() 
     {
-        if (canJump && Input.GetKeyDown(KeyCode.Space))
+        if (grounded)
         {
-            rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+            canJump = true;
+        }
+        else if (jumpBuffer > 0 && !grounded)
+        {
+            jumpBuffer -= Time.deltaTime;
+        }
+
+        if (jumpBuffer > 0 && !jumped) 
+        {
+            canJump = true;
+        }
+
+        if (canJump && jumped) 
+        {
+            canJump = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            canJump = false;
+            jumped = true;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             Debug.Log("Jumped");
         }
     }
