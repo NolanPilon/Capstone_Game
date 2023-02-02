@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BaseMobClass : MonoBehaviour
 {
+
+    //THE PLAYER
+    public GameObject player;
     //Mob stats
-    int Health;
-    float Speed;
-    int damage;
-    bool dead = false;
+    private int Health = 66;
+    private float Speed;
+    private int damage;
+    private bool dead = false;
 
 
     void Start()
@@ -19,7 +23,7 @@ public class BaseMobClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //Returns the  health
@@ -29,9 +33,16 @@ public class BaseMobClass : MonoBehaviour
     }
 
     //Intakes damage done to the mob
-    int takeDamage()
+    void takeDamage(int dmgTaken)
     {
         //should probably intake damage from play - Heatlh
+        Health -= dmgTaken;
+    }
+
+    public float getSpeed()
+    {
+        //should probably intake damage from play - Heatlh
+        return Speed;
     }
 
     //Returns the Mobs Damage 
@@ -50,8 +61,11 @@ public class BaseMobClass : MonoBehaviour
 
     //will kill the mob
     void die()
-    {
-        Destroy();
+    {  
+        //play death animation
+
+        Destroy(this.gameObject);
+
         //add score
     }
 }

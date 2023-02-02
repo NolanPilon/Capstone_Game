@@ -40,6 +40,7 @@ public class RangeMobClass : BaseMobClass
     bool isSafe()
     {
         //run away
+        return false;
     }
 
 }
