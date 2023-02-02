@@ -11,7 +11,7 @@ public class BaseMobClass : MonoBehaviour
 
     //Mob stats
     private int health = 999;
-    private float speed;
+    public float speed;
     private int damage;
     private bool dead = false;
 
