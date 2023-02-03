@@ -10,6 +10,7 @@ public class BaseMobClass : MonoBehaviour
     public GameObject player;
 
     //Mob stats
+
     private int health = 999;
     public float speed;
     private int damage;
@@ -63,7 +64,7 @@ public class BaseMobClass : MonoBehaviour
 
 
     //checks if the player is within range of the mob(range of attack)
-    bool isInRange(float maxRange)
+    public  bool isInRange(float maxRange)
     {
         Vector2 distance = player.transform.position - this.transform.position;
 
