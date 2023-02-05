@@ -1,29 +1,23 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using Pathfinding;
 
-public class GroundMobClass : BaseMobClass
+public class PathFindingAir : MonoBehaviour
 {
-    //Later on will change stuff into programmable  objects to avoid stuff like (float speed in both classes)
     [Header("Pathfinding")]
-    public Transform target;
-    public float activateDistance = 50.0f;
-    public float pathUpdateSeconds = 0.5f;
+    private Transform target;
+    private float activateDistance = 50.0f;
+    private float pathUpdateSeconds = 0.5f;
 
     [Header("Physics")]
-    public float nextWaypointDistance = 3.0f;
-    public float jumpNodeHeightRequirement = 0.8f;
-    public float minPlayerHeightDistance = 10;
-    public float jumpModifier = 0.3f;
-    public float jumpCheckOffset = 0.1f;
-    public float mySpeed = 200f;
+    private float nextWaypointDistance = 3.0f;
+    private float mySpeed = 200f;
 
     [Header("Custom Behavior")]
-    public bool followEnabled = true;
-    public bool jumpEnabled = true;
-    public bool minJumpDistanceEnabled = false;
-    public bool directionLookEnabled = true;
+    private bool followEnabled = true;
+    private bool directionLookEnabled = true;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -39,9 +33,29 @@ public class GroundMobClass : BaseMobClass
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
 
+    public void SetPathfindingInfo(Transform useThisTarget, Seeker useThisSeeker, float actiDistamce, float pathUpdateSecs)
+    {
+        target = useThisTarget;
+        activateDistance = actiDistamce;
+        pathUpdateSeconds = pathUpdateSecs;
+        seeker = useThisSeeker;
+    }
+    
+    public void SetPhysicsInfo(float nextWaypointDis, float speed)
+    {
+        mySpeed = speed;
+        nextWaypointDistance = nextWaypointDis;
+    }
+
+    public void SetCustomBehavior(bool followEnable,bool directionLook)
+    {
+        followEnabled = followEnable;
+        directionLookEnabled = directionLook;
+    }
+
     private void FixedUpdate()
     {
-        if(TargetInDistance() && followEnabled)
+        if (TargetInDistance() && followEnabled)
         {
             PathFollow();
         }
@@ -49,7 +63,7 @@ public class GroundMobClass : BaseMobClass
 
     private void UpdatePath()
     {
-        if(followEnabled && TargetInDistance() && seeker.IsDone())
+        if (followEnabled && TargetInDistance() && seeker.IsDone())
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
@@ -68,52 +82,30 @@ public class GroundMobClass : BaseMobClass
             return;
         }
 
-        //See if colliding with anything
-        Vector3 startOffset = transform.position - new Vector3(0.0f, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
-        isGrounded = Physics2D.Raycast(startOffset, -Vector3.up, 0.05f);
-
         // creates the vector towards the player
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * mySpeed * Time.deltaTime;
 
-        float jumpHeightDistance = player.transform.position.y - this.transform.position.y;
-
-        //Jump
-        if (jumpEnabled && isGrounded)
-        {
-
-            if(direction.y > jumpNodeHeightRequirement)
-            {
-                rb.AddForce(Vector2.up * mySpeed * jumpModifier);
-            }
-            else if(minJumpDistanceEnabled)
-            {
-                if(jumpHeightDistance >= minPlayerHeightDistance)
-                {
-                    rb.AddForce(Vector2.up * mySpeed * jumpModifier);
-                }
-            }
-        }
 
         //Moves the mob
         rb.AddForce(force);
 
         //Gets the next waypoint
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-        
-        if(distance < nextWaypointDistance)
+
+        if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
 
         //Flip the GFX
-        if(directionLookEnabled)
+        if (directionLookEnabled)
         {
-            if(rb.velocity.x > 0.05f)
+            if (rb.velocity.x > 0.05f)
             {
                 transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
-            else if(rb.velocity.x < -0.05f)
+            else if (rb.velocity.x < -0.05f)
             {
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
@@ -135,5 +127,4 @@ public class GroundMobClass : BaseMobClass
             currentWaypoint = 0;
         }
     }
-
 }
