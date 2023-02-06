@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControlls : MonoBehaviour
 {
+    public bool controlsEnabled = true;
+
     private float moveSpeed = 10;
     private float horizontalMove;
     private int jumpForce = 18;
@@ -17,8 +19,10 @@ public class PlayerControlls : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    
 
     private Rigidbody2D playerRB;
+
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -26,37 +30,41 @@ public class PlayerControlls : MonoBehaviour
 
     void Update()
     {
-        PlayerMovement();
-
-        // Jump buffer timer
-        if (checkGrounded())
+        // disable controlls during certain events
+        if (controlsEnabled) 
         {
-            jumpBufferTimer = jumpBuffer;
-        }
-        else 
-        {
-            jumpBufferTimer -= Time.deltaTime;
-        }
+            horizontalMove = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
-        {
-            Jump();
-        }
+            PlayerMovement(horizontalMove);
 
-        // Prevents double jump and allows for variable jump height
-        if (Input.GetKeyUp(KeyCode.Space) && playerRB.velocity.y > 0) 
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            // Jump buffer timer
+            if (isGrounded())
+            {
+                jumpBufferTimer = jumpBuffer;
+            }
+            else
+            {
+                jumpBufferTimer -= Time.deltaTime;
+            }
 
-            jumpBufferTimer = 0;
+            if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
+            {
+                Jump();
+            }
+
+            // Prevents double jump and allows for variable jump height
+            if (Input.GetKeyUp(KeyCode.Space) && playerRB.velocity.y > 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+
+                jumpBufferTimer = 0;
+            }
         }
     }
 
     //Using velocity based movement to prevent jittering and clipping
-    private void PlayerMovement()
-    {
-        horizontalMove = Input.GetAxisRaw("Horizontal");
-
+    private void PlayerMovement(float xMove)
+    { 
         playerRB.velocity = new Vector2(horizontalMove * moveSpeed, playerRB.velocity.y);
     }
 
@@ -66,7 +74,7 @@ public class PlayerControlls : MonoBehaviour
     }
 
     //Draws an invisible circle to check if on the ground
-    private bool checkGrounded() 
+    private bool isGrounded() 
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
