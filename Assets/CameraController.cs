@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     // Check Camera shaking is on
     public bool IsOnShake { set; get; }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (IsOnShake == true) return;
 
