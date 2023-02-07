@@ -1,4 +1,5 @@
 using Pathfinding;
+using Pathfinding.Util;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -34,11 +35,45 @@ public class EnemyGroundBrain : MonoBehaviour
 
     private Path path;
     private int currentWaypoint;
+    private float NextAttack;
     private bool isGrounded = false;
+    
     Seeker seeker;
     Rigidbody2D rb;
+    
+    PathFindingGround movement;
     void Start()
     {
+        startUP();
+    }
+
+    void FixedUpdate()
+    {
+        // go towards the player
+        if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
+        {
+            if (movement.TargetDistance() <= attackRange)
+            {
+                //ATTACK
+                NextAttack = Time.time + delayAfterAttack;
+            }
+            else
+            {
+                movement.PathFollow();
+            }
+        }
+        else
+        {
+           // if out of range should stop moving
+        }
+
+
+     
+    }
+
+    void startUP()
+    {
+
         //Sets Pathfinding Info
         tagTarget = EnemyGroundInfo.targetTag;
         activateDistance = EnemyGroundInfo.activateDistance;
@@ -65,10 +100,11 @@ public class EnemyGroundBrain : MonoBehaviour
 
         if (followEnabled)
         {
+            movement = gameObject.GetComponent<PathFindingGround>();
+
             GameObject targetBody = GameObject.FindGameObjectWithTag(tagTarget);
             if (targetBody)
             {
-                var movement = gameObject.GetComponent<PathFindingGround>();
                 Seeker seeker = gameObject.GetComponent<Seeker>();
                 Rigidbody2D rigidbody2D = seeker.gameObject.GetComponent<Rigidbody2D>();
                 Transform target = targetBody.transform;
@@ -82,7 +118,5 @@ public class EnemyGroundBrain : MonoBehaviour
                 }
             }
         }
-
     }
-
 }
