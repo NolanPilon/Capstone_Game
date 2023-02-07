@@ -72,12 +72,12 @@ public class PathFindingGround : MonoBehaviour
     void FixedUpdate()
     {
 
-        // go towards the player
-        if (TargetInDistance() && followEnabled)
-        {
-            PathFollow();
-        }
-    }
+       // // go towards the player
+       // if (TargetInDistance() && followEnabled)
+       // {
+       //     PathFollow();
+       // }
+    }  
 
     protected void UpdatePath()
     {
@@ -87,7 +87,7 @@ public class PathFindingGround : MonoBehaviour
         }
     }
 
-    protected void PathFollow()
+    public void PathFollow()
     {
         if (path == null)
         {
@@ -152,10 +152,15 @@ public class PathFindingGround : MonoBehaviour
         }
     }
 
-    //aggro distance
-    protected bool TargetInDistance()
+    //check if player is in mob range
+    public bool TargetInDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
+    }
+
+    public float TargetDistance()
+    {
+        return Vector2.Distance(transform.position, target.transform.position);
     }
 
     //activates when mob reaches the end of path

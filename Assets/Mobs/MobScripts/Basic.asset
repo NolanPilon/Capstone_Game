@@ -16,18 +16,18 @@ MonoBehaviour:
   damage: 3
   isDead: 0
   targetTag: Player
-  activateDistance: 50
+  activateDistance: 20
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
-  jumpNodeHeightRequirement: 0.8
+  jumpNodeHeightRequirement: 0.9
   minPlayerHeightDistance: 10
-  jumpModifier: 0.35
+  jumpModifier: 1.39
   jumpCheckOffset: 0.1
   mySpeed: 1000
-  attackRange: 0.8
+  attackRange: 1.2
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   followEnabled: 1
   jumpEnabled: 1
   minJumpDistanceEnabled: 0
-  directionLookEnabled: 1
+  directionLookEnabled: 0
