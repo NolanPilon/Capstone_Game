@@ -9,7 +9,7 @@ public class CameraShake : MonoBehaviour
 
     private static CameraShake instance;
     public static CameraShake Instance => instance;
-    
+
     private float shakeTime;
     private float shakeIntensity;
 

@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class ParryArrowRotation : MonoBehaviour
 {
-    [SerializeField]
-    private Transform player;
-
-    private float rotateSpeed = 2800.0f;
-
     void Update()
     {
-        if (isActiveAndEnabled) 
-        {
-            transform.RotateAround(player.transform.position, Vector3.forward, rotateSpeed * Time.deltaTime);
-        }
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
