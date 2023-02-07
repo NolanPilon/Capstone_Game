@@ -19,11 +19,11 @@ MonoBehaviour:
   activateDistance: 20
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
-  jumpNodeHeightRequirement: 0.9
+  jumpNodeHeightRequirement: 0.3
   minPlayerHeightDistance: 10
-  jumpModifier: 1.39
+  jumpModifier: 0.5
   jumpCheckOffset: 0.1
-  mySpeed: 1000
+  mySpeed: 500
   attackRange: 1.2
   delayAfterAttack: 3
   delayAfterGettingHit: 3
