@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1489422729}
   - component: {fileID: 1489422724}
   - component: {fileID: 1384358887475680516}
+  - component: {fileID: 3426879024166653572}
   - component: {fileID: 8582687330161885826}
   m_Layer: 0
   m_Name: Player
@@ -227,6 +228,19 @@ MonoBehaviour:
   playerController: {fileID: 1489422724}
   parryArrow: {fileID: 55818437570687787}
   playerObject: {fileID: 2041005998658260607}
+--- !u!114 &3426879024166653572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041005998658260607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64d3a69e522d8449be1be967d19b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSpeed: 0
 --- !u!61 &8582687330161885826
 BoxCollider2D:
   m_ObjectHideFlags: 0
