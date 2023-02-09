@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonControlls : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public Button start;
     public Sprite newStartsprite;
@@ -25,18 +25,18 @@ public class ButtonControlls : MonoBehaviour
     }
 
     // functions for start mouse event
-    public void StartMouseOver()
+    public void EnterMouseStart()
     {
         start.image.sprite= newStartsprite;
     }
 
-    public void StartMouseExit()
+    public void ExitMouseStart()
     {
         start.image.sprite = originalStartsprite;
     }
 
     // functions for exit mouse event
-    public void ExittMouseOver()
+    public void EnterMouseExit()
     {
         exit.image.sprite = newExitsprite;
     }
@@ -47,12 +47,12 @@ public class ButtonControlls : MonoBehaviour
     }
 
     // functions for start mouse event
-    public void SettingsMouseOver()
+    public void EnterMouseSettings()
     {
         settings.image.sprite = newSettingssprite;
     }
 
-    public void SettingsMouseExit()
+    public void ExitMouseSettings()
     {
         settings.image.sprite = originalSettingssprite;
     }
