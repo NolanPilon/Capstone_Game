@@ -41,6 +41,9 @@ public class PlayerControlls : MonoBehaviour
             if (isGrounded())
             {
                 jumpBufferTimer = jumpBuffer;
+
+                // Reset parry combo
+                GameManager.parryCombo = 0;
             }
             else
             {

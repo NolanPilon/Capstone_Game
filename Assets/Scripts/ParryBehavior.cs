@@ -51,8 +51,8 @@ public class ParryBehavior : MonoBehaviour
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
-
             playerRB.AddForce(launchDir * launchSpeed, ForceMode2D.Impulse);
+            GameManager.parryCombo += 1;
         }
 
         // If in range of enemy and space is pressed
