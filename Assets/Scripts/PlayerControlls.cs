@@ -41,6 +41,9 @@ public class PlayerControlls : MonoBehaviour
             if (isGrounded())
             {
                 jumpBufferTimer = jumpBuffer;
+
+                // Reset parry combo
+                GameManager.parryCombo = 0;
             }
             else
             {
@@ -65,7 +68,7 @@ public class PlayerControlls : MonoBehaviour
     //Using velocity based movement to prevent jittering and clipping
     private void PlayerMovement(float xMove)
     { 
-        playerRB.velocity = new Vector2(horizontalMove * moveSpeed, playerRB.velocity.y);
+        playerRB.velocity = new Vector2((horizontalMove * moveSpeed), playerRB.velocity.y);
     }
 
     private void Jump() 
@@ -74,7 +77,7 @@ public class PlayerControlls : MonoBehaviour
     }
 
     //Draws an invisible circle to check if on the ground
-    private bool isGrounded() 
+    public bool isGrounded() 
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
