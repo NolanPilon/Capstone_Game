@@ -9,6 +9,11 @@ public class EnemyGroundBrain : MonoBehaviour
 {
     public EnemyGroundInfo EnemyGroundInfo;
 
+    [Header("EnemyStats")]
+    public int health;
+    public int damage;
+
+
     [Header("Pathfinding")]
     private string tagTarget;
     private float activateDistance;
@@ -24,6 +29,7 @@ public class EnemyGroundBrain : MonoBehaviour
 
     [Header("Attack Info")]
     private float attackRange;
+    public float safetyRange;
     private float delayAfterAttack;
     private float delayAfterGettingHit;
 
@@ -49,33 +55,48 @@ public class EnemyGroundBrain : MonoBehaviour
 
     void FixedUpdate()
     {
-        // go towards the player
-        if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
+        if (health > 0)
         {
-            if (movement.TargetDistance() <= attackRange)
+            if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
             {
-                //ATTACK
-                NextAttack = Time.time + delayAfterAttack;
-            }
-            else
-            {
-                movement.PathFollow();
+
+                if (movement.TargetDistance() >= attackRange)
+                {
+                    movement.PathFollow();
+
+                }
+                else if (movement.TargetDistance() <= safetyRange)
+                {
+                    movement.RunAway();
+                }
+                else
+                {
+                    Debug.Log("attack");
+                    movement.MovementStop();
+                }
+
             }
         }
-        else
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player" && Time.time > NextAttack)
         {
-           // if out of range should stop moving
+            NextAttack = Time.time + delayAfterAttack;
         }
-
-
-     
     }
 
     void startUP()
     {
+        //Sets Mob Stats
+        health = EnemyGroundInfo.health;
+        damage = EnemyGroundInfo.damage;
 
-        //Sets Pathfinding Info
-        tagTarget = EnemyGroundInfo.targetTag;
+
+    //Sets Pathfinding Info
+    tagTarget = EnemyGroundInfo.targetTag;
         activateDistance = EnemyGroundInfo.activateDistance;
         pathUpdateSeconds = EnemyGroundInfo.pathUpdateSeconds;
 
@@ -91,6 +112,7 @@ public class EnemyGroundBrain : MonoBehaviour
         attackRange = EnemyGroundInfo.attackRange;
         delayAfterAttack = EnemyGroundInfo.delayAfterAttack;
         delayAfterGettingHit = EnemyGroundInfo.delayAfterGettingHit;
+        safetyRange = EnemyGroundInfo.safetyRange;
 
         //Sets Custom Behavior
         followEnabled = EnemyGroundInfo.followEnabled;

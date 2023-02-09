@@ -152,12 +152,32 @@ public class PathFindingGround : MonoBehaviour
         }
     }
 
+    public void RunAway()
+    {
+        // creates the vector towards the player
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction.x = direction.x * -1;
+        Vector2 force = direction * mySpeed * Time.deltaTime;
+
+        float jumpHeightDistance = target.transform.position.y - this.transform.position.y;
+
+
+        //Moves the mob
+        rb.AddForce(force);
+    }
+
+    public void MovementStop()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
     //check if player is in mob range
     public bool TargetInDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
     }
 
+    //return the distance
     public float TargetDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position);

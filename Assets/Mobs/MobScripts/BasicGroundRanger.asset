@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
-  m_Name: Basic
+  m_Name: BasicGroundRanger
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
   isDead: 0
   targetTag: Player
-  activateDistance: 20
+  activateDistance: 50
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
-  jumpNodeHeightRequirement: 0.9
+  jumpNodeHeightRequirement: 0.8
   minPlayerHeightDistance: 10
-  jumpModifier: 1.39
+  jumpModifier: 0.3
   jumpCheckOffset: 0.1
-  mySpeed: 500
-  attackRange: 0
-  safetyRange: -1
+  mySpeed: 200
+  attackRange: 10
+  safetyRange: 7
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   followEnabled: 1
-  jumpEnabled: 1
+  jumpEnabled: 0
   minJumpDistanceEnabled: 0
-  directionLookEnabled: 0
+  directionLookEnabled: 1
