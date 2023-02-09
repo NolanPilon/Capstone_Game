@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private int health;
-    public float currentSpeed;
+    private float currentSpeed;
     private float invincibilityFrames;
     private Rigidbody2D playerRB;
 
@@ -17,7 +17,8 @@ public class PlayerStats : MonoBehaviour
     }
     void Update()
     {
-        currentSpeed = Mathf.Abs(playerRB.velocity.x + playerRB.velocity.y);    
+        currentSpeed = Mathf.Abs(playerRB.velocity.x + playerRB.velocity.y);
+        GameManager.playerSpeed = currentSpeed;
     }
 
     public void takeDamage(int damage) 
