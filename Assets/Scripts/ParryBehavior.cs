@@ -24,12 +24,40 @@ public class ParryBehavior : MonoBehaviour
 
     void Update()
     {
+        ParryFunction();
+    }   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Parry" || collision.tag == "Enemy")
+        {
+            canParry = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Parry" || collision.tag == "Enemy")
+        {
+            canParry = false;
+            inParry = false;
+        }
+    }
+
+    private void ParryFunction() 
+    {
+        // If the player is in the slow-mo state and lets go of space
+        // Launch towards arrow indicator
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
+
             playerRB.AddForce(launchDir * launchSpeed, ForceMode2D.Impulse);
         }
 
+        // If in range of enemy and space is pressed
+        // Parry arrow shows up and time is slowed
+        // When you let go hide the arrow and reset time
         if (canParry && Input.GetKeyDown(KeyCode.Space))
         {
             Time.timeScale = 0.1f;
@@ -46,22 +74,11 @@ public class ParryBehavior : MonoBehaviour
             playerRB.gravityScale = 2;
             parryArrow.SetActive(false);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Parry" || collision.tag == "Enemy")
+        // Temp fix for air movement
+        if (playerController.isGrounded() || Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Space) && !playerController.isGrounded() && !inParry)
         {
-            canParry = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Parry" || collision.tag == "Enemy")
-        {
-            canParry = false;
-            inParry = false;
+            playerController.controlsEnabled = true;
         }
     }
 }
