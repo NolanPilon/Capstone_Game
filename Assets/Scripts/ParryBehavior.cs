@@ -12,7 +12,9 @@ public class ParryBehavior : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     private Rigidbody2D playerRB;
     private float launchSpeed = 20.0f;
+    private float launchMultiplier = 3f;
     private Vector2 launchDir;
+    private float holdTimer = 0;
 
     private bool canParry = false;
     private bool inParry = false;
@@ -24,12 +26,22 @@ public class ParryBehavior : MonoBehaviour
 
     void Update()
     {
+        if (holdTimer > 0) 
+        {
+            holdTimer -= Time.deltaTime * 5;
+        }
+
+        if (!canParry && !inParry) 
+        {
+            holdTimer = 1.0f;
+        }
+
         ParryFunction();
     }   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Parry" || collision.tag == "Enemy")
+        if (collision.tag == "Parry")
         {
             canParry = true;
         }
@@ -37,7 +49,7 @@ public class ParryBehavior : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Parry" || collision.tag == "Enemy")
+        if (collision.tag == "Parry")
         {
             canParry = false;
             inParry = false;
@@ -51,7 +63,7 @@ public class ParryBehavior : MonoBehaviour
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
-            playerRB.AddForce(launchDir * launchSpeed, ForceMode2D.Impulse);
+            playerRB.AddForce(launchDir * (launchSpeed + (launchMultiplier * GameManager.parryCombo)), ForceMode2D.Impulse);
             GameManager.parryCombo += 1;
         }
 
@@ -60,6 +72,7 @@ public class ParryBehavior : MonoBehaviour
         // When you let go hide the arrow and reset time
         if (canParry && Input.GetKeyDown(KeyCode.Space))
         {
+            holdTimer = 1.0f;
             Time.timeScale = 0.1f;
             playerController.controlsEnabled = false;
             playerRB.gravityScale = 0;
@@ -67,7 +80,7 @@ public class ParryBehavior : MonoBehaviour
             parryArrow.SetActive(true);
             inParry = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) || !inParry)
+        else if (Input.GetKeyUp(KeyCode.Space) || !inParry || holdTimer <= 0)
         {
             inParry = false;
             Time.timeScale = 1f;
