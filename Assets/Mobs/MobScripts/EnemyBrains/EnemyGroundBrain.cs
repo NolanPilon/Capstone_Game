@@ -10,8 +10,8 @@ public class EnemyGroundBrain : MonoBehaviour
     public EnemyGroundInfo EnemyGroundInfo;
 
     [Header("EnemyStats")]
-    public int health;
-    public int damage;
+    private int health;
+    private int damage;
 
 
     [Header("Pathfinding")]
@@ -29,25 +29,28 @@ public class EnemyGroundBrain : MonoBehaviour
 
     [Header("Attack Info")]
     private float attackRange;
-    public float safetyRange;
+    private float safetyRange;
     private float delayAfterAttack;
     private float delayAfterGettingHit;
+    private bool isRanger;
+
 
     [Header("Custom Behavior")]
     private bool followEnabled;
     private bool jumpEnabled;
     private bool minJumpDistanceEnable;
-    private bool directionLookEnabled ;
+    private bool directionLookEnabled;
 
     private Path path;
     private int currentWaypoint;
     private float NextAttack;
     private bool isGrounded = false;
-    
+
     Seeker seeker;
     Rigidbody2D rb;
-    
     PathFindingGround movement;
+    RangeAttack rangeAttack;
+
     void Start()
     {
         startUP();
@@ -55,34 +58,53 @@ public class EnemyGroundBrain : MonoBehaviour
 
     void FixedUpdate()
     {
+        //if alive 
         if (health > 0)
-        {
+        {   //checks if target is in agro distance and if the mob can move also added a delay if it attacks
             if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
             {
-
+                // if in attack distance
                 if (movement.TargetDistance() >= attackRange)
                 {
                     movement.PathFollow();
 
                 }
+                // keeps the mob safe 
                 else if (movement.TargetDistance() <= safetyRange)
                 {
                     movement.RunAway();
                 }
+                //if the mob is in between safe and attack it will now attack
                 else
                 {
-                    Debug.Log("attack");
+                    if (isRanger)
+                    {
+                        //delay attack
+                        if (Time.time > NextAttack)
+                        {
+                            rangeAttack.ShootBullet();
+                            NextAttack = Time.time + delayAfterAttack;
+                        }
+
+                        movement.MovementStop();
+                    }
+
                     movement.MovementStop();
                 }
 
             }
+        }
+        else
+        {
+            // mob is dead 
+            Destroy(gameObject);
         }
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && Time.time > NextAttack)
+        if (collision.tag == "Player" && Time.time > NextAttack)
         {
             NextAttack = Time.time + delayAfterAttack;
         }
@@ -95,8 +117,8 @@ public class EnemyGroundBrain : MonoBehaviour
         damage = EnemyGroundInfo.damage;
 
 
-    //Sets Pathfinding Info
-    tagTarget = EnemyGroundInfo.targetTag;
+        //Sets Pathfinding Info
+        tagTarget = EnemyGroundInfo.targetTag;
         activateDistance = EnemyGroundInfo.activateDistance;
         pathUpdateSeconds = EnemyGroundInfo.pathUpdateSeconds;
 
@@ -113,6 +135,7 @@ public class EnemyGroundBrain : MonoBehaviour
         delayAfterAttack = EnemyGroundInfo.delayAfterAttack;
         delayAfterGettingHit = EnemyGroundInfo.delayAfterGettingHit;
         safetyRange = EnemyGroundInfo.safetyRange;
+        isRanger = EnemyGroundInfo.isRanger;
 
         //Sets Custom Behavior
         followEnabled = EnemyGroundInfo.followEnabled;
@@ -123,6 +146,7 @@ public class EnemyGroundBrain : MonoBehaviour
         if (followEnabled)
         {
             movement = gameObject.GetComponent<PathFindingGround>();
+            rangeAttack = gameObject.GetComponent<RangeAttack>();
 
             GameObject targetBody = GameObject.FindGameObjectWithTag(tagTarget);
             if (targetBody)
@@ -139,6 +163,8 @@ public class EnemyGroundBrain : MonoBehaviour
                     movement.SetCustomBehaviorInfo(followEnabled, jumpEnabled, minJumpDistanceEnable, directionLookEnabled);
                 }
             }
+
+
         }
     }
 }

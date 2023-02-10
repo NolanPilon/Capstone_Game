@@ -35,13 +35,19 @@ public class PathFindingGround : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     private bool isGrounded = false;
+
+    [SerializeField] private Transform groundCheck = null;
+    [SerializeField] private LayerMask groundLayer = 0;
+
     Seeker seeker;
     Rigidbody2D rb;
+    RaycastHit2D pogger;
 
     public void Start()
     {
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
+
     public void SetPathfindingInfo(Transform useThisTarget, Seeker useThisSeeker, float actiDistamce,float pathUpdateSecs )
     {
         target = useThisTarget;
@@ -100,9 +106,16 @@ public class PathFindingGround : MonoBehaviour
             return;
         }
 
-        //See if colliding with anything
-        Vector3 startOffset = transform.position - new Vector3(0.0f, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
-        isGrounded = Physics2D.Raycast(startOffset, -Vector3.up, 0.05f);
+
+        if (checkIfGround())
+        {
+            isGrounded = true;
+        }
+        else
+        { 
+            isGrounded = false;
+        }
+
 
         // creates the vector towards the player
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -182,7 +195,10 @@ public class PathFindingGround : MonoBehaviour
     {
         return Vector2.Distance(transform.position, target.transform.position);
     }
-
+    public bool checkIfGround()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
     //activates when mob reaches the end of path
     void OnPathComplete(Path p)
     {

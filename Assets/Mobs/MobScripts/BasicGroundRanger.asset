@@ -28,6 +28,7 @@ MonoBehaviour:
   safetyRange: 7
   delayAfterAttack: 3
   delayAfterGettingHit: 3
+  isRanger: 1
   followEnabled: 1
   jumpEnabled: 0
   minJumpDistanceEnabled: 0

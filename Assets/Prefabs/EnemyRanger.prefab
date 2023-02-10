@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1476705246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476705247}
+  m_Layer: 0
+  m_Name: ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1476705247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476705246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227395346809148060}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &227395346809148056
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +46,7 @@ GameObject:
   - component: {fileID: 227395346809148050}
   - component: {fileID: 227395346809148051}
   - component: {fileID: 227395346809148049}
+  - component: {fileID: 103242578}
   m_Layer: 0
   m_Name: EnemyRanger
   m_TagString: Untagged
@@ -35,6 +67,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9106836166991338607}
+  - {fileID: 1476705247}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,6 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05958b766a493e6499ae9d843de81571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 1476705247}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &227395346809148049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,9 +217,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyGroundInfo: {fileID: 11400000, guid: e85e888ea420f8948a1f04ede28efe5f, type: 2}
-  health: 0
-  damage: 0
-  safetyRange: 0
+--- !u!114 &103242578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227395346809148056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a590d6dcc74fe15428cd8bfa9de0d19f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3804872307928805566, guid: d036b70b99612384b80a2946b411a3c7, type: 3}
+  firePostion: {fileID: 1476705247}
 --- !u!1 &9106836166991338600
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9106836166991338607
 Transform:
   m_ObjectHideFlags: 0
