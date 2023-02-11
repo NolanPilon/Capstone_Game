@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de42eca495b057c48901e26f0e27e4dc, type: 3}
-  m_Name: BasisAir
+  m_Name: BasiAirRanger
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
@@ -18,11 +18,12 @@ MonoBehaviour:
   targetTag: Player
   activateDistance: 50
   pathUpdateSeconds: 0.5
-  nextWaypointDistance: 1
-  mySpeed: 1000
-  attackRange: 0.8
-  delayAfterAttack: 3
+  nextWaypointDistance: 3
+  mySpeed: 1200
+  attackRange: 10
+  safetyRange: 5
+  delayAfterAttack: 1
   delayAfterGettingHit: 3
-  isRanger: 0
+  isRanger: 1
   followEnabled: 1
   directionLookEnabled: 1

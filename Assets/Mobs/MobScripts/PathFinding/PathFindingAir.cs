@@ -22,14 +22,13 @@ public class PathFindingAir : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     bool isGrounded = false;
+
+
     Seeker seeker;
     Rigidbody2D rb;
 
     public void Start()
     {
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
-
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
 
@@ -41,10 +40,11 @@ public class PathFindingAir : MonoBehaviour
         seeker = useThisSeeker;
     }
     
-    public void SetPhysicsInfo(float nextWaypointDis, float speed)
+    public void SetPhysicsInfo(Rigidbody2D useThisRb,float nextWaypointDis, float speed)
     {
         mySpeed = speed;
         nextWaypointDistance = nextWaypointDis;
+        rb = useThisRb;
     }
 
     public void SetCustomBehavior(bool followEnable,bool directionLook)
@@ -53,15 +53,7 @@ public class PathFindingAir : MonoBehaviour
         directionLookEnabled = directionLook;
     }
 
-    private void FixedUpdate()
-    {
-        if (TargetInDistance() && followEnabled)
-        {
-            PathFollow();
-        }
-    }
-
-    private void UpdatePath()
+    public void UpdatePath()
     {
         if (followEnabled && TargetInDistance() && seeker.IsDone())
         {
@@ -69,7 +61,7 @@ public class PathFindingAir : MonoBehaviour
         }
     }
 
-    private void PathFollow()
+    public void PathFollow()
     {
         if (path == null)
         {
@@ -112,14 +104,39 @@ public class PathFindingAir : MonoBehaviour
         }
     }
 
+    public void RunAway()
+    {
+        // creates the vector towards the player
+        // Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 direction = (target.position - transform.position);
+
+        //reverses it 
+        direction = direction * -1;
+        Vector2 force = direction * mySpeed * Time.deltaTime;
+
+        //Moves the mob
+        rb.AddForce(force);
+    }
+
+    public void MovementStop()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
     //aggro distance
-    private bool TargetInDistance()
+    public bool TargetInDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
     }
 
+    //return the distance
+    public float TargetDistance()
+    {
+        return Vector2.Distance(transform.position, target.transform.position);
+    }
+
     //activates when mob reaches the end of path
-    void OnPathComplete(Path p)
+    public void OnPathComplete(Path p)
     {
         if (!p.error)
         {
