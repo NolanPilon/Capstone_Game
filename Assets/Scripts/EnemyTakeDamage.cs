@@ -12,8 +12,16 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (collision.tag == "Player" && GameManager.playerSpeed > requiredSpeed)
         {
+            StartCoroutine(AttackFreeze());
             transform.position = new Vector2(1000, 1000);
             Destroy(this.gameObject, 0.2f);
         }
+    }
+
+    IEnumerator AttackFreeze() 
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.08f);
+        Time.timeScale = 1.0f;
     }
 }
