@@ -70,7 +70,6 @@ public class EnemyBrainAir : MonoBehaviour
                 }
             }
         }
-
     }
 }
 

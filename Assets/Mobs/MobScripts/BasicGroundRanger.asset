@@ -24,8 +24,8 @@ MonoBehaviour:
   jumpModifier: 0.3
   jumpCheckOffset: 0.1
   mySpeed: 200
-  attackRange: 10
-  safetyRange: 7
+  attackRange: 8
+  safetyRange: 6
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   isRanger: 1

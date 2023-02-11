@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1384358887475680516}
   - component: {fileID: 3426879024166653572}
   - component: {fileID: 8582687330161885826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: b323ef23ba612714cbad45b4562d7725, type: 2}
@@ -228,6 +228,7 @@ MonoBehaviour:
   playerController: {fileID: 1489422724}
   parryArrow: {fileID: 55818437570687787}
   playerObject: {fileID: 2041005998658260607}
+  canParry: 0
 --- !u!114 &3426879024166653572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a64d3a69e522d8449be1be967d19b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
 --- !u!61 &8582687330161885826
 BoxCollider2D:
   m_ObjectHideFlags: 0

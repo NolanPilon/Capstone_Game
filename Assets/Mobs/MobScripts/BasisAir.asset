@@ -18,7 +18,7 @@ MonoBehaviour:
   targetTag: Player
   activateDistance: 50
   pathUpdateSeconds: 0.5
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
   mySpeed: 1000
   attackRange: 0.8
   delayAfterAttack: 3

@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager gameManager;
     public static int parryCombo = 0;
-    public static float playerSpeed = 0;
+    public static float playerSpeed;
     public int combo;
     public float speed;
+    
 
     public static GameManager Instance { get { return gameManager; } }
     void Awake()
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        combo = parryCombo;
         speed = playerSpeed;
+        combo = parryCombo;
     }
 }
