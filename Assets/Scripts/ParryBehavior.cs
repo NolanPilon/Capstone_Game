@@ -11,13 +11,13 @@ public class ParryBehavior : MonoBehaviour
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
     private Rigidbody2D playerRB;
-    private float launchSpeed = 20.0f;
-    private float launchMultiplier = 3f;
+    private float launchSpeed = 15.0f;
+    private float launchMultiplier = 2.5f;
     private Vector2 launchDir;
     private float holdTimer = 0;
 
-    private bool canParry = false;
-    private bool inParry = false;
+    public bool canParry = false;
+    public static bool inParry = false;
 
     void Awake()
     {

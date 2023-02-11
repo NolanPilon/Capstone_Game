@@ -23,11 +23,12 @@ MonoBehaviour:
   minPlayerHeightDistance: 10
   jumpModifier: 4
   jumpCheckOffset: 0.1
-  mySpeed: 500
+  mySpeed: 250
   attackRange: 0
   safetyRange: -1
   delayAfterAttack: 3
   delayAfterGettingHit: 3
+  isRanger: 0
   followEnabled: 1
   jumpEnabled: 1
   minJumpDistanceEnabled: 0

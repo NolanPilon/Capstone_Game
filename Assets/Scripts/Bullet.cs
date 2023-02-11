@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     public float projectileSpeed = 0.5f;
     private Rigidbody2D rb;
     public Transform target;
+    [SerializeField] private Transform colliderPos;
+    [SerializeField] private LayerMask colliderLayer;
 
     public void Start()
     {
@@ -18,17 +19,17 @@ public class Bullet : MonoBehaviour
         rb.velocity = (direction * projectileSpeed);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
+        if (hitSomething()) 
+        {
+            transform.position = new Vector2(1000, 1000);
+            Destroy(gameObject, 0.1f);
+        }   
+    }
 
-        if (collision.tag == "Player")
-        {
-            //dmg player
-            Destroy(gameObject);
-        }
-        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
-        {
-            Destroy(gameObject);
-        }
+    private bool hitSomething() 
+    {
+        return Physics2D.OverlapCircle(colliderPos.position, 0.2f, colliderLayer);
     }
 }

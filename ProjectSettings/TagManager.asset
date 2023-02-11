@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Parry
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
-  - 
+  - Mob
+  - Player
   - 
   - 
   - 
