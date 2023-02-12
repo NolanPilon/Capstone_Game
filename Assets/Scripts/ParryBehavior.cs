@@ -11,13 +11,13 @@ public class ParryBehavior : MonoBehaviour
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
     private Rigidbody2D playerRB;
-    private float launchSpeed = 20.0f;
-    private float launchMultiplier = 3f;
+    private float launchSpeed = 15.0f;
+    private float launchMultiplier = 2.5f;
     private Vector2 launchDir;
     private float holdTimer = 0;
 
-    private bool canParry = false;
-    private bool inParry = false;
+    public bool canParry = false;
+    public static bool inParry = false;
 
     void Awake()
     {
@@ -26,6 +26,7 @@ public class ParryBehavior : MonoBehaviour
 
     void Update()
     {
+        // Time t'ill you get kicked out of parry state
         if (holdTimer > 0) 
         {
             holdTimer -= Time.deltaTime * 5;
@@ -36,7 +37,17 @@ public class ParryBehavior : MonoBehaviour
             holdTimer = 1.0f;
         }
 
-        ParryFunction();
+        if (canParry) 
+        {
+            ParryFunction();
+        }
+
+
+        // Temp fix for control issues
+        if (playerController.isGrounded() || Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Space) && !playerController.isGrounded() && !inParry)
+        {
+            playerController.controlsEnabled = true;
+        }
     }   
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -67,10 +78,10 @@ public class ParryBehavior : MonoBehaviour
             GameManager.parryCombo += 1;
         }
 
-        // If in range of enemy and space is pressed
+        // If in range of projectile and space is pressed
         // Parry arrow shows up and time is slowed
         // When you let go hide the arrow and reset time
-        if (canParry && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;
@@ -86,12 +97,6 @@ public class ParryBehavior : MonoBehaviour
             Time.timeScale = 1f;
             playerRB.gravityScale = 2;
             parryArrow.SetActive(false);
-        }
-
-        // Temp fix for air movement
-        if (playerController.isGrounded() || Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Space) && !playerController.isGrounded() && !inParry)
-        {
-            playerController.controlsEnabled = true;
         }
     }
 }

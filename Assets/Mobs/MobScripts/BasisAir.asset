@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de42eca495b057c48901e26f0e27e4dc, type: 3}
   m_Name: BasisAir
   m_EditorClassIdentifier: 
-  health: 10
-  damage: 10
+  health: 3
+  damage: 1
   isDead: 0
   targetTag: Player
   activateDistance: 50
   pathUpdateSeconds: 0.5
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
   mySpeed: 1000
   attackRange: 0.8
   delayAfterAttack: 3
   delayAfterGettingHit: 3
+  isRanger: 0
   followEnabled: 1
   directionLookEnabled: 1

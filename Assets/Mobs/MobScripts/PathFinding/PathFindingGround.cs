@@ -41,7 +41,6 @@ public class PathFindingGround : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
-    RaycastHit2D pogger;
 
     public void Start()
     {
@@ -74,16 +73,6 @@ public class PathFindingGround : MonoBehaviour
         minJumpDistanceEnabled = minJumpDistanceEnable;
         directionLookEnabled = isdirectionLook;
     }
-
-    void FixedUpdate()
-    {
-
-       // // go towards the player
-       // if (TargetInDistance() && followEnabled)
-       // {
-       //     PathFollow();
-       // }
-    }  
 
     protected void UpdatePath()
     {
@@ -169,10 +158,10 @@ public class PathFindingGround : MonoBehaviour
     {
         // creates the vector towards the player
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+
+        //reverses it 
         direction.x = direction.x * -1;
         Vector2 force = direction * mySpeed * Time.deltaTime;
-
-        float jumpHeightDistance = target.transform.position.y - this.transform.position.y;
 
 
         //Moves the mob

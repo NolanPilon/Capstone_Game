@@ -53,7 +53,7 @@ public class EnemyGroundBrain : MonoBehaviour
 
     void Start()
     {
-        startUP();
+        StartUP();
     }
 
     void FixedUpdate()
@@ -110,7 +110,7 @@ public class EnemyGroundBrain : MonoBehaviour
         }
     }
 
-    void startUP()
+    void StartUP()
     {
         //Sets Mob Stats
         health = EnemyGroundInfo.health;
@@ -149,6 +149,7 @@ public class EnemyGroundBrain : MonoBehaviour
             rangeAttack = gameObject.GetComponent<RangeAttack>();
 
             GameObject targetBody = GameObject.FindGameObjectWithTag(tagTarget);
+
             if (targetBody)
             {
                 Seeker seeker = gameObject.GetComponent<Seeker>();
