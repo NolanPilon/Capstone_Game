@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
-        SceneManager.LoadScene("TutorialLevel");
+        SceneManager.LoadScene("PrototypeLevel");
     }
 
     public void OnClickExit()

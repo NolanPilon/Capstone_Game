@@ -33,7 +33,7 @@ public class BossAI : MonoBehaviour
     float height;               //boss height
     float width;                //boss width
 
-    PlayerStats playerStat;     //for take damage function
+    PlayerCombatFunctions playerStat;     //for take damage function
     int BossHealth = 3;         //boss lives
 
     public Image healthbar;     //boss healthbar
@@ -65,7 +65,7 @@ public class BossAI : MonoBehaviour
         rectTransform= GetComponent<RectTransform>();
         height = rectTransform.rect.height * rectTransform.localScale.y;
         width = rectTransform.rect.width * rectTransform.localScale.x;
-        playerStat = target.GetComponent<PlayerStats>();
+        playerStat = target.GetComponent<PlayerCombatFunctions>();
         initalize();
     }
 
@@ -145,7 +145,7 @@ public class BossAI : MonoBehaviour
             else
             {
                 transform.position = destination;
-                playerStat.takeDamage(1);
+                playerStat.takeDamage(collision.transform.position - this.transform.position);
                 initalize();
             }
 
