@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
     public Sprite newSettingssprite;
     private Sprite originalSettingssprite;
 
+    public GameObject SettingPopUp;
+
     // Initialize the original sprites
     private void Start()
     {
@@ -60,17 +62,21 @@ public class MainMenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("TutorialLevel");
     }
 
     public void OnClickExit()
     {
-        Application.Quit();
+        if (SettingPopUp.activeSelf)
+        {
+            SettingPopUp.SetActive(false);
+        }
+        else Application.Quit();
     }
 
     public void OnClickSettings()
     {
-        SceneManager.LoadScene("Settings");
+        SettingPopUp.SetActive(true);
     }
 
 }
