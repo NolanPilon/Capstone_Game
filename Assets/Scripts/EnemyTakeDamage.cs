@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
     //Required speed to be damaged
-    private int requiredSpeed = 28;
+    private int requiredCombo = 2;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && GameManager.playerSpeed > requiredSpeed)
+        if (collision.tag == "Player" && GameManager.parryCombo >= requiredCombo)
         {
             StartCoroutine(AttackFreeze());
             transform.position = new Vector2(1000, 1000);
