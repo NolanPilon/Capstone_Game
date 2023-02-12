@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject directionalLight;
 
+    public GameObject SettingPopUp;
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -30,7 +32,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Settings()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Settings");
+        SettingPopUp.SetActive(true);
+    }
+
+    public void OnClickExit()
+    {
+        SettingPopUp.SetActive(false);
     }
 }
