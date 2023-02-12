@@ -10,7 +10,7 @@ public class PlayerCombatFunctions : MonoBehaviour
     private float invincibilityTimer;
 
     private Rigidbody2D playerRB;
-    private Vector2 vel;
+    //private Vector2 vel;
     private SpriteRenderer playerSprite;
    
     public PlayerControlls playerController;
@@ -31,13 +31,13 @@ public class PlayerCombatFunctions : MonoBehaviour
         {
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
         }
-        vel = playerRB.velocity;
-        GameManager.playerSpeed = vel.magnitude;
+        //vel = playerRB.velocity;
+        //GameManager.playerSpeed = vel.magnitude;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.playerSpeed < 28 && collision.tag == "Enemy") 
+        if (GameManager.parryCombo < 2 && collision.tag == "Enemy") 
         {
             if (invincibilityTimer <= 0)
             {

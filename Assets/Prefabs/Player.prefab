@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a64d3a69e522d8449be1be967d19b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  playerController: {fileID: 1489422724}
 --- !u!61 &8582687330161885826
 BoxCollider2D:
   m_ObjectHideFlags: 0

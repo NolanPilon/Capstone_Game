@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 1
   isDead: 0
   targetTag: Player
-  activateDistance: 50
+  activateDistance: 10
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8

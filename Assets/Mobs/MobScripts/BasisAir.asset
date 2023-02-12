@@ -16,11 +16,12 @@ MonoBehaviour:
   damage: 1
   isDead: 0
   targetTag: Player
-  activateDistance: 50
+  activateDistance: 10
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 1
   mySpeed: 1000
   attackRange: 0.8
+  safetyRange: 10
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   isRanger: 0
