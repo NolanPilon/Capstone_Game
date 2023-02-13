@@ -986,6 +986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgrounMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 805368585560976568, guid: ed5169135c31b234cb5afe5364652e9b, type: 3}
+      propertyPath: m_TagString
+      value: BGM
+      objectReference: {fileID: 0}
     - target: {fileID: 7101136809713669787, guid: ed5169135c31b234cb5afe5364652e9b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1615,7 +1619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1006399778}
-  BGM: {fileID: 1755405137}
 --- !u!114 &1006399778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,7 +1666,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.52
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2487,11 +2490,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680460329}
   m_CullTransparentMesh: 1
---- !u!1 &1755405137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 805368585560976568, guid: ed5169135c31b234cb5afe5364652e9b, type: 3}
-  m_PrefabInstance: {fileID: 628423418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1800158877
 GameObject:
   m_ObjectHideFlags: 0
