@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
-using static UnityEditor.FilePathAttribute;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UI;
 
