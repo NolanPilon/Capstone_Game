@@ -11,8 +11,8 @@ public class ParryBehavior : MonoBehaviour
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
     private Rigidbody2D playerRB;
-    private float launchSpeed = 15.0f;
-    private float launchMultiplier = 2.5f;
+    private float launchSpeed = 20.0f;
+    private float launchMultiplier = 3.5f;
     private Vector2 launchDir;
     private float holdTimer = 0;
 

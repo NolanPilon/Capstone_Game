@@ -19,7 +19,7 @@ public class BossRoomTrigger : MonoBehaviour
         bossDoor.SetActive(false);
         yield return new WaitForSecondsRealtime(0.3f);
         bossDoor.SetActive(true);
-        bossCam.orthographicSize = 10;
-        bossCam.transform.position = new Vector3(106, -70, -1);
+        bossCam.orthographicSize = 8;
+        bossCam.transform.position = new Vector3(107.5f, -72f, -1f);
     }
 }

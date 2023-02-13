@@ -16,6 +16,7 @@ public class BossAI : MonoBehaviour
     private Rigidbody2D bossRB;
     public float speed = 5f;    //speed of boss
     int bounceTime;             //track bounce time
+    int maxBounces = 6;
     Vector2 direction;          //direction of the boss movement
     Vector2 destination;        //destination for after boss bounce (1st motion)
     Vector2 spawnPos;
@@ -94,13 +95,13 @@ public class BossAI : MonoBehaviour
             }
             if (!Motion1)
             {
-                if (bounceTime < 4)
+                if (bounceTime < maxBounces)
                 {
                     bossRB.velocity = direction.normalized * speed;
                     //transform.Translate(direction.normalized * speed * Time.deltaTime);
                 }
 
-                if (bounceTime == 4)
+                if (bounceTime == maxBounces)
                 {
                     transform.position = Vector2.MoveTowards(this.transform.position, destination, speed * Time.deltaTime);
 
@@ -159,7 +160,7 @@ public class BossAI : MonoBehaviour
         {
             if (collision.collider.CompareTag("Player"))
             {
-                if (GameManager.parryCombo >= 3 && canTakeDamage)
+                if (GameManager.parryCombo >= 2 && canTakeDamage)
                 {
                     BossHealth--;
                     transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
@@ -180,14 +181,14 @@ public class BossAI : MonoBehaviour
             {
                 if (!Motion1)
                 {
-                    if (bounceTime < 4)
+                    if (bounceTime < maxBounces)
                     {
                         direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
 
                         bounceTime++;
                     }
 
-                    if (bounceTime == 4)
+                    if (bounceTime == maxBounces)
                     {
                         location = this.transform.position;
                     }
