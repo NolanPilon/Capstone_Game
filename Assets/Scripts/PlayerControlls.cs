@@ -62,6 +62,17 @@ public class PlayerControlls : MonoBehaviour
 
                 jumpBufferTimer = 0;
             }
+
+            // Flip sprite
+            if (playerRB.velocity.x < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else 
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+
         }
     }
 

@@ -65,4 +65,9 @@ public class PlayerCombatFunctions : MonoBehaviour
 
         GameManager.playerHP--;
     }
+
+    public void launchOpposite() 
+    {
+        playerRB.velocity = -playerRB.velocity;
+    }
 }

@@ -13,10 +13,13 @@ public class BossAI : MonoBehaviour
 {
     public GameObject target;   //player
     public GameObject[] spawner;   //spawner
+    private Rigidbody2D bossRB;
     public float speed = 5f;    //speed of boss
     int bounceTime;             //track bounce time
+    int maxBounces = 6;
     Vector2 direction;          //direction of the boss movement
     Vector2 destination;        //destination for after boss bounce (1st motion)
+    Vector2 spawnPos;
     Vector2 location;           //curr location (1st & 2nd motion)
     
     bool Motion1;               //trigger of 1st motion
@@ -27,6 +30,9 @@ public class BossAI : MonoBehaviour
     bool start;                 //start translate (1st & 2nd motion)
     bool coolDown;              //start cooldown (2nd motion)
     bool attack;                //start attack (2nd motion)
+    bool spawnsCreated;
+    bool canTakeDamage = true;
+    bool alive = true;
 
     float angle = (-2 * Mathf.PI) / 6;      //angle in radians (3rd motion)
     RectTransform rectTransform;            //for get boss height and width
@@ -51,7 +57,7 @@ public class BossAI : MonoBehaviour
         coolDown = false;
         attack = false;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4; i++)
         {
             spawner[i].SetActive(false);
         }
@@ -61,127 +67,146 @@ public class BossAI : MonoBehaviour
 
     private void Start()
     {
+        bossRB = GetComponent<Rigidbody2D>();
+
         destination = this.transform.position; //initial position == destination
-        rectTransform= GetComponent<RectTransform>();
+        spawnPos = this.transform.position;
+        rectTransform = GetComponent<RectTransform>();
         height = rectTransform.rect.height * rectTransform.localScale.y;
         width = rectTransform.rect.width * rectTransform.localScale.x;
         playerStat = target.GetComponent<PlayerCombatFunctions>();
+        spawnsCreated = false;
         initalize();
     }
 
     private void Update()
     {
-        if (TargetInRange() && Range == true)
+        if (alive) 
         {
-            if (!start)
+            if (TargetInRange() && Range == true)
             {
-                direction = target.transform.position - this.transform.position;
-                start = true;
-                Motion1 = false;
-            }
-            Range= false;
-        }
-        if (!Motion1)
-        {
-            if (bounceTime < 4)
-            {
-                transform.Translate(direction.normalized * speed * Time.deltaTime);
-            }
-
-            if (bounceTime == 4)
-            {
-                transform.position = Vector2.MoveTowards(this.transform.position, destination, speed * Time.deltaTime);
-
-                location = this.transform.position;
-
-                if (location == destination)
+                if (!start)
                 {
-                    Motion1 = true;
-                    Motion2 = false;
-                    start = false;
-                    bounceTime = 0;
+                    direction = -(target.transform.position - this.transform.position);
+                    start = true;
+                    Motion1 = false;
+                }
+                Range = false;
+            }
+            if (!Motion1)
+            {
+                if (bounceTime < maxBounces)
+                {
+                    bossRB.velocity = direction.normalized * speed;
+                    //transform.Translate(direction.normalized * speed * Time.deltaTime);
+                }
+
+                if (bounceTime == maxBounces)
+                {
+                    transform.position = Vector2.MoveTowards(this.transform.position, destination, speed * Time.deltaTime);
+
+                    location = this.transform.position;
+
+                    if (location == destination)
+                    {
+                        Motion1 = true;
+                        Motion2 = false;
+                        start = false;
+                        bounceTime = 0;
+                    }
                 }
             }
-        }
-        if(!Motion2)
-        {
-            if (!coolDown)
+            if (!Motion2)
             {
-                StartCoroutine("delayTime"); // delay 3seconds
-                coolDown = true;
+                if (!coolDown)
+                {
+                    bossRB.velocity = Vector3.zero;
+                    StartCoroutine("delayTime"); // delay 2seconds
+                    coolDown = true;
+                }
+                if (start)
+                {
+                    direction = target.transform.position - this.transform.position;
+                    direction.y *= -1;
+                    start = false;
+                    attack = true;
+                }
+                if (attack && !start)
+                {
+                    bossRB.velocity = direction.normalized * speed;
+                }
             }
-            if (start)
+            if (!Motion3)
             {
-                direction = target.transform.position - this.transform.position;
-                direction.y *= -1;
-                start = false;
-                attack = true;
+                bossRB.velocity = Vector3.zero;
+                CreateSpawns();
+                Motion3 = true;
             }
-            if (attack && !start)
-            {
-                transform.Translate(direction.normalized * 1.5f * speed * Time.deltaTime);
-            }
-        }
-        if (!Motion3)
-        {
-            CreateSpawns();
-            Motion3 = true;
-        }
 
-        healthValue = (float)(this.BossHealth / 3f);
-        healthbar.fillAmount = healthValue;
+            healthValue = (float)(this.BossHealth / 3f);
+            healthbar.fillAmount = healthValue;
+
+
+            if (BossHealth <= 0)
+            {
+                Die();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (alive) 
         {
-            if (GameManager.parryCombo >= 3)
+            if (collision.collider.CompareTag("Player"))
             {
-                BossHealth--;
-                transform.position = destination;
-                initalize();
-            }
-            else
-            {
-                transform.position = destination;
-                playerStat.takeDamage(collision.transform.position - this.transform.position);
-                initalize();
-            }
-
-            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
-            rb.velocity = Vector3.zero;
-            Range = true;
-        }
-        else
-        {
-            if (!Motion1)
-            {
-                if (bounceTime < 4)
+                if (GameManager.parryCombo >= 2 && canTakeDamage)
                 {
-                    direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
-
-                    bounceTime++;
-                }
-
-                if (bounceTime == 4)
-                {
-                    location = this.transform.position;
-                }
-            }
-
-            if (!Motion2)
-            {
-                if (bounceTime == 0)
-                {
-                    direction = target.transform.position - this.transform.position;
-                    bounceTime++;
+                    BossHealth--;
+                    transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+                    playerStat.launchOpposite();
+                    transform.position = spawnPos;
+                    StartCoroutine(invincible());
                 }
                 else
                 {
-                    direction = Vector2.zero;
-                    Motion2 = true;
-                    Motion3 = false;
+                    playerStat.takeDamage(collision.transform.position - this.transform.position);
+                    transform.position = spawnPos;
+                    initalize();
+                }
+                bossRB.velocity = Vector3.zero;
+                Range = true;
+            }
+            else
+            {
+                if (!Motion1)
+                {
+                    if (bounceTime < maxBounces)
+                    {
+                        direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
+
+                        bounceTime++;
+                    }
+
+                    if (bounceTime == maxBounces)
+                    {
+                        location = this.transform.position;
+                    }
+                }
+
+                if (!Motion2)
+                {
+                    if (bounceTime == 0)
+                    {
+                        direction = target.transform.position - this.transform.position;
+                        bounceTime++;
+                    }
+                    else
+                    {
+                        direction = Vector2.zero;
+                        Motion2 = true;
+                        Motion3 = false;
+                    }
                 }
             }
         }
@@ -196,23 +221,50 @@ public class BossAI : MonoBehaviour
 
     IEnumerator delayTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         
         start = true;
     }
 
+    IEnumerator invincible()
+    {
+        canTakeDamage = false;
+        initalize();
+        yield return new WaitForSeconds(2);
+        canTakeDamage = true;
+    }
+
+    void Die() 
+    {
+        alive = false;
+        bossRB.velocity = Vector2.zero;
+        Destroy(gameObject, 2);
+    }
+
     void CreateSpawns()
     {
-        for (int i = 0; i < 5; i++)
+        if (!spawnsCreated)
         {
-            GameObject sphere = spawner[i];
-            sphere.SetActive(enabled);
-            float r = width + 0.5f;    // distance from center
-                             // sin and cos need value in radians
-            Vector2 pos2d = new Vector2(Mathf.Sin(angle) * r + this.transform.position.x, Mathf.Cos(angle) * r + this.transform.position.y - (height/2));
-            sphere.transform.position = new Vector2(pos2d.x, pos2d.y);
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject sphere = spawner[i];
+                sphere.SetActive(enabled);
+                float r = width + 1.8f;    // distance from center
+                                           // sin and cos need value in radians
+                Vector2 pos2d = new Vector2(Mathf.Sin(angle) * r + this.transform.position.x, Mathf.Cos(angle) * r + this.transform.position.y - (height / 2));
+                sphere.transform.position = new Vector2(pos2d.x, pos2d.y);
 
-            angle += Mathf.PI / 6;
+                angle += Mathf.PI / 4.5f;
+                spawnsCreated = true;
+            }
+        }
+        else 
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject sphere = spawner[i];
+                sphere.SetActive(enabled);
+            }
         }
     }
 }
