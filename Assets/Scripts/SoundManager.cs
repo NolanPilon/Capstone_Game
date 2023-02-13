@@ -7,21 +7,25 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
 
-    public GameObject BGM;
+    private GameObject BGM;
     // Start is called before the first frame update
-/*    void Start()
-    {
-        if (!PlayerPrefs.HasKey("musicVolume"))
+    /*    void Start()
         {
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
-    }*/
+            if (!PlayerPrefs.HasKey("musicVolume"))
+            {
+                PlayerPrefs.SetFloat("musicVolume", 1);
+                Load();
+            }
+            else
+            {
+                Load();
+            }
+        }*/
 
+    private void Start()
+    {
+        BGM = GameObject.FindGameObjectWithTag("BGM");
+    }
     public void ChangeVolume()
     {
         BGM.GetComponent<AudioSource>().volume = volumeSlider.value;
