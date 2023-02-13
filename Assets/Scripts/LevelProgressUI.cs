@@ -16,8 +16,8 @@ public class LevelProgressUI : MonoBehaviour
     [SerializeField] private Transform triggerpoint2;
     [SerializeField] private Transform endLineTransform;
 
-    private Vector2 triggerpoint1Ps;
-    private Vector2 triggerpoint2Ps;
+    private Vector3 triggerpoint1Ps;
+    private Vector3 triggerpoint2Ps;
     private Vector3 endLinePosition;
 
     private float dist1;
@@ -30,6 +30,8 @@ public class LevelProgressUI : MonoBehaviour
 
     private void Start()
     {
+        triggerpoint1Ps = triggerpoint1.position;
+        triggerpoint2Ps = triggerpoint2.position;
         endLinePosition = endLineTransform.position;
 
         dist1 = Vector2.Distance(playerTransform.position, triggerpoint1Ps);
@@ -49,6 +51,7 @@ public class LevelProgressUI : MonoBehaviour
             }
             else
             {
+                dist1 = 0;
                 checkpoint1 = true;
                 checkpoint2 = false;
             }
@@ -58,10 +61,10 @@ public class LevelProgressUI : MonoBehaviour
             if (playerTransform.position.y > triggerpoint2Ps.y)
             {
                 dist2 = Vector2.Distance(triggerpoint2Ps, playerTransform.position);
-                dist2 = -dist2;
             }
             else
             {
+                dist2 = 0;
                 checkpoint2 = true;
             }
         }
