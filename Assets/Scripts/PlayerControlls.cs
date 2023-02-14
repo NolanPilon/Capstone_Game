@@ -90,7 +90,12 @@ public class PlayerControlls : MonoBehaviour
     //Draws an invisible circle to check if on the ground
     public bool isGrounded() 
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(groundCheck.position, 0.5f);
     }
 }
 
