@@ -3,7 +3,14 @@ guid: 47cd27e4b86f93f41aa745adb9392964
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - jump: {fileID: 8300000, guid: 6d19d01766b08084fab1170b2c9dcc7f, type: 3}
+  - hit: {fileID: 8300000, guid: a65dbfb09c5036441b67f6a596a8d70f, type: 3}
+  - hurt: {fileID: 8300000, guid: 7ef2088db9476324bb3e6bd074483d92, type: 3}
+  - qTE: {fileID: 8300000, guid: f2a702c6244a90f46bef7838111f2586, type: 3}
+  - enemyAttack: {fileID: 8300000, guid: 60a06756457ffa042a7474d56c6d0752, type: 3}
+  - enemyDeath: {fileID: 8300000, guid: 5a1f15504a7045943b078107b3d77241, type: 3}
+  - Menu: {fileID: 8300000, guid: d9a8be2eb76a16943a8d8a8bc9ead6eb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
