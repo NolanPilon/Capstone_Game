@@ -5,40 +5,40 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
+    public static SoundManager Instance = null;
+    private AudioSource soundEffectAudio;
+    public AudioClip jump;
+    public AudioClip hit;
+    public AudioClip hurt;
+    public AudioClip qTE;
+    public AudioClip enemyAttack;
+    public AudioClip enemyDeath;
+    public AudioClip Menu;
 
-    private GameObject BGM;
-    // Start is called before the first frame update
-    /*    void Start()
+    //Start is called before the first frame update
+    void Start()
+    {
+       if (Instance == null) 
         {
-            if (!PlayerPrefs.HasKey("musicVolume"))
+          Instance = this;
+        }
+        else if (Instance !=this) 
+        {
+          Destroy(gameObject);
+        }
+        AudioSource[] sources = GetComponents<AudioSource>();
+        foreach (AudioSource source in sources)
+        {
+            if (source.clip == null)
             {
-                PlayerPrefs.SetFloat("musicVolume", 1);
-                Load();
+                soundEffectAudio = source;
             }
-            else
-            {
-                Load();
-            }
-        }*/
-
-    private void Start()
-    {
-        BGM = GameObject.FindGameObjectWithTag("BGM");
-    }
-    public void ChangeVolume()
-    {
-        BGM.GetComponent<AudioSource>().volume = volumeSlider.value;
-        //Save();
+        }
     }
 
-/*    public void Load()
+    public void PlayOneShot(AudioClip clip)
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        soundEffectAudio.PlayOneShot(clip);
     }
 
-    public void Save()
-    {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
-    }*/
 }
