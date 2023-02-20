@@ -24,8 +24,8 @@ public class PauseMenu : MonoBehaviour
     public void BackToMap()
     {
         Time.timeScale = 1f;
-        Destroy(GameObject.FindGameObjectWithTag("BGM"));
-        SceneManager.LoadScene("MainMenu");
+        //Destroy(GameObject.FindGameObjectWithTag("BGM"));
+        SceneManager.LoadScene("LevelMap");
     }
 
     public void Settings()

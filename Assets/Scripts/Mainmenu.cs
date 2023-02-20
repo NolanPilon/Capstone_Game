@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class Mainmenu : MonoBehaviour
 {
     public Button start;
     public Sprite newStartsprite;
@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
-        SceneManager.LoadScene("PrototypeLevel");
+        SceneManager.LoadScene("LevelMap");
     }
 
     public void OnClickExit()
