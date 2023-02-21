@@ -9728,6 +9728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 686672454}
   SettingPopUp: {fileID: 566070233}
+  PauseButton: {fileID: 1760659251}
 --- !u!4 &1763476516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8301248127051353147, guid: 8be3a49b351d25b4585ef9f866250ffb, type: 3}
