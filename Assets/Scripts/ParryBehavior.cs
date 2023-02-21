@@ -10,6 +10,7 @@ public class ParryBehavior : MonoBehaviour
 
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
+    [SerializeField] private GameObject playerGlow;
     private Rigidbody2D playerRB;
     private float launchSpeed = 20.0f;
     private float launchMultiplier = 3.5f;
@@ -54,6 +55,7 @@ public class ParryBehavior : MonoBehaviour
     {
         if (collision.tag == "Parry")
         {
+            playerGlow.SetActive(true);
             canParry = true;
         }
     }
@@ -62,6 +64,7 @@ public class ParryBehavior : MonoBehaviour
     {
         if (collision.tag == "Parry")
         {
+            playerGlow.SetActive(false);
             canParry = false;
             inParry = false;
         }
@@ -81,7 +84,7 @@ public class ParryBehavior : MonoBehaviour
         // If in range of projectile and space is pressed
         // Parry arrow shows up and time is slowed
         // When you let go hide the arrow and reset time
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;
