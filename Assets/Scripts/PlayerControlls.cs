@@ -9,6 +9,8 @@ public class PlayerControlls : MonoBehaviour
 {
     public bool controlsEnabled = true;
 
+    public ParticleSystem dust;
+
     private float moveSpeed = 10;
     private float horizontalMove;
     private int jumpForce = 18;
@@ -66,11 +68,17 @@ public class PlayerControlls : MonoBehaviour
             // Flip sprite
             if (playerRB.velocity.x < 0)
             {
+                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
+                    CreateDust();
                 GetComponent<SpriteRenderer>().flipX = true;
+              
             }
             else 
             {
+                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
+                    CreateDust();
                 GetComponent<SpriteRenderer>().flipX = false;
+    
             }
 
         }
@@ -82,8 +90,9 @@ public class PlayerControlls : MonoBehaviour
         playerRB.velocity = new Vector2((horizontalMove * moveSpeed), playerRB.velocity.y);
     }
 
-    private void Jump() 
-    {   
+    private void Jump()
+    {
+        CreateDust();
         playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
@@ -91,6 +100,12 @@ public class PlayerControlls : MonoBehaviour
     public bool isGrounded() 
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+    }
+
+    void CreateDust()
+    {
+        if(isGrounded())
+        dust.Play();
     }
 
     public void OnDrawGizmos()
