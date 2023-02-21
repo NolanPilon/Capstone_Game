@@ -6349,6 +6349,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1104314213 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9186343074933683535, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
+  m_PrefabInstance: {fileID: 1231494009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1138195301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6924,6 +6929,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 826534830}
     m_Modifications:
+    - target: {fileID: 9026944159204441649, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
+      propertyPath: LandingParticles
+      value: 
+      objectReference: {fileID: 1104314213}
     - target: {fileID: 9026944159204441658, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
       propertyPath: m_Name
       value: GroundSeeker (1)
@@ -8019,10 +8028,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 826534830}
     m_Modifications:
-    - target: {fileID: 227395346809148051, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 227395346809148056, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
       propertyPath: m_Name
       value: GroundRanger
@@ -8070,18 +8075,6 @@ PrefabInstance:
     - target: {fileID: 227395346809148060, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 227395346809148061, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 227395346809148061, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 227395346809148061, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.54901963
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
@@ -11445,11 +11438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 73.52
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.82
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12426,7 +12419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9026944159204441662, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.54
+      value: 70.47
       objectReference: {fileID: 0}
     - target: {fileID: 9026944159204441662, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
       propertyPath: m_LocalPosition.y

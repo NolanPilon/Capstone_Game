@@ -41,6 +41,7 @@ public class EnemyGroundBrain : MonoBehaviour
     private bool minJumpDistanceEnable;
     private bool directionLookEnabled;
 
+  //  public ParticleSystem landing;
     private Path path;
     private int currentWaypoint;
     private float NextAttack;
@@ -93,6 +94,7 @@ public class EnemyGroundBrain : MonoBehaviour
                 }
 
             }
+                
         }
         else
         {
@@ -110,6 +112,10 @@ public class EnemyGroundBrain : MonoBehaviour
         }
     }
 
+    void CreateLandingParticles()
+    {
+       // landing.Play();
+    }
     void StartUP()
     {
         //Sets Mob Stats
