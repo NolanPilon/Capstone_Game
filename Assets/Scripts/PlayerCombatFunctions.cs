@@ -15,6 +15,8 @@ public class PlayerCombatFunctions : MonoBehaviour
    
     public PlayerControlls playerController;
 
+    public SoundManager sm;
+
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -64,6 +66,7 @@ public class PlayerCombatFunctions : MonoBehaviour
         invincibilityTimer = invincibilityFrames;
 
         GameManager.playerHP--;
+        sm.PlayHurt();
     }
 
     public void launchOpposite() 
