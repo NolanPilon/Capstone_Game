@@ -10,6 +10,7 @@ public class PlayerControlls : MonoBehaviour
     public bool controlsEnabled = true;
 
     public ParticleSystem dust;
+    public ParticleSystem landingDust;
 
     private float moveSpeed = 10;
     private float horizontalMove;
@@ -18,6 +19,7 @@ public class PlayerControlls : MonoBehaviour
     //Coyote time
     private float jumpBuffer = 0.2f;
     private float jumpBufferTimer;
+    private bool playedLanding = false;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -78,9 +80,19 @@ public class PlayerControlls : MonoBehaviour
                 if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
                     CreateDust();
                 GetComponent<SpriteRenderer>().flipX = false;
-    
             }
 
+            if (playerRB.velocity.y < -20)
+            {
+                Debug.Log("HELP");
+                playedLanding = false;
+            }
+            if (isGrounded() && playedLanding == false)
+            {
+                CreateLandingDust();
+                playedLanding = true;
+            }
+            
         }
     }
 
@@ -106,6 +118,12 @@ public class PlayerControlls : MonoBehaviour
     {
         if(isGrounded())
         dust.Play();
+    }
+
+    void CreateLandingDust()
+    {
+            landingDust.Play();
+        Debug.Log("fuicl");
     }
 
     public void OnDrawGizmos()

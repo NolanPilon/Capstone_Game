@@ -35,7 +35,6 @@ public class PathFindingGround : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     private bool isGrounded = false;
-    public ParticleSystem LandingParticles;
 
     [SerializeField] private Transform groundCheck = null;
     [SerializeField] private LayerMask groundLayer = 0;
@@ -100,10 +99,6 @@ public class PathFindingGround : MonoBehaviour
 
         if (checkIfGround())
         {
-            if (isGrounded == false)
-            {
-                CreateLandingParticles();
-            }
             isGrounded = true; 
         }
         else
@@ -193,11 +188,6 @@ public class PathFindingGround : MonoBehaviour
     public bool checkIfGround()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    void CreateLandingParticles()
-    {
-        LandingParticles.Play();
     }
 
     //activates when mob reaches the end of path
