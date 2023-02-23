@@ -27,10 +27,12 @@ public class PlayerControlls : MonoBehaviour
 
     private Rigidbody2D playerRB;
 
+    public SoundManager sm;
+
     void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>();
-    }
+        playerRB = GetComponent<Rigidbody2D>(); 
+    } 
 
     void Update()
     {
@@ -57,6 +59,7 @@ public class PlayerControlls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
                 Jump();
+                sm.PlayJump();  
             }
 
             // Prevents double jump and allows for variable jump height
@@ -106,6 +109,8 @@ public class PlayerControlls : MonoBehaviour
     {
         CreateDust();
         playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //Call Jump Sound Effect
+        
     }
 
     //Draws an invisible circle to check if on the ground
