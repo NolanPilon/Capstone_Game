@@ -87,7 +87,6 @@ public class PlayerControlls : MonoBehaviour
 
             if (playerRB.velocity.y < -20)
             {
-                Debug.Log("HELP");
                 playedLanding = false;
             }
             if (isGrounded() && playedLanding == false)
@@ -127,8 +126,7 @@ public class PlayerControlls : MonoBehaviour
 
     void CreateLandingDust()
     {
-            landingDust.Play();
-        Debug.Log("fuicl");
+        landingDust.Play();
     }
 
     public void OnDrawGizmos()
