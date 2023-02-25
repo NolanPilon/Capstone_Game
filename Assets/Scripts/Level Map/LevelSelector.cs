@@ -29,7 +29,7 @@ public class LevelSelector : MonoBehaviour
     // Update is called once per frame
     public void OpenScene(int i)
     {
-        if (levels[i-0] == locked) return;
+        if (levels[i-1] == locked) return;
 
         //SceneManager.LoadScene("Level" + i.ToString());
         SceneManager.LoadScene("PrototypeLevel");
