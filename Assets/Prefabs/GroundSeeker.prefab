@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 9026944159204441648}
   - component: {fileID: 9026944159204441649}
   - component: {fileID: 9026944159204441651}
-  - component: {fileID: 1572718850463896697}
   - component: {fileID: 2249684636095561088}
   - component: {fileID: 4501232235710125317}
   m_Layer: 0
@@ -91,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,18 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyGroundInfo: {fileID: 11400000, guid: b4d41c01b3fb6904fab381d882163771, type: 2}
---- !u!114 &1572718850463896697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9026944159204441658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f30e36c0d9eee499d313c575783c7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
 --- !u!61 &2249684636095561088
 BoxCollider2D:
   m_ObjectHideFlags: 0

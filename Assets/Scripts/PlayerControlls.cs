@@ -9,6 +9,9 @@ public class PlayerControlls : MonoBehaviour
 {
     public bool controlsEnabled = true;
 
+    public ParticleSystem dust;
+    public ParticleSystem landingDust;
+
     private float moveSpeed = 10;
     private float horizontalMove;
     private int jumpForce = 18;
@@ -16,6 +19,7 @@ public class PlayerControlls : MonoBehaviour
     //Coyote time
     private float jumpBuffer = 0.2f;
     private float jumpBufferTimer;
+    private bool playedLanding = false;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -23,10 +27,12 @@ public class PlayerControlls : MonoBehaviour
 
     private Rigidbody2D playerRB;
 
+    public SoundManager sm;
+
     void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>();
-    }
+        playerRB = GetComponent<Rigidbody2D>(); 
+    } 
 
     void Update()
     {
@@ -53,6 +59,7 @@ public class PlayerControlls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
                 Jump();
+                sm.PlayJump();  
             }
 
             // Prevents double jump and allows for variable jump height
@@ -66,13 +73,29 @@ public class PlayerControlls : MonoBehaviour
             // Flip sprite
             if (playerRB.velocity.x < 0)
             {
+                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
+                    CreateDust();
                 GetComponent<SpriteRenderer>().flipX = true;
+              
             }
             else 
             {
+                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
+                    CreateDust();
                 GetComponent<SpriteRenderer>().flipX = false;
             }
 
+            if (playerRB.velocity.y < -20)
+            {
+                Debug.Log("HELP");
+                playedLanding = false;
+            }
+            if (isGrounded() && playedLanding == false)
+            {
+                CreateLandingDust();
+                playedLanding = true;
+            }
+            
         }
     }
 
@@ -82,15 +105,30 @@ public class PlayerControlls : MonoBehaviour
         playerRB.velocity = new Vector2((horizontalMove * moveSpeed), playerRB.velocity.y);
     }
 
-    private void Jump() 
-    {   
+    private void Jump()
+    {
+        CreateDust();
         playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //Call Jump Sound Effect
+        
     }
 
     //Draws an invisible circle to check if on the ground
     public bool isGrounded() 
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+    }
+
+    void CreateDust()
+    {
+        if(isGrounded())
+        dust.Play();
+    }
+
+    void CreateLandingDust()
+    {
+            landingDust.Play();
+        Debug.Log("fuicl");
     }
 
     public void OnDrawGizmos()
