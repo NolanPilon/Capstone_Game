@@ -37,9 +37,6 @@ public class EnemyGroundInfo : ScriptableObject
     public bool minJumpDistanceEnabled = false;
     public bool directionLookEnabled = true;
 
-    [Header("Other")]
-    public GameObject deathParticles;
-
     private Path path;
     private int currentWaypoint = 0;
     bool isGrounded = false;

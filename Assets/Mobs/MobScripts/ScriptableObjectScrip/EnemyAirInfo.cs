@@ -28,12 +28,11 @@ public class EnemyAirInfo : ScriptableObject
     public float delayAfterGettingHit = 3.0f;
     public bool isRanger = false;
 
+
+
     [Header("Custom Behavior")]
     public bool followEnabled = true;
     public bool directionLookEnabled = true;
-
-    [Header("Other")]
-    public GameObject deathParticles;
 
     private Path path;
     private int currentWaypoint = 0;

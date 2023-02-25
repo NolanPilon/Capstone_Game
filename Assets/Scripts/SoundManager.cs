@@ -6,62 +6,39 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance = null;
-    private AudioSource[] soundEffectAudio;
-    private AudioSource jump;
-    private AudioSource hit;
-    private AudioSource hurt;
-    private AudioSource qTE;  //
-    private AudioSource enemyAttack;
-    private AudioSource enemyDeath;
-    private AudioSource Menu;
+    private AudioSource soundEffectAudio;
+    public AudioClip jump;
+    public AudioClip hit;
+    public AudioClip hurt;
+    public AudioClip qTE;
+    public AudioClip enemyAttack;
+    public AudioClip enemyDeath;
+    public AudioClip Menu;
 
     //Start is called before the first frame update
     void Start()
     {
-        soundEffectAudio= GetComponents<AudioSource>();
-
-        jump = soundEffectAudio[0];
-        hurt = soundEffectAudio[1];
-        //hit = soundEffectAudio[2];
-        //qTE = soundEffectAudio[3];
-        //enemyAttack = soundEffectAudio[4];
-        //enemyDeath = soundEffectAudio[5];
-        //Menu = soundEffectAudio[6];
+       if (Instance == null) 
+        {
+          Instance = this;
+        }
+        else if (Instance !=this) 
+        {
+          Destroy(gameObject);
+        }
+        AudioSource[] sources = GetComponents<AudioSource>();
+        foreach (AudioSource source in sources)
+        {
+            if (source.clip == null)
+            {
+                soundEffectAudio = source;
+            }
+        }
     }
 
-    public void PlayJump()
+    public void PlayOneShot(AudioClip clip)
     {
-        jump.Play();
-    }
-
-    public void PlayHit()
-    {
-      hit.Play();
-    }
-
-    public void PlayHurt()
-    {
-        hurt.Play();
-    }
-
-    public void PlayQTE()
-    {
-        qTE.Play();
-    }
-
-    public void PlayEAttack()
-    {
-        enemyAttack.Play();
-    }
-
-    public void PlayEDeath()
-    {
-        enemyDeath.Play();
-    }
-
-    public void PlayMenu()
-    {
-        Menu.Play();
+        soundEffectAudio.PlayOneShot(clip);
     }
 
 }

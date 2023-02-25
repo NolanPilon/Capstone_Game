@@ -41,13 +41,10 @@ public class EnemyGroundBrain : MonoBehaviour
     private bool minJumpDistanceEnable;
     private bool directionLookEnabled;
 
-  //  public ParticleSystem landing;
     private Path path;
     private int currentWaypoint;
     private float NextAttack;
     private bool isGrounded = false;
-    private GameObject deathParticles;
-
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -70,6 +67,7 @@ public class EnemyGroundBrain : MonoBehaviour
                 if (movement.TargetDistance() >= attackRange)
                 {
                     movement.PathFollow();
+
                 }
                 // keeps the mob safe 
                 else if (movement.TargetDistance() <= safetyRange)
@@ -95,7 +93,6 @@ public class EnemyGroundBrain : MonoBehaviour
                 }
 
             }
-                
         }
         else
         {
@@ -107,31 +104,10 @@ public class EnemyGroundBrain : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && GameManager.parryCombo >= health)
-        {
-            StartCoroutine(AttackFreeze());
-            createDeathParticles();
-            
-            transform.position = new Vector2(1000, 1000);
-            Destroy(this.gameObject, 0.2f);
-        }
-        else if (collision.tag == "Player" && Time.time > NextAttack)
+        if (collision.tag == "Player" && Time.time > NextAttack)
         {
             NextAttack = Time.time + delayAfterAttack;
         }
-
-    }
-
-    IEnumerator AttackFreeze()
-    {
-        Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(0.08f);
-        Time.timeScale = 1.0f;
-    }
- 
-    void createDeathParticles()
-    {
-        Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
     }
 
     void StartUP()
@@ -166,9 +142,6 @@ public class EnemyGroundBrain : MonoBehaviour
         jumpEnabled = EnemyGroundInfo.jumpEnabled;
         minJumpDistanceEnable = EnemyGroundInfo.minJumpDistanceEnabled;
         directionLookEnabled = EnemyGroundInfo.directionLookEnabled;
-        
-        //other
-        deathParticles = EnemyGroundInfo.deathParticles;
 
         if (followEnabled)
         {

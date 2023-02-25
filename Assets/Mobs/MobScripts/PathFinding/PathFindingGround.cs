@@ -44,7 +44,6 @@ public class PathFindingGround : MonoBehaviour
 
     public void Start()
     {
-
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
 
@@ -99,7 +98,7 @@ public class PathFindingGround : MonoBehaviour
 
         if (checkIfGround())
         {
-            isGrounded = true; 
+            isGrounded = true;
         }
         else
         { 
@@ -189,7 +188,6 @@ public class PathFindingGround : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-
     //activates when mob reaches the end of path
     void OnPathComplete(Path p)
     {
