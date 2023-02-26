@@ -35,6 +35,8 @@ public class EnemyBrainAir : MonoBehaviour
     private bool followEnabled = true;
     private bool directionLookEnabled = true;
 
+
+    private GameObject deathParticles;
     private Path path;
     private int currentWaypoint = 0;
     private float NextAttack;
@@ -96,12 +98,30 @@ public class EnemyBrainAir : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && Time.time > NextAttack)
+        if (collision.tag == "Player" && GameManager.parryCombo >= health)
+        {
+            StartCoroutine(AttackFreeze());
+            createDeathParticles();
+
+            transform.position = new Vector2(1000, 1000);
+            Destroy(this.gameObject, 0.2f);
+        }
+        else if (collision.tag == "Player" && Time.time > NextAttack)
         {
             NextAttack = Time.time + delayAfterAttack;
         }
     }
+    IEnumerator AttackFreeze()
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.08f);
+        Time.timeScale = 1.0f;
+    }
 
+    void createDeathParticles()
+    {
+        Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
+    }
 
     private void startUP()
     {
@@ -129,6 +149,9 @@ public class EnemyBrainAir : MonoBehaviour
         //Sets Custom Behavior
         followEnabled = EnemyAirInfo.followEnabled;
         directionLookEnabled = EnemyAirInfo.directionLookEnabled;
+
+        //Other
+        deathParticles = EnemyAirInfo.deathParticles;
 
         if (followEnabled)
         {

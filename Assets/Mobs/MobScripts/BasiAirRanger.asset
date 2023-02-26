@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de42eca495b057c48901e26f0e27e4dc, type: 3}
   m_Name: BasiAirRanger
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   damage: 1
   isDead: 0
   targetTag: Player
@@ -27,3 +27,4 @@ MonoBehaviour:
   isRanger: 1
   followEnabled: 1
   directionLookEnabled: 1
+  deathParticles: {fileID: 2464784198141276583, guid: f3e10b42b24042e418f242332ac7f527, type: 3}
