@@ -1,0 +1,981 @@
+fileFormatVersion: 2
+guid: 16395a16e59e3604ba9297026856639e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 124
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d1030ee3773294d87a28aecc2aa235
+      internalID: 458483325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075d6ea89c16dd6449b9431d915ab653
+      internalID: -743622172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990b21105e647d848a4630590af4fd64
+      internalID: 75146824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_3
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9462043bddb4049bb57862c6ad183f
+      internalID: 1922784533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_4
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b664abf5c617848b518a80d018d685
+      internalID: -699434491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_5
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd767868fa427c4f9e05882f1e35294
+      internalID: 1129672177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_6
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293a1a946dcff354e92b36e0809f9431
+      internalID: -1952231198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_7
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 497
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed2bad50d297f448ae462076177359c
+      internalID: 464548331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92d50b02be7dfb4c83f5892e25e896c
+      internalID: -1238508820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367cf386c1bfb6840874fdb955d48c7b
+      internalID: 1646997638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_10
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422bb14469fdecf4691bb58c1d8691f4
+      internalID: 548511117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_11
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a205b548d4d6112428b496232603978d
+      internalID: 5169359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_12
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a077e2ddd8387446abc9f800cf4f593
+      internalID: 282173794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_13
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20f491a7e004a7478010781095518de
+      internalID: 2122201822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_14
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea6fae975973904e9f09e5531447d67
+      internalID: 1120342768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_15
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 373
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fee8f1539c1e064890fa7c25aa66986
+      internalID: 791010905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_16
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d76f97f1ca6364f93d53e112fcc88c
+      internalID: -341257816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_17
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe9e137f3156df47add679bdebbccab
+      internalID: -1146122212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_18
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c76c66bc96368743a0931e0009cba33
+      internalID: 1811337452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_19
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d491021868ab5a84d9a90a315bdd4bdf
+      internalID: 368422803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_20
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b01bb046beafb9488b1953366e30f5a
+      internalID: -705413893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_21
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082e62925efcc334bae2212d8fa42cb8
+      internalID: -1117387142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_22
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305c0ae2db3772a48a5e03ec6999fdea
+      internalID: -1855458524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_23
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 249
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6885e4a91b73f4b4f9d92a352a43728f
+      internalID: -1529689890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08eb095681da0634980a385dd72f898a
+      internalID: -1700204160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_25
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92be0e0b26a71f34f89478511a2ae73c
+      internalID: -1520767979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_26
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fd08423b31de2428fd930f36e88fd9
+      internalID: -1790825248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_27
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ce43ec2d9a87e4198ff71d1914b754
+      internalID: -697218625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_28
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead07d2e4613a1f4db2b92bf74abbb95
+      internalID: 441380492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_29
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb089b955fd1c0c499edc92df7ff394c
+      internalID: 866657108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_30
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085f4776bcd3cea4c8051bd822cf2b11
+      internalID: -409870267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_31
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 125
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5b2afa187a27a41aba072930aafe16
+      internalID: -228996859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f12ab55c3b0d8747b685e5af0baea1a
+      internalID: -1054363846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_33
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b698666b5ede62c48819dc76ce5d8dbb
+      internalID: 1299729262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_34
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558ce2a97be5c8448a55ebc2b0c20a3a
+      internalID: 1049415109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_35
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8917bc4cf30a86a46ba26a4500209fa5
+      internalID: 1982096521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_36
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766d3861413472c4dbbd2def01a9111e
+      internalID: -1897073578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_37
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbe079d28f7c604890b110d42810d2f
+      internalID: -1675218711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backMoveArtboard 69 copy 2_38
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ca543787ba21442953ca65e534beee
+      internalID: -1647938525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      backMoveArtboard 69 copy 2_0: 458483325
+      backMoveArtboard 69 copy 2_33: 1299729262
+      backMoveArtboard 69 copy 2_8: -1238508820
+      backMoveArtboard 69 copy 2_28: 441380492
+      backMoveArtboard 69 copy 2_21: -1117387142
+      backMoveArtboard 69 copy 2_23: -1529689890
+      backMoveArtboard 69 copy 2_12: 282173794
+      backMoveArtboard 69 copy 2_24: -1700204160
+      backMoveArtboard 69 copy 2_11: 5169359
+      backMoveArtboard 69 copy 2_25: -1520767979
+      backMoveArtboard 69 copy 2_34: 1049415109
+      backMoveArtboard 69 copy 2_5: 1129672177
+      backMoveArtboard 69 copy 2_38: -1647938525
+      backMoveArtboard 69 copy 2_19: 368422803
+      backMoveArtboard 69 copy 2_18: 1811337452
+      backMoveArtboard 69 copy 2_27: -697218625
+      backMoveArtboard 69 copy 2_29: 866657108
+      backMoveArtboard 69 copy 2_31: -228996859
+      backMoveArtboard 69 copy 2_4: -699434491
+      backMoveArtboard 69 copy 2_7: 464548331
+      backMoveArtboard 69 copy 2_1: -743622172
+      backMoveArtboard 69 copy 2_3: 1922784533
+      backMoveArtboard 69 copy 2_15: 791010905
+      backMoveArtboard 69 copy 2_22: -1855458524
+      backMoveArtboard 69 copy 2_20: -705413893
+      backMoveArtboard 69 copy 2_17: -1146122212
+      backMoveArtboard 69 copy 2_2: 75146824
+      backMoveArtboard 69 copy 2_14: 1120342768
+      backMoveArtboard 69 copy 2_9: 1646997638
+      backMoveArtboard 69 copy 2_32: -1054363846
+      backMoveArtboard 69 copy 2_13: 2122201822
+      backMoveArtboard 69 copy 2_6: -1952231198
+      backMoveArtboard 69 copy 2_16: -341257816
+      backMoveArtboard 69 copy 2_30: -409870267
+      backMoveArtboard 69 copy 2_36: -1897073578
+      backMoveArtboard 69 copy 2_35: 1982096521
+      backMoveArtboard 69 copy 2_37: -1675218711
+      backMoveArtboard 69 copy 2_26: -1790825248
+      backMoveArtboard 69 copy 2_10: 548511117
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
