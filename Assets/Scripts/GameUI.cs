@@ -11,14 +11,11 @@ public class GameUI : MonoBehaviour
     gameUI.SetHealthText(health);*/
 
     // Coding the UI
-    [SerializeField]
-    private Image Live1;
-    [SerializeField]
-    private Image Live2;
-    [SerializeField]
-    private Image Live3;
-    [SerializeField]
-    private Text comboText;
+    [SerializeField] private Image[] Lives;
+    [SerializeField] private Text collectablesText;
+    [SerializeField] private Sprite HeartAlive;
+    [SerializeField] private Sprite HeartDead;
+    [SerializeField] private Image comboBar;
     /*[SerializeField]
     private Text timeText;*/
     /*[SerializeField]
@@ -26,10 +23,7 @@ public class GameUI : MonoBehaviour
     /*[SerializeField]
     Player player;*/
 
-    public Sprite HeartAlive;
-    public Sprite HeartDead;
-
-    public bool isGameOver;
+    private bool isGameOver;
     private int time;
 
     void Start()
@@ -38,37 +32,23 @@ public class GameUI : MonoBehaviour
         StartCoroutine("increaseTimeEachSecond");
         Time.timeScale = 1;
         isGameOver = false;
+
+        for (int i = 0; i < Lives.Length; i++)
+        {
+            AliveHeart(Lives[i]);
+        }
+
     }
 
     private void Update()
     {
-        if (GameManager.playerHP == 3)
-        {
-            AliveHeart(Live1);
-            AliveHeart(Live2);
-            AliveHeart(Live3);
-        }
-        else if (GameManager.playerHP == 2)
-        {
-            AliveHeart(Live1);
-            AliveHeart(Live2);
-            DeadHeart(Live3);
-        }
-        else if(GameManager.playerHP == 1)
-        {
-            AliveHeart(Live1);
-            DeadHeart(Live2);
-            DeadHeart(Live3);
-        }
-        else
-        {
-            DeadHeart(Live1);
-            DeadHeart(Live2);
-            DeadHeart(Live3);
-        }
+        SetHP();                            //Update the player HP UI
 
-        SetCombotext(GameManager.parryCombo);
+        SetCombo(GameManager.parryCombo);   //Update the parry combo bar
+
+        SetCollectablesText(0);             //Neeed to change the argument after collectable script done
     }
+
 
     IEnumerator increaseTimeEachSecond()
     {
@@ -81,9 +61,26 @@ public class GameUI : MonoBehaviour
         
     }
 
-    public void SetCombotext(int combo)
+    public void SetCombo(int combo)
     {
-        comboText.text = "x" + combo;
+        if (combo > 3) return; //update the bar until 3 combos
+
+        comboBar.fillAmount = (float)combo / 3.0f;
+    }
+
+    public void SetCollectablesText(int collectables)
+    {
+        collectablesText.text = "x" + collectables; 
+    }
+
+    public void SetHP()
+    {
+        int playerhp = 3 - GameManager.playerHP;
+
+        for (int i = 0; i < playerhp; i++)
+        {
+            DeadHeart(Lives[i]);
+        }
     }
 
     public void AliveHeart(Image hp)

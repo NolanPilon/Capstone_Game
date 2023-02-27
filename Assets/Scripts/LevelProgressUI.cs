@@ -9,6 +9,7 @@ public class LevelProgressUI : MonoBehaviour
 {
     [Header("UI references :")]
     [SerializeField] private Image uiFillImage;
+    [SerializeField] private GameObject BossHP;
 
     [Header("Player & Endline references :")]
     [SerializeField] private Transform playerTransform;
@@ -39,6 +40,8 @@ public class LevelProgressUI : MonoBehaviour
         dist3 = Vector2.Distance(triggerpoint2Ps, endLinePosition);
 
         fullDistance = GetDistance();
+
+        BossHP.SetActive(false);
     }
 
     private float GetDistance()
@@ -87,6 +90,7 @@ public class LevelProgressUI : MonoBehaviour
         {
             checkpoint1 = false;
             checkpoint2 = true;
+            BossHP.SetActive(false);
 
             dist1 = Vector2.Distance(playerTransform.position, triggerpoint1Ps);
             dist2 = Vector2.Distance(triggerpoint1Ps, triggerpoint2Ps);
@@ -94,8 +98,12 @@ public class LevelProgressUI : MonoBehaviour
         }
 
         if (playerTransform.position.y < endLinePosition.y)
+        {
+            this.gameObject.SetActive(false);
+            BossHP.SetActive(true);
             return;
-
+        }
+            
         float newDistance = GetDistance();
         float progressValue = Mathf.InverseLerp(fullDistance, 0f, newDistance);
         //InverseLerp(min,max,v) always returns a value bet 0 & 1
