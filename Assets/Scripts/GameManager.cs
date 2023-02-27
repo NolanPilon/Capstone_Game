@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int combo;
     public float speed;
+    public static Vector2 respawnPoint = Vector2.zero;
     
-
     public static GameManager Instance { get { return gameManager; } }
     void Awake()
     {
