@@ -31,7 +31,12 @@ public class PlayerControlls : MonoBehaviour
 
     void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>(); 
+        playerRB = GetComponent<Rigidbody2D>();
+
+        if (GameManager.respawnPoint != Vector2.zero )
+        {
+            this.transform.position = GameManager.respawnPoint;
+        }
     } 
 
     void Update()

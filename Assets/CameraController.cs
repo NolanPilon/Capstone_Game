@@ -12,6 +12,12 @@ public class CameraController : MonoBehaviour
     // Check Camera shaking is on
     public bool IsOnShake { set; get; }
 
+    private void Start()
+    {
+        //Set the start position of camera same with player
+        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10.0f);
+    }
+
     private void Update()
     {
         if (IsOnShake == true) return;
