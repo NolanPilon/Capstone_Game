@@ -2458,6 +2458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be3a49b351d25b4585ef9f866250ffb, type: 3}
+--- !u!4 &433489892 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9026944159204441662, guid: 7acf361fb47fcd74a8bf1880d401ec36, type: 3}
+  m_PrefabInstance: {fileID: 345330371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &434220677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,12 +5713,13 @@ Transform:
   - {fileID: 24310928}
   - {fileID: 747622633}
   - {fileID: 1413200328}
-  - {fileID: 781220925}
+  - {fileID: 433489892}
   - {fileID: 1533890765}
   - {fileID: 1703314500}
   - {fileID: 2110363713}
   - {fileID: 1442331971}
   - {fileID: 1083902359}
+  - {fileID: 781220925}
   - {fileID: 1761789427}
   - {fileID: 1769815749}
   m_Father: {fileID: 0}
@@ -7796,7 +7802,7 @@ MonoBehaviour:
   collectablesText: {fileID: 1994037312}
   HeartAlive: {fileID: 21300000, guid: 2f07f8ad5dda61f459f4b97c610171d0, type: 3}
   HeartDead: {fileID: 21300000, guid: fded3f98767e2bd4d88134b88b6d963a, type: 3}
-  isGameOver: 0
+  comboBar: {fileID: 97551279}
 --- !u!1001 &1320288553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7867,7 +7873,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2819637893348982181, guid: 60445c28626664c479c89492bd5231f8, type: 3}
   m_PrefabInstance: {fileID: 1320288553}
   m_PrefabAsset: {fileID: 0}
-  comboBar: {fileID: 97551279}
 --- !u!1 &1326264179
 GameObject:
   m_ObjectHideFlags: 0
@@ -10685,7 +10690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826534830}
-  m_RootOrder: 99
+  m_RootOrder: 100
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1761789428
 BoxCollider2D:
@@ -10934,7 +10939,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826534830}
-  m_RootOrder: 100
+  m_RootOrder: 101
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1769815750
 BoxCollider2D:
