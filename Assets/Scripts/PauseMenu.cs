@@ -10,21 +10,27 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject SettingPopUp;
     [SerializeField] Button PauseButton;
 
+    private Color color;
+    private Selectable pausebutton;
+
+    public void Start()
+    {
+        color = PauseButton.GetComponent<Image>().color;
+        pausebutton= PauseButton.GetComponent<Selectable>(); 
+    }
+
     public void Update()
     {
-        Color color = PauseButton.GetComponent<Image>().color;
-
         if (ParryBehavior.inParry)
         {
             color.a = 0.2f;
-            PauseButton.GetComponent<Image>().color = color;
-            PauseButton.GetComponent<Button>().interactable = false;
-            return;
+            pausebutton.interactable = false;
         }
-
-        PauseButton.GetComponent<Button>().interactable = true;
-        color.a = 1.0f;
-        PauseButton.GetComponent<Image>().color = color;
+        else
+        {
+            color.a = 1.0f;
+            pausebutton.interactable = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
