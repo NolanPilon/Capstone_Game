@@ -15,6 +15,7 @@ public class Mainmenu : MonoBehaviour
     public Button settings;
     public Sprite newSettingssprite;
     private Sprite originalSettingssprite;
+    public Animator transition;
 
     public GameObject SettingPopUp;
 
@@ -62,8 +63,16 @@ public class Mainmenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame() 
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene("LevelMap");
     }
+
 
     public void OnClickExit()
     {
