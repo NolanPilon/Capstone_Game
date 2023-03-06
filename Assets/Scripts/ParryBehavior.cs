@@ -38,10 +38,7 @@ public class ParryBehavior : MonoBehaviour
             holdTimer = 1.0f;
         }
 
-        if (canParry) 
-        {
-            ParryFunction();
-        }
+        ParryFunction();
 
 
         // Temp fix for control issues
@@ -84,7 +81,7 @@ public class ParryBehavior : MonoBehaviour
         // If in range of projectile and space is pressed
         // Parry arrow shows up and time is slowed
         // When you let go hide the arrow and reset time
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canParry)
         {
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;

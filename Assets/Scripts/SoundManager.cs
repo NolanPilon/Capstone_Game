@@ -5,17 +5,29 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance = null;
+    private static SoundManager soundManager;
     private AudioSource[] soundEffectAudio;
     private AudioSource jump;
     private AudioSource hit;
     private AudioSource hurt;
-    private AudioSource qTE;  //
+    private AudioSource qTE;  
     private AudioSource enemyAttack;
     private AudioSource enemyDeath;
     private AudioSource Menu;
 
-    //Start is called before the first frame update
+    public static SoundManager Instance { get { return soundManager; } }
+    void Awake()
+    {
+        if (soundManager != null && soundManager != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            soundManager = this;
+        }
+    }
+
     void Start()
     {
         soundEffectAudio= GetComponents<AudioSource>();

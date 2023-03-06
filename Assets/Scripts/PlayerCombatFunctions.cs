@@ -10,12 +10,9 @@ public class PlayerCombatFunctions : MonoBehaviour
     private float invincibilityTimer;
 
     private Rigidbody2D playerRB;
-    //private Vector2 vel;
     private SpriteRenderer playerSprite;
    
     public PlayerControlls playerController;
-
-    public SoundManager sm;
 
     void Start()
     {
@@ -33,13 +30,19 @@ public class PlayerCombatFunctions : MonoBehaviour
         {
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
         }
-        //vel = playerRB.velocity;
-        //GameManager.playerSpeed = vel.magnitude;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (GameManager.parryCombo < 2 && collision.tag == "Enemy") 
+        {
+            if (invincibilityTimer <= 0)
+            {
+                takeDamage(collision.gameObject.transform.position);
+            }
+        }
+
+        if(collision.tag == "ParryBullet" && !ParryBehavior.inParry && GameManager.parryCombo <= 0)
         {
             if (invincibilityTimer <= 0)
             {
@@ -66,7 +69,7 @@ public class PlayerCombatFunctions : MonoBehaviour
         invincibilityTimer = invincibilityFrames;
 
         GameManager.playerHP--;
-        sm.PlayHurt();
+        SoundManager.Instance.PlayHurt();
     }
 
     public void launchOpposite() 
