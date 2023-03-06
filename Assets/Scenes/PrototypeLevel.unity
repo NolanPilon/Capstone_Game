@@ -8311,8 +8311,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1436992933}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &1436992936
 Animator:
@@ -8979,7 +8979,7 @@ Transform:
   - {fileID: 1085185547}
   - {fileID: 1320288554}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1577162349
 GameObject:
@@ -9305,8 +9305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594458868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.7819, y: 42.1117, z: 9.958596}
-  m_LocalScale: {x: 129.501, y: 14.5434, z: 1}
+  m_LocalPosition: {x: 32.7819, y: 42.2695, z: 9.958596}
+  m_LocalScale: {x: 129.501, y: 14.858992, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826534830}
@@ -12416,11 +12416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13543,7 +13543,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1625124361631618874, guid: 207db2532946ca640be5e78149596b17, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1625124361631618874, guid: 207db2532946ca640be5e78149596b17, type: 3}
       propertyPath: m_LocalPosition.x
