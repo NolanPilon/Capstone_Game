@@ -1,0 +1,2103 @@
+fileFormatVersion: 2
+guid: 7802716792e5b4d40a758800bb2fe1e5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spriteBoss1Movement_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e83efb6022bf74f9af6cacf250ae4e
+      internalID: -462841339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_1
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7dfafec04d09e40952f73f4a1f6d5e
+      internalID: 492575168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_2
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b56086149e64f4294485789dda95e6
+      internalID: 1841525517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_3
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322af2a2bced5094eb937e9e074e1cbb
+      internalID: 359300426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_4
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40bc58bc7c05a942874b60b9dfff20e
+      internalID: -2012267858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_5
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b121062c88252af499fea9845a1307a5
+      internalID: 1154551151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_6
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5577a764a6d90274c96b086c64ed6a90
+      internalID: -1491815999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_7
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40f1f2743673b142a7079342bc35810
+      internalID: 641851294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_8
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39997ade29a912a42b896978286d8e86
+      internalID: -1964337675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_9
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 8640
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3094ad6c16f58c4289f7ca829f32bce
+      internalID: -644129035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a612639220aeb4499e4687e6dc72462
+      internalID: 2120107885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_11
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e22fcddb7368f4f9725f5e3958dc06
+      internalID: -1438568485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_12
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7b62edc0abaa142a99a59991f3938e
+      internalID: 918873976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_13
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1143e5bcbbe36ab45b7c8427a0a0c881
+      internalID: 1076198101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_14
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cfb44342f2a014a82412629e903520
+      internalID: 1340909732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_15
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9117fc87c92ce41a8b24fb7fb7cdfa
+      internalID: 639195035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_16
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5278d71517581418f4db5d107b5e69
+      internalID: -768851286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_17
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb21e5583c69713499530a087916fcda
+      internalID: 2002296450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_18
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0bd3257e5c1874e836451f4a7e232c
+      internalID: 1217571384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_19
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 7560
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4de382103f20741a93aa930506281f
+      internalID: -1860135751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6997f9cb286ca47837682f646f47f5
+      internalID: 132544197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_21
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f13c10bbd75d9c4fbfda86d34d3fa0c
+      internalID: 183482719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_22
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d40d1a4953d0d4bab8d7b99a658259
+      internalID: 456447604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_23
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9fd6e947daa22498a00bf956ee470e
+      internalID: -391225714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_24
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e8698b90513ed4480b6c0b0b106ab1
+      internalID: 2047444527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_25
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a37222b22a1a2a498f34684361b753a
+      internalID: 1054469406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_26
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421041a25c8d1d5409ab89894b886491
+      internalID: 1437581661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_27
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a68a43946eb3224586b79aac888af9a
+      internalID: 689614456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_28
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144ce76306a69414f872b1b902b443c8
+      internalID: 1630665518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_29
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 6480
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf12f63d654a4de418b01ffe6d757641
+      internalID: 1949547873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b9b9d77246d0f41a5e10a4aa96ed3e
+      internalID: 794191989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_31
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06df4b2e7ecaac47b168c87091b1031
+      internalID: -1843436858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_32
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810d4a7b5d2e3da48bbf9b51dc866cdb
+      internalID: -1934651344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_33
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7cfc6aade62aa48885df3bec700787
+      internalID: -730302793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_34
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20031046d94886469818dc6abb6379d
+      internalID: 116521467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_35
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d216406326cbc848a545fbf7ef894ee
+      internalID: 337664743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_36
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce648cde54cdf84abe52cc2a2d0c9d8
+      internalID: -2085591553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_37
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca80555dec30494eabb7ed9da1d4c9c
+      internalID: -312656106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_38
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8985d1327530b842aa87a6d69de9f68
+      internalID: 1670876540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_39
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 5400
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cb11c8ba349a14bbe5e7b077c0f353
+      internalID: 1224518081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5906c5be532054399057811bce6098
+      internalID: 154396535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_41
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba94015fb03bdfa4bb5c720d8e4eced8
+      internalID: -1414469173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_42
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdaf17cc5d8cf9040b613ffe6944ae36
+      internalID: 80108892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_43
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f52587e3b318754ba54a4e553d7c737
+      internalID: 1107921122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_44
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa87a2f8145e47b4ba4b94d6674c6a0b
+      internalID: -41334741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_45
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7212f177a56d8e47ab3f41c19c0a73e
+      internalID: 1841414319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_46
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828948cc0fcc3d74c9331512c779eafd
+      internalID: -1204009912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_47
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28dc984b6ad3cd428737feabd6e2e51
+      internalID: 2121694649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_48
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e9ebbfcfdd9714cb33bb8b2bd7068c
+      internalID: -629643427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_49
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 4320
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0bf13f9010ba2408634622067a7cce
+      internalID: 858657628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a3d78d7c0294244a7f6d27648420a9
+      internalID: -1814990697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_51
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ded5cf9f066d604783acf42a67fe548
+      internalID: -494880188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_52
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0191e35620ac884bbc8b7e63d0cc55b
+      internalID: -404427643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_53
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec89f91fdd8ef94bad446948abeb15b
+      internalID: 1717069418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_54
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bfedd6dc6a06340b743a459a2183ad
+      internalID: -535164688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_55
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a5ff7d9f464dc479e386b7c18885b7
+      internalID: 548138015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_56
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5635fd9b2a7baa54690741f1457d262b
+      internalID: 243123369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_57
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a8c7b70e841234aae6ce46a5e91e03
+      internalID: -877165097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_58
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9d7183fc545ea48b3580164bc01a7c
+      internalID: -309945547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_59
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 3240
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03006e1b33c5314439d992c2f08e5a26
+      internalID: 1554645995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559445aedf7729b4ab396c5b631cf9ad
+      internalID: 367284984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_61
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ece573c61a3274a84a4ddff98e8ec3
+      internalID: 1876702835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_62
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53beebe0412cd6449b2f51dee4e27080
+      internalID: 361764534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_63
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab8d1796258d3349bd9491a3a05d9d8
+      internalID: -1461845647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_64
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa9bebef436da94da07cc6dd844e28d
+      internalID: -1472612395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_65
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7436f3c1403fb43971b852d4048d2f
+      internalID: 1739860871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_66
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5758102fb10e490438e1eddab448062f
+      internalID: -990573402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_67
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e4779202696e24ab548b4f973811d4
+      internalID: -292689540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_68
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2641a9db397be5468a5d0c055021bd1
+      internalID: -1410788813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_69
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 2160
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c895865282f43cb4caa3b714cb92bcdb
+      internalID: 1978638036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b94a0b13b76ba4ab8a97303fc6cf20
+      internalID: -1546806297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_71
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb092261c4488a745a5debf76cd0e1f7
+      internalID: 524080861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_72
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91b6cd6e042f4441a5d715d005915ee
+      internalID: -1227668702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_73
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb119e5e2ff081419270bffdab3b657
+      internalID: 957259658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_74
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4918fa2f8f8b91c4dba2f48c78abc726
+      internalID: -1099741382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_75
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee28e9f5a2708e4b91ee65e5da7114d
+      internalID: 279809964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_76
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013c0ed33ffab0f408cef9349d3aeb0f
+      internalID: -1257179838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_77
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca97b91b9182d8f44b5f60a5a87142f1
+      internalID: -1960185509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_78
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d14b46a2c4b444eabfc36df0e31f6c
+      internalID: 612718950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_79
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 1080
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368203f0dbeee084794a02aeaffeddcd
+      internalID: -990815397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d23019314728a44bc09cebd76a36f0
+      internalID: -1766174205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_81
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e049221ff485c914db144c63c95a961b
+      internalID: 2011268132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_82
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7e32108e1d7204da1fce2f6862012e
+      internalID: -672265279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_83
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ae03f8070b3694985653aae0e06f17
+      internalID: -1800722472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_84
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f9589ae52c83b4294b5b87c1e03b2e
+      internalID: 917248393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_85
+      rect:
+        serializedVersion: 2
+        x: 6500
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111b51449f62f4a47b265fedd84ee8f7
+      internalID: 273990026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_86
+      rect:
+        serializedVersion: 2
+        x: 7800
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56ac0eb3767fd04a880e3fd860f1a2c
+      internalID: 171509014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_87
+      rect:
+        serializedVersion: 2
+        x: 9100
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381e4cf89f4463e49b9161a16cede554
+      internalID: 1013971637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_88
+      rect:
+        serializedVersion: 2
+        x: 10400
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd099383c7b153c4c9a4b3bdd6fdbdf4
+      internalID: 2041814302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spriteBoss1Movement_89
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 0
+        width: 1300
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0c7964d8cbab44db4ba67f17744da7
+      internalID: -1905100753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spriteBoss1Movement_29: 1949547873
+      spriteBoss1Movement_52: -404427643
+      spriteBoss1Movement_16: -768851286
+      spriteBoss1Movement_54: -535164688
+      spriteBoss1Movement_82: -672265279
+      spriteBoss1Movement_42: 80108892
+      spriteBoss1Movement_74: -1099741382
+      spriteBoss1Movement_14: 1340909732
+      spriteBoss1Movement_50: -1814990697
+      spriteBoss1Movement_75: 279809964
+      spriteBoss1Movement_76: -1257179838
+      spriteBoss1Movement_15: 639195035
+      spriteBoss1Movement_9: -644129035
+      spriteBoss1Movement_83: -1800722472
+      spriteBoss1Movement_3: 359300426
+      spriteBoss1Movement_51: -494880188
+      spriteBoss1Movement_73: 957259658
+      spriteBoss1Movement_62: 361764534
+      spriteBoss1Movement_5: 1154551151
+      spriteBoss1Movement_89: -1905100753
+      spriteBoss1Movement_21: 183482719
+      spriteBoss1Movement_55: 548138015
+      spriteBoss1Movement_35: 337664743
+      spriteBoss1Movement_72: -1227668702
+      spriteBoss1Movement_18: 1217571384
+      spriteBoss1Movement_46: -1204009912
+      spriteBoss1Movement_27: 689614456
+      spriteBoss1Movement_38: 1670876540
+      spriteBoss1Movement_47: 2121694649
+      spriteBoss1Movement_33: -730302793
+      spriteBoss1Movement_67: -292689540
+      spriteBoss1Movement_57: -877165097
+      spriteBoss1Movement_48: -629643427
+      spriteBoss1Movement_7: 641851294
+      spriteBoss1Movement_60: 367284984
+      spriteBoss1Movement_34: 116521467
+      spriteBoss1Movement_59: 1554645995
+      spriteBoss1Movement_49: 858657628
+      spriteBoss1Movement_64: -1472612395
+      spriteBoss1Movement_24: 2047444527
+      spriteBoss1Movement_37: -312656106
+      spriteBoss1Movement_10: 2120107885
+      spriteBoss1Movement_45: 1841414319
+      spriteBoss1Movement_26: 1437581661
+      spriteBoss1Movement_30: 794191989
+      spriteBoss1Movement_71: 524080861
+      spriteBoss1Movement_84: 917248393
+      spriteBoss1Movement_43: 1107921122
+      spriteBoss1Movement_20: 132544197
+      spriteBoss1Movement_79: -990815397
+      spriteBoss1Movement_6: -1491815999
+      spriteBoss1Movement_63: -1461845647
+      spriteBoss1Movement_12: 918873976
+      spriteBoss1Movement_85: 273990026
+      spriteBoss1Movement_68: -1410788813
+      spriteBoss1Movement_78: 612718950
+      spriteBoss1Movement_86: 171509014
+      spriteBoss1Movement_65: 1739860871
+      spriteBoss1Movement_81: 2011268132
+      spriteBoss1Movement_88: 2041814302
+      spriteBoss1Movement_61: 1876702835
+      spriteBoss1Movement_80: -1766174205
+      spriteBoss1Movement_2: 1841525517
+      spriteBoss1Movement_0: -462841339
+      spriteBoss1Movement_58: -309945547
+      spriteBoss1Movement_36: -2085591553
+      spriteBoss1Movement_77: -1960185509
+      spriteBoss1Movement_32: -1934651344
+      spriteBoss1Movement_22: 456447604
+      spriteBoss1Movement_1: 492575168
+      spriteBoss1Movement_87: 1013971637
+      spriteBoss1Movement_31: -1843436858
+      spriteBoss1Movement_40: 154396535
+      spriteBoss1Movement_23: -391225714
+      spriteBoss1Movement_39: 1224518081
+      spriteBoss1Movement_56: 243123369
+      spriteBoss1Movement_41: -1414469173
+      spriteBoss1Movement_19: -1860135751
+      spriteBoss1Movement_4: -2012267858
+      spriteBoss1Movement_11: -1438568485
+      spriteBoss1Movement_28: 1630665518
+      spriteBoss1Movement_66: -990573402
+      spriteBoss1Movement_25: 1054469406
+      spriteBoss1Movement_8: -1964337675
+      spriteBoss1Movement_53: 1717069418
+      spriteBoss1Movement_44: -41334741
+      spriteBoss1Movement_13: 1076198101
+      spriteBoss1Movement_17: 2002296450
+      spriteBoss1Movement_70: -1546806297
+      spriteBoss1Movement_69: 1978638036
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
