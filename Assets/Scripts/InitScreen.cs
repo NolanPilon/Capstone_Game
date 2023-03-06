@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class InitScreen : MonoBehaviour
 {
+    public Animator transition;
     void Update()
     {
-        if (Input.anyKey) 
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        StartCoroutine(LoadMenu());
+    }
+
+    IEnumerator LoadMenu() 
+    {
+        yield return new WaitForSeconds(2.5f);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("MainMenu");
     }
 }

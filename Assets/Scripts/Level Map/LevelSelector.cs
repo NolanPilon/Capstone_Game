@@ -9,6 +9,7 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] private Button[] levels;
     Sprite[] sprites;
     public Sprite locked;
+    public Animator transition;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,14 @@ public class LevelSelector : MonoBehaviour
         if (levels[i-1] == locked) return;
 
         //SceneManager.LoadScene("Level" + i.ToString());
+        StartCoroutine(Transition());
+    }
+
+    IEnumerator Transition() 
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene("PrototypeLevel");
     }
+
 }
