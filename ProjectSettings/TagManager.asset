@@ -10,6 +10,7 @@ TagManager:
   - BGM
   - Checkpoint
   - ParryBullet
+  - Collectable
   layers:
   - Default
   - TransparentFX
