@@ -62,7 +62,7 @@ public class PlayerCombatFunctions : MonoBehaviour
             }
         }
         //estoy modificando
-        if (collision.tag == ("Collectible"))
+        if (collision.tag == ("Collectable"))
         {
             print("we have collected an item");
             string itemType = collision.gameObject.GetComponent<CollectScript>().itemType;
