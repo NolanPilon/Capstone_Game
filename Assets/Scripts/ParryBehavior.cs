@@ -90,7 +90,8 @@ public class ParryBehavior : MonoBehaviour
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
-            bulletRb.AddForce((-launchDir) * 10, ForceMode2D.Impulse);
+            if (bulletRb != null)
+                bulletRb.AddForce((-launchDir) * 10, ForceMode2D.Impulse);
             playerRB.AddForce(launchDir * (launchSpeed + (launchMultiplier * GameManager.parryCombo)), ForceMode2D.Impulse);
             GameManager.parryCombo += 1;
         }
