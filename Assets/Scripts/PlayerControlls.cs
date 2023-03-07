@@ -111,8 +111,6 @@ public class PlayerControlls : MonoBehaviour
         CreateDust();
         playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         SoundManager.Instance.PlayJump();
-
-        
     }
 
     //Draws an invisible circle to check if on the ground

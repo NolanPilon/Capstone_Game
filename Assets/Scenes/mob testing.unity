@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AirRanger
       objectReference: {fileID: 0}
+    - target: {fileID: 3100430684601523029, guid: 7966ea010abd81849a5e1fefbea891c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7966ea010abd81849a5e1fefbea891c1, type: 3}
 --- !u!4 &329082588 stripped
