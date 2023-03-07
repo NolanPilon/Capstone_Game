@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - BGM
   - Collectible
+  - Collectable
   layers:
   - Default
   - TransparentFX

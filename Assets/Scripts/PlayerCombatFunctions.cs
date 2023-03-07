@@ -5,10 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerCombatFunctions : MonoBehaviour
 {
-    //estoy anadiendo
-    public List<string> items;
-    //
-
+    
     private int knockBackForce = 25;
     private float invincibilityFrames = 1.5f;
     private float invincibilityTimer;
@@ -24,10 +21,6 @@ public class PlayerCombatFunctions : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         playerRB = GetComponent<Rigidbody2D>();
         GameManager.playerHP = 3;
-
-        //estoy anadiendo
-        items = new List<string>();
-        //
 
     }
     void Update()
@@ -61,18 +54,7 @@ public class PlayerCombatFunctions : MonoBehaviour
                 takeDamage(collision.gameObject.transform.position);
             }
         }
-        //estoy modificando
-        if (collision.tag == ("Collectable"))
-        {
-            print("we have collected an item");
-            string itemType = collision.gameObject.GetComponent<CollectScript>().itemType;
-            print("we have collected a: " + itemType);
-
-            items.Add(itemType);
-            print("Inventory length:" + items.Count);
-            Destroy(collision.gameObject);
-        }
-        //
+        
 
     }
    
