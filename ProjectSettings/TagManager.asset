@@ -10,6 +10,7 @@ TagManager:
   - BGM
   - Checkpoint
   - ParryBullet
+  - Wall
   - Collectable
   layers:
   - Default
