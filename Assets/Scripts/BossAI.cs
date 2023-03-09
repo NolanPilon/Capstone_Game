@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UI;
+using System;
 
 public class BossAI : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class BossAI : MonoBehaviour
     int maxBounces = 6;
     Vector2 direction;          //direction of the boss movement
     Vector2 destination;        //destination for after boss bounce (1st motion)
-    Vector2 spawnPos;
+    public Vector2 spawnPos;
     Vector2 location;           //curr location (1st & 2nd motion)
     
     bool Motion1;               //trigger of 1st motion
@@ -44,7 +45,10 @@ public class BossAI : MonoBehaviour
     public Image healthbar;     //boss healthbar
     float healthValue;          //boss health value
 
-    void initalize()
+
+    
+
+    public void initalize()
     {
         bounceTime = 0;
         Motion1 = true;
@@ -55,10 +59,12 @@ public class BossAI : MonoBehaviour
         start = false;
         coolDown = false;
         attack = false;
+        
 
         for (int i = 0; i < 4; i++)
         {
             spawner[i].SetActive(false);
+            
         }
 
         direction = Vector2.zero;
@@ -74,6 +80,8 @@ public class BossAI : MonoBehaviour
         height = rectTransform.rect.height * rectTransform.localScale.y;
         width = rectTransform.rect.width * rectTransform.localScale.x;
         playerStat = target.GetComponent<PlayerCombatFunctions>();
+        
+        
         spawnsCreated = false;
         initalize();
     }
@@ -139,6 +147,7 @@ public class BossAI : MonoBehaviour
             {
                 bossRB.velocity = Vector3.zero;
                 CreateSpawns();
+                StartCoroutine(bossResetTimer());
                 Motion3 = true;
             }
 
@@ -153,61 +162,66 @@ public class BossAI : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (alive) 
         {
-            if (collision.collider.CompareTag("Player"))
+            
+            
+        if (collision.collider.CompareTag("Player"))
+        {
+            if (GameManager.parryCombo >= 2 && canTakeDamage)
             {
-                if (GameManager.parryCombo >= 2 && canTakeDamage)
-                {
-                    BossHealth--;
-                    transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-                    playerStat.launchOpposite();
-                    transform.position = spawnPos;
-                    StartCoroutine(invincible());
-                }
-                else
-                {
-                    playerStat.takeDamage(collision.transform.position - this.transform.position);
-                    transform.position = spawnPos;
-                    initalize();
-                }
-                bossRB.velocity = Vector3.zero;
-                Range = true;
+                BossHealth--;
+                transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+                playerStat.launchOpposite();
+                transform.position = spawnPos;
+                StartCoroutine(invincible());
             }
             else
             {
-                if (!Motion1)
+                playerStat.takeDamage(collision.transform.position - this.transform.position);
+                transform.position = spawnPos;
+                initalize();
+            }
+            bossRB.velocity = Vector3.zero;
+            Range = true;
+        }
+        else
+        {
+            if (!Motion1)
+            {
+                if (bounceTime < maxBounces)
                 {
-                    if (bounceTime < maxBounces)
-                    {
-                        direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
+                    direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
 
-                        bounceTime++;
-                    }
-
-                    if (bounceTime == maxBounces)
-                    {
-                        location = this.transform.position;
-                    }
+                    bounceTime++;
                 }
 
-                if (!Motion2)
+                if (bounceTime == maxBounces)
                 {
-                    if (bounceTime == 0)
-                    {
-                        direction = target.transform.position - this.transform.position;
-                        bounceTime++;
-                    }
-                    else
-                    {
-                        direction = Vector2.zero;
-                        Motion2 = true;
-                        Motion3 = false;
-                    }
+                    location = this.transform.position;
                 }
             }
+
+            if (!Motion2)
+            {
+                if (bounceTime == 0)
+                {
+                    direction = target.transform.position - this.transform.position;
+                    bounceTime++;
+                }
+                else
+                {
+                    direction = Vector2.zero;
+                    Motion2 = true;
+                    Motion3 = false;
+                }
+            }
+        }
+            
+            
         }
     }
 
@@ -223,6 +237,13 @@ public class BossAI : MonoBehaviour
         yield return new WaitForSeconds(2);
         
         start = true;
+    }
+
+    IEnumerator bossResetTimer()
+    {
+        yield return new WaitForSeconds(5);
+        transform.position = spawnPos;
+        initalize();
     }
 
     IEnumerator invincible()
