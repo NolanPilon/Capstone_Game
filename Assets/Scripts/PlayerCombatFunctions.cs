@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerCombatFunctions : MonoBehaviour
 {
+
+    public PlayerControlls playerController;
+
     private int knockBackForce = 25;
     private float invincibilityFrames = 1.5f;
     private float invincibilityTimer;
 
     private Rigidbody2D playerRB;
     private SpriteRenderer playerSprite;
-   
-    public PlayerControlls playerController;
 
     void Start()
     {
@@ -67,6 +69,7 @@ public class PlayerCombatFunctions : MonoBehaviour
         playerRB.AddForce(knockbackDir * knockBackForce, ForceMode2D.Impulse);
         playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0.4f);
         invincibilityTimer = invincibilityFrames;
+        DamageVignette.vignetteValue = 0.35f;
 
         GameManager.playerHP--;
         SoundManager.Instance.PlayHurt();
