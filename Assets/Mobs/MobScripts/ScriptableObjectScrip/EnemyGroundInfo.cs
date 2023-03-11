@@ -32,6 +32,7 @@ public class EnemyGroundInfo : ScriptableObject
     public bool isRanger = false;
 
     [Header("Custom Behavior")]
+    public bool isTurret = false;
     public bool followEnabled = true;
     public bool jumpEnabled = true;
     public bool minJumpDistanceEnabled = false;
