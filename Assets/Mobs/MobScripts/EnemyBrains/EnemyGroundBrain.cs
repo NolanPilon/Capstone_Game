@@ -36,6 +36,7 @@ public class EnemyGroundBrain : MonoBehaviour
 
 
     [Header("Custom Behavior")]
+    private bool isTurret;
     private bool followEnabled;
     private bool jumpEnabled;
     private bool minJumpDistanceEnable;
@@ -61,41 +62,60 @@ public class EnemyGroundBrain : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if alive 
         if (health > 0)
-        {   //checks if target is in agro distance and if the mob can move also added a delay if it attacks
-            if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
+        {
+            if (!isTurret)
             {
-                // if in attack distance
-                if (movement.TargetDistance() >= attackRange)
+                //checks if target is in agro distance and if the mob can move also added a delay if it attacks
+                if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
                 {
-                    movement.PathFollow();
-                }
-                // keeps the mob safe 
-                else if (movement.TargetDistance() <= safetyRange)
-                {
-                    movement.RunAway();
-                }
-                //if the mob is in between safe and attack it will now attack
-                else
-                {
-                    if (isRanger)
+
+                    // if in attack distance
+                    if (movement.TargetDistance() >= attackRange)
                     {
-                        //delay attack
-                        if (Time.time > NextAttack)
+                        movement.PathFollow();
+                    }
+                    // keeps the mob safe 
+                    else if (movement.TargetDistance() <= safetyRange)
+                    {
+                        movement.RunAway();
+                    }
+                    //if the mob is in between safe and attack it will now attack
+                    else
+                    {
+                        if (isRanger)
                         {
-                            rangeAttack.ShootBullet();
-                            NextAttack = Time.time + delayAfterAttack;
+                            //delay attack
+                            if (Time.time > NextAttack)
+                            {
+                                rangeAttack.ShootBullet();
+                                NextAttack = Time.time + delayAfterAttack;
+                            }
+
+                            movement.MovementStop();
                         }
 
                         movement.MovementStop();
                     }
 
-                    movement.MovementStop();
                 }
-
             }
-                
+            else
+            {
+                //locks the turrent in place
+                movement.MovementStop();
+                 
+                if (movement.TargetDistance() <= attackRange)
+                {
+                    //delay attack
+                    if (Time.time > NextAttack)
+                    {
+                        rangeAttack.ShootBullet();
+                        NextAttack = Time.time + delayAfterAttack;
+                    }
+                }
+            }
+        
         }
         else
         {
@@ -162,6 +182,7 @@ public class EnemyGroundBrain : MonoBehaviour
         isRanger = EnemyGroundInfo.isRanger;
 
         //Sets Custom Behavior
+        isTurret = EnemyGroundInfo.isTurret;
         followEnabled = EnemyGroundInfo.followEnabled;
         jumpEnabled = EnemyGroundInfo.jumpEnabled;
         minJumpDistanceEnable = EnemyGroundInfo.minJumpDistanceEnabled;

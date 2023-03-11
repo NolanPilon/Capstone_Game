@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
-  m_Name: BasicGroundRanger
+  m_Name: BigPenguin
   m_EditorClassIdentifier: 
   health: 2
   damage: 1
   isDead: 0
   targetTag: Player
-  activateDistance: 10
+  activateDistance: 20
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
   minPlayerHeightDistance: 10
   jumpModifier: 0.3
   jumpCheckOffset: 0.1
-  mySpeed: 200
-  attackRange: 8
-  safetyRange: 6
+  mySpeed: 500
+  attackRange: 0
+  safetyRange: -1
   delayAfterAttack: 3
-  delayAfterGettingHit: 3
-  isRanger: 1
+  delayAfterGettingHit: 5
+  isRanger: 0
   isTurret: 0
   followEnabled: 1
   jumpEnabled: 0
   minJumpDistanceEnabled: 0
   directionLookEnabled: 1
-  deathParticles: {fileID: 2464784198141276583, guid: f3e10b42b24042e418f242332ac7f527, type: 3}
+  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}

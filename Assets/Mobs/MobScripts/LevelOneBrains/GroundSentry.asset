@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
-  m_Name: BasicGroundRanger
+  m_Name: GroundSentry
   m_EditorClassIdentifier: 
   health: 2
   damage: 1
   isDead: 0
   targetTag: Player
-  activateDistance: 10
+  activateDistance: 20
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
@@ -24,12 +24,12 @@ MonoBehaviour:
   jumpModifier: 0.3
   jumpCheckOffset: 0.1
   mySpeed: 200
-  attackRange: 8
-  safetyRange: 6
+  attackRange: 15
+  safetyRange: -1
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   isRanger: 1
-  isTurret: 0
+  isTurret: 1
   followEnabled: 1
   jumpEnabled: 0
   minJumpDistanceEnabled: 0
