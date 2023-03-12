@@ -10,6 +10,7 @@ TagManager:
   - BGM
   - Checkpoint
   - ParryBullet
+  - Settings
   layers:
   - Default
   - TransparentFX
