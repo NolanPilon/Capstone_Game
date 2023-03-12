@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyGroundInfo: {fileID: 11400000, guid: b4d41c01b3fb6904fab381d882163771, type: 2}
-  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
 --- !u!61 &2249684636095561088
 BoxCollider2D:
   m_ObjectHideFlags: 0

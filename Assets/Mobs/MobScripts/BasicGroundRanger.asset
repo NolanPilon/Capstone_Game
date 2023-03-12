@@ -29,6 +29,7 @@ MonoBehaviour:
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   isRanger: 1
+  isTurret: 0
   followEnabled: 1
   jumpEnabled: 0
   minJumpDistanceEnabled: 0
