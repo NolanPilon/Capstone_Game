@@ -25,11 +25,12 @@ public class GameUI : MonoBehaviour
 
     private bool isGameOver;
     private int time;
+    private int playerhp;
 
     void Start()
     {
         //SetHealthText(200); //Need to get initial health from player class
-        StartCoroutine("increaseTimeEachSecond");
+        //StartCoroutine("increaseTimeEachSecond");
         Time.timeScale = 1;
         isGameOver = false;
 
@@ -37,7 +38,6 @@ public class GameUI : MonoBehaviour
         {
             AliveHeart(Lives[i]);
         }
-
     }
 
     private void Update()
@@ -75,7 +75,7 @@ public class GameUI : MonoBehaviour
 
     public void SetHP()
     {
-        int playerhp = 3 - GameManager.playerHP;
+        playerhp = 3 - GameManager.playerHP;
 
         for (int i = 0; i < playerhp; i++)
         {
