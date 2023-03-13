@@ -6,7 +6,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public float cameraSpeed = 5.0f;
-
+    public float YOffset;
+    public float XOffset;
     public GameObject player;
 
     // Check Camera shaking is on
@@ -23,7 +24,7 @@ public class CameraController : MonoBehaviour
         if (IsOnShake == true) return;
 
         Vector3 dir = player.transform.position - this.transform.position;
-        Vector3 moveVector = new Vector3(dir.x * cameraSpeed * Time.deltaTime, dir.y * cameraSpeed * Time.deltaTime, 0.0f);
+        Vector3 moveVector = new Vector3(((dir.x * cameraSpeed) + XOffset) * Time.deltaTime, ((dir.y * cameraSpeed) + YOffset) * Time.deltaTime, 0.0f);
         this.transform.Translate(moveVector);
     }
 
