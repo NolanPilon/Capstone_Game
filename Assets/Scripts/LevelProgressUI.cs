@@ -13,70 +13,118 @@ public class LevelProgressUI : MonoBehaviour
 
     [Header("Player & Endline references :")]
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Transform triggerpoint1;
-    [SerializeField] private Transform triggerpoint2;
+    [SerializeField] private Transform[] triggerpoints;     //Create an array so that it can be used in other game scenes
     [SerializeField] private Transform endLineTransform;
 
-    private Vector3 triggerpoint1Ps;
-    private Vector3 triggerpoint2Ps;
+
+    private Vector3[] triggerpointPs;   //Create an array so that it can be used in other game scenes
     private Vector3 endLinePosition;
 
-    private float dist1;
-    private float dist2;
-    private float dist3;
-    private float fullDistance;
+    private int PQty;    // if triggerPoints are 3, distance Qty will be 4 (0, 1, 2, 3)
+    private float[] dist;       //Each distance value (player~triggerpoint, trigger[i-1]~trigger[i])
+    private float fullDistance; //Full distance of this game scene
 
-    private bool checkpoint1 = false;
-    private bool checkpoint2 = true;
+    public bool[] checkTriggered;  //Make sure where the player is
+
+    private void Awake()
+    {
+        PQty = triggerpoints.Length;
+        triggerpointPs = new Vector3[PQty];
+        checkTriggered = new bool[PQty];
+
+        //Check the player respawn from checkpoint
+        if (GameManager.progressPoint != 0)
+        {
+            for (int i = 0; i < GameManager.progressPoint; i++)
+            {
+                triggerpoints[i].GetComponent<TriggerPoint>().isTriggered = true;
+            }
+        }
+    }
 
     private void Start()
     {
-        triggerpoint1Ps = triggerpoint1.position;
-        triggerpoint2Ps = triggerpoint2.position;
+        //assigns triggerpointPs & endlinePosition
+        for (int i = 0; i < PQty; i++)
+        {
+            triggerpointPs[i] = triggerpoints[i].position;
+        }
         endLinePosition = endLineTransform.position;
 
-        dist1 = Vector2.Distance(playerTransform.position, triggerpoint1Ps);
-        dist2 = Vector2.Distance(triggerpoint1Ps, triggerpoint2Ps);
-        dist3 = Vector2.Distance(triggerpoint2Ps, endLinePosition);
-
-        fullDistance = GetDistance();
-
-        BossHP.SetActive(false);
+        initialized();
     }
 
+    private void initialized()
+    {
+        dist = new float[PQty + 1];
+        dist[0] = Vector2.Distance(new Vector2(0,0), triggerpointPs[0]);
+
+        //initialize dist list checkpoints
+        for (int i = 1; i < PQty; i++)
+        {
+            dist[i] = Vector2.Distance(triggerpointPs[i - 1], triggerpointPs[i]);
+            checkTriggered[i] = triggerpoints[i].GetComponent<TriggerPoint>().isTriggered;
+        }
+        dist[PQty] = Vector2.Distance(triggerpointPs[PQty-1], endLinePosition);
+
+        BossHP.SetActive(false);
+
+        for (int i = 0; i <= PQty; i++)
+        {
+            fullDistance += dist[i];
+        }
+    }
+
+    // get the distance value to apply to progress value
     private float GetDistance()
     {
-        if (!checkpoint1)
-        {
-            if (playerTransform.position.y > triggerpoint1Ps.y)
-            {
-                dist1 = Vector2.Distance(playerTransform.position, triggerpoint1Ps);
-            }
-            else
-            {
-                dist1 = 0;
-                checkpoint1 = true;
-                checkpoint2 = false;
-            }
+        float fulldist = 0;
+        checkTriggered[0] = triggerpoints[0].GetComponent<TriggerPoint>().isTriggered;
+
+        if (!checkTriggered[0])
+        { 
+            dist[0] = Vector2.Distance(playerTransform.position, triggerpointPs[0]);
+            fulldist += dist[0];
         }
-        else if (!checkpoint2)
-        {
-            if (playerTransform.position.y > triggerpoint2Ps.y)
-            {
-                dist2 = Vector2.Distance(triggerpoint2Ps, playerTransform.position);
-            }
-            else
-            {
-                dist2 = 0;
-                checkpoint2 = true;
-            }
+        else
+        { 
+            dist[0] = 0; 
         }
-        else if (checkpoint1 && checkpoint2)
-        {
-            dist3 = Vector2.Distance(playerTransform.position, endLinePosition);
+        
+        for (int i = 1; i < triggerpoints.Length; i++)
+        {          
+            dist[i] = CalDistance(triggerpointPs[i], dist[i], checkTriggered[i-1], checkTriggered[i]);
+            fulldist += dist[i];
+            checkTriggered[i] = triggerpoints[i].GetComponent<TriggerPoint>().isTriggered;
         }
 
-        return dist1 + dist2 + dist3;
+        if (fulldist == 0)
+        {
+            fulldist = Vector2.Distance(playerTransform.position, endLinePosition);
+        }
+        else
+        {
+            fulldist += dist[PQty];
+        }
+
+        return fulldist;
+    }
+
+    //Calculate distance
+    private float CalDistance(Vector2 triggerpointPs, float dist, bool checkpoint, bool checkpoint2)
+    {
+        if (!checkpoint) return dist;
+
+        if (checkpoint && !checkpoint2)
+        {
+            dist = Vector2.Distance(playerTransform.position, triggerpointPs);
+        }
+        else
+        {
+            dist = 0;
+        }
+
+        return dist;
     }
 
     private void UpdateProgressFill(float value)
@@ -88,13 +136,7 @@ public class LevelProgressUI : MonoBehaviour
     {
         if (GameManager.playerHP == 0)
         {
-            checkpoint1 = false;
-            checkpoint2 = true;
-            BossHP.SetActive(false);
-
-            dist1 = Vector2.Distance(playerTransform.position, triggerpoint1Ps);
-            dist2 = Vector2.Distance(triggerpoint1Ps, triggerpoint2Ps);
-            dist3 = Vector2.Distance(triggerpoint2Ps, endLinePosition);
+            initialized();
         }
 
         if (playerTransform.position.y < endLinePosition.y)
