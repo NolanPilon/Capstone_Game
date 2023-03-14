@@ -12,6 +12,7 @@ TagManager:
   - ParryBullet
   - Wall
   - Collectable
+  - DeathPit
   layers:
   - Default
   - TransparentFX
