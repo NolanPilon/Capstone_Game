@@ -16,7 +16,7 @@ public class Mainmenu : MonoBehaviour
     public Sprite newSettingssprite;
     private Sprite originalSettingssprite;
     public Animator transition;
-
+    
     public GameObject SettingPopUp;
 
     // Initialize the original sprites
@@ -76,11 +76,7 @@ public class Mainmenu : MonoBehaviour
 
     public void OnClickExit()
     {
-        if (SettingPopUp.activeSelf)
-        {
-            SettingPopUp.SetActive(false);
-        }
-        else Application.Quit();
+        Application.Quit();
     }
 
     public void OnClickSettings()
