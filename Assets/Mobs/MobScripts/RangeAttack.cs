@@ -9,7 +9,8 @@ public class RangeAttack : MonoBehaviour
   
    public void ShootBullet()
     {
-        Instantiate(projectile, firePostion.position,firePostion.rotation); 
+        Instantiate(projectile, firePostion.position,firePostion.rotation);
+        SoundManager.Instance.PlayEAttack();
     }
         
 }

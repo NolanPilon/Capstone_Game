@@ -89,6 +89,7 @@ public class EnemyGroundBrain : MonoBehaviour
                             if (Time.time > NextAttack)
                             {
                                 rangeAttack.ShootBullet();
+                                SoundManager.Instance.PlayEAttack();
                                 NextAttack = Time.time + delayAfterAttack;
                             }
 
@@ -131,7 +132,8 @@ public class EnemyGroundBrain : MonoBehaviour
         {
             StartCoroutine(AttackFreeze());
             createDeathParticles();
-            
+            SoundManager.Instance.PlayHit();
+
             transform.position = new Vector2(1000, 1000);
             Destroy(this.gameObject, 0.2f);
         }

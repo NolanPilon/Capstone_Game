@@ -34,11 +34,12 @@ public class SoundManager : MonoBehaviour
 
         jump = soundEffectAudio[0];
         hurt = soundEffectAudio[1];
-        //hit = soundEffectAudio[2];
-        //qTE = soundEffectAudio[3];
-        //enemyAttack = soundEffectAudio[4];
-        //enemyDeath = soundEffectAudio[5];
-        //Menu = soundEffectAudio[6];
+        hit = soundEffectAudio[2];
+        qTE = soundEffectAudio[3];
+        enemyAttack = soundEffectAudio[4];
+        Menu = soundEffectAudio[5];
+        //enemyDeath = soundEffectAudio[6];
+
     }
 
     public void PlayJump()

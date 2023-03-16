@@ -108,6 +108,7 @@ public class ParryBehavior : MonoBehaviour
             playerRB.velocity = Vector2.zero;
             parryArrow.SetActive(true);
             inParry = true;
+            SoundManager.Instance.PlayQTE();
         }
         else if (Input.GetKeyUp(KeyCode.Space) || !inParry || holdTimer <= 0)
         {
