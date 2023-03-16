@@ -7,6 +7,7 @@ using UnityEngine;
 public class ParryBehavior : MonoBehaviour
 {
     public PlayerControlls playerController;
+    public GameObject storedParryObject;
 
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
@@ -53,8 +54,10 @@ public class ParryBehavior : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Parry")
+        if (collision.tag == "Parry" && !collision.gameObject.GetComponent<PreviouslyParried>().beenParried)
         {
+            storedParryObject = collision.gameObject;
+
             if (bulletRb == null) 
             {
                 bulletRb = collision.gameObject.GetComponent<Rigidbody2D>();
@@ -101,6 +104,7 @@ public class ParryBehavior : MonoBehaviour
         // When you let go hide the arrow and reset time
         if (Input.GetKeyDown(KeyCode.Space) && canParry && !playerController.isGrounded())
         {
+            storedParryObject.GetComponent<PreviouslyParried>().beenParried = true;
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;
             playerController.controlsEnabled = false;
