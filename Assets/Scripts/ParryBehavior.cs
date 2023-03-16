@@ -99,7 +99,7 @@ public class ParryBehavior : MonoBehaviour
         // If in range of projectile and space is pressed
         // Parry arrow shows up and time is slowed
         // When you let go hide the arrow and reset time
-        if (Input.GetKeyDown(KeyCode.Space) && canParry)
+        if (Input.GetKeyDown(KeyCode.Space) && canParry && !playerController.isGrounded())
         {
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;

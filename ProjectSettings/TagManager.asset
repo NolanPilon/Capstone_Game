@@ -12,6 +12,7 @@ TagManager:
   - ParryBullet
   - Wall
   - Collectable
+  - DeathPit
   - Settings
   layers:
   - Default
