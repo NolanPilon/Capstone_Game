@@ -7,6 +7,8 @@ using UnityEngine;
 public class ParryBehavior : MonoBehaviour
 {
     public PlayerControlls playerController;
+    public GameObject storedParryObject;
+    public GameObject previousParryObject;
 
     [SerializeField] private GameObject parryArrow;
     [SerializeField] private GameObject playerObject;
@@ -42,7 +44,6 @@ public class ParryBehavior : MonoBehaviour
 
         ParryFunction();
 
-
         // Temp fix for control issues
         if (playerController.isGrounded() || Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Space) && !playerController.isGrounded() && !inParry)
         {
@@ -53,8 +54,16 @@ public class ParryBehavior : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // Store current parry object
         if (collision.tag == "Parry")
+            storedParryObject = collision.gameObject;
+
+        if (collision.tag == "Parry" && !storedParryObject.GetComponent<PreviouslyParried>().beenParried)
         {
+            // Change the previous parry point to be active when entering a new parry point
+            if (previousParryObject != null)
+                previousParryObject.GetComponent<PreviouslyParried>().beenParried = false;
+
             if (bulletRb == null) 
             {
                 bulletRb = collision.gameObject.GetComponent<Rigidbody2D>();
@@ -89,6 +98,8 @@ public class ParryBehavior : MonoBehaviour
         // Launch towards arrow indicator
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
+            previousParryObject = storedParryObject;
+            storedParryObject.GetComponent<PreviouslyParried>().beenParried = true;
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
             if (bulletRb != null)
                 bulletRb.AddForce((-launchDir) * 10, ForceMode2D.Impulse);
@@ -115,6 +126,12 @@ public class ParryBehavior : MonoBehaviour
             Time.timeScale = 1f;
             playerRB.gravityScale = 2;
             parryArrow.SetActive(false);
+        }
+
+        // Reset parry objects if grounded
+        if (playerController.isGrounded() && previousParryObject != null) 
+        {
+            previousParryObject.GetComponent<PreviouslyParried>().beenParried = false;
         }
     }
 }
