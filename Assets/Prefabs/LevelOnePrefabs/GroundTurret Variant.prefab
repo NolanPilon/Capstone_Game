@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1476705246, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 227395346809148049, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
       propertyPath: EnemyGroundInfo
       value: 
@@ -14,6 +18,10 @@ PrefabInstance:
     - target: {fileID: 227395346809148056, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
       propertyPath: m_Name
       value: GroundTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 227395346809148056, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 227395346809148060, guid: 9cef8f4528e7fcd4abcbe2542c06298d, type: 3}
       propertyPath: m_RootOrder
