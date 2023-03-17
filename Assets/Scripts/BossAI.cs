@@ -287,4 +287,9 @@ public class BossAI : MonoBehaviour
             }
         }
     }
+
+    public bool getIfMotion2()
+    {
+        return Motion2;
+    }
 }
