@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossRoomTrigger : MonoBehaviour
 {
-    [SerializeField]private GameObject bossDoor;
+    [SerializeField] private GameObject bossDoor;
     [SerializeField] private Camera bossCam;
     private void OnTriggerEnter2D(Collider2D collision)
     {
