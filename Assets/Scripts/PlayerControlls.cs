@@ -14,7 +14,7 @@ public class PlayerControlls : MonoBehaviour
 
     private float moveSpeed = 10;
     private float horizontalMove;
-    private int jumpForce = 18;
+    private int jumpForce = 19;
 
     //Coyote time
     private float jumpBuffer = 0.2f;
