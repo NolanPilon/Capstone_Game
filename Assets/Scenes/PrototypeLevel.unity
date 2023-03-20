@@ -9056,7 +9056,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossDoor: {fileID: 1959489468}
-  bossCam: {fileID: 387749016}
+  MainCam: {fileID: 0}
+  bossRoomPos: {fileID: 0}
+  camSize: 0
 --- !u!1001 &1793578711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10347,11 +10349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 63.4
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 7991599635160671502, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.z

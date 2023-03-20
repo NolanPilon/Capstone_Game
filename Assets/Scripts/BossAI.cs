@@ -242,8 +242,11 @@ public class BossAI : MonoBehaviour
     IEnumerator bossResetTimer()
     {
         yield return new WaitForSeconds(5);
-        transform.position = spawnPos;
-        initalize();
+        if (Motion1 && Motion3) 
+        {
+            transform.position = spawnPos;
+            initalize();
+        }
     }
 
     IEnumerator invincible()
