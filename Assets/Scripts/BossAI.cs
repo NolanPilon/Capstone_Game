@@ -38,6 +38,7 @@ public class BossAI : MonoBehaviour
     RectTransform rectTransform;            //for get boss height and width
     float height;               //boss height
     float width;                //boss width
+    int activateRange = 20;     //Boss activation range
 
     PlayerCombatFunctions playerStat;     //for take damage function
     int BossHealth = 3;         //boss lives
@@ -227,7 +228,7 @@ public class BossAI : MonoBehaviour
 
     bool TargetInRange()
     {
-        if (Vector2.Distance(this.transform.position, target.transform.position) < 10) //Distance bet player and boss is less than 10
+        if (Vector2.Distance(this.transform.position, target.transform.position) < activateRange) //Distance bet player and boss is less than 10
             return true;
         return false;
     }

@@ -23,7 +23,7 @@ public class PlayerControlls : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    
+    [SerializeField] private Transform spawnPoint;
 
     private Rigidbody2D playerRB;
 
@@ -31,11 +31,16 @@ public class PlayerControlls : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
 
-        if (GameManager.respawnPoint != Vector2.zero )
+        if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
         {
             this.transform.position = GameManager.respawnPoint;
+        } 
+        else 
+        
+        {
+            this.transform.position = spawnPoint.position;
         }
-    } 
+    }
 
     void Update()
     {
