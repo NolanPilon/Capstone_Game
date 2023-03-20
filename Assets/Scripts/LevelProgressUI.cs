@@ -139,11 +139,11 @@ public class LevelProgressUI : MonoBehaviour
             initialized();
         }
 
-        if (playerTransform.position.y < endLinePosition.y)
+        if (playerTransform.position.x > endLinePosition.x)
         {
-            this.gameObject.SetActive(false);
-            BossHP.SetActive(true);
-            return;
+           this.gameObject.SetActive(false);
+           BossHP.SetActive(true);
+           return;
         }
             
         float newDistance = GetDistance();

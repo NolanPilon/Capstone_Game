@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class DamageVignette : MonoBehaviour
 {
     public VolumeProfile vignetteProfile;
-    private Vignette damageVignette;
+    public Vignette damageVignette;
     public static float vignetteValue;
 
     private void Start()
@@ -25,6 +25,9 @@ public class DamageVignette : MonoBehaviour
             vignetteValue -= Time.deltaTime * 0.2f;
         }
 
-        damageVignette.intensity.value = vignetteValue;
+        if (damageVignette.intensity.value <= 0)
+        {
+            damageVignette.intensity.value = vignetteValue;
+        }
     }
 }

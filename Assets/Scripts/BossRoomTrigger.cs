@@ -5,12 +5,15 @@ using UnityEngine;
 public class BossRoomTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject bossDoor;
-    [SerializeField] private Camera bossCam;
+    [SerializeField] private Camera MainCam;
+    [SerializeField] private Transform bossRoomPos;
+    [SerializeField] private int camSize;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") 
         {
-            bossCam.gameObject.GetComponent<CameraController>().enabled = false;
+            MainCam.gameObject.GetComponent<CameraController>().enabled = false;
             StartCoroutine(EnterBossRoom());
         }
     }
@@ -19,7 +22,7 @@ public class BossRoomTrigger : MonoBehaviour
         bossDoor.SetActive(false);
         yield return new WaitForSecondsRealtime(0.3f);
         bossDoor.SetActive(true);
-        bossCam.orthographicSize = 8;
-        bossCam.transform.position = new Vector3(107.5f, -72f, -1f);
+        MainCam.orthographicSize = camSize;
+        MainCam.transform.position = bossRoomPos.transform.position;
     }
 }

@@ -352,7 +352,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &8564890200178075813
 GameObject:
@@ -1802,7 +1802,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8564890201419436851
 MonoBehaviour:
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!1 &8564890201433696031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,9 +1937,11 @@ MonoBehaviour:
   uiFillImage: {fileID: 8564890200289960557}
   BossHP: {fileID: 8564890201097502671}
   playerTransform: {fileID: 0}
-  triggerpoint1: {fileID: 0}
-  triggerpoint2: {fileID: 0}
+  triggerpoints:
+  - {fileID: 0}
+  - {fileID: 0}
   endLineTransform: {fileID: 0}
+  checkTriggered: 
 --- !u!1 &8564890201714103249
 GameObject:
   m_ObjectHideFlags: 0
