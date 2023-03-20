@@ -86,7 +86,7 @@ MonoBehaviour:
   - {fileID: 3936398777047836924}
   - {fileID: 4042431355611408005}
   - {fileID: 8741727740419491935}
-  motion: 00000000
+  motion: 0000000000
   target: {fileID: 0}
   boundary: {fileID: 7929801097171912075}
   BossHealth: 3
@@ -119,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3143302328422527471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: -5, z: 0}
+  m_LocalPosition: {x: -10.18, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

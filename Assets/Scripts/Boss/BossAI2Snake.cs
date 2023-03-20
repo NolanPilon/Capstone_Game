@@ -48,7 +48,7 @@ public class BossAI2Snake : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == BossAI2.Instance.target)
+        if (collision.gameObject == BossAI2.Instance.target && BossAI2.Instance.motion[0])
         {
             if (GameManager.parryCombo >= 2)
             {
@@ -56,7 +56,6 @@ public class BossAI2Snake : MonoBehaviour
                 curPatternCount = 0;
                 BossAI2.Instance.motion[0] = false;
                 shootStart = false;
-                Destroy(bullet);
             }
             else
             {
@@ -77,6 +76,8 @@ public class BossAI2Snake : MonoBehaviour
 
     private void ParryShoot()
     {
+        if (!BossAI2.Instance.motion[0]) return;
+
         int roundNumA = 20;
 
         for (int i = 0; i < roundNumA; i++)

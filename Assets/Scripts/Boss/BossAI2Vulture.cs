@@ -47,5 +47,6 @@ public class BossAI2Vulture : MonoBehaviour
         gameObject.SetActive(false);
         BossAI2.Instance.motion[3] = false;
         BossAI2.Instance.motion[0] = true;
+        BossAI2Snake.motionIndex = 4;
     }
 }

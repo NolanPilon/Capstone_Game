@@ -9,11 +9,12 @@ public class BossAI2 : MonoBehaviour
     public static BossAI2 Instance => instance;
 
     [SerializeField] private GameObject[] Boss; //[0] snake [1] wolf [2] buffalo [3] vulture
-    public bool[] motion = new bool[4]; //trigger the motions
+    public bool[] motion = new bool[5]; //trigger the motions
                                         //motion[0] : snake
                                         //motion[1] : wolf
                                         //motion[2] : buffalo
                                         //motion[3] : vulture
+                                        //motion[4] : died
 
     private bool start = false; // check the boss mob start
     public GameObject target;   // player
@@ -71,7 +72,7 @@ public class BossAI2 : MonoBehaviour
         healthValue = (float)(BossHealth / 3f);
         healthbar.fillAmount = healthValue;
 
-        if (BossHealth <= 0)
+        if (motion[4])
         {
             Die();
         }
