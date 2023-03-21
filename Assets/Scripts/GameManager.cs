@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
         {
             gameManager = this;
         }
+
+        progressPoint = 0;
+
     }
 
     private void Update()

@@ -17,6 +17,7 @@ public class BossAI : MonoBehaviour
     public float speed = 5f;    //speed of boss
     int bounceTime;             //track bounce time
     int maxBounces = 6;
+    int checkDistance = 20;     //distance before activating 
     Vector2 direction;          //direction of the boss movement
     Vector2 destination;        //destination for after boss bounce (1st motion)
     public Vector2 spawnPos;
@@ -227,7 +228,7 @@ public class BossAI : MonoBehaviour
 
     bool TargetInRange()
     {
-        if (Vector2.Distance(this.transform.position, target.transform.position) < 10) //Distance bet player and boss is less than 10
+        if (Vector2.Distance(this.transform.position, target.transform.position) < checkDistance) //Distance bet player and boss is less than 10
             return true;
         return false;
     }
