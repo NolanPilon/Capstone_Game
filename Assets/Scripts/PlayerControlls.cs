@@ -11,6 +11,7 @@ public class PlayerControlls : MonoBehaviour
 
     public ParticleSystem dust;
     public ParticleSystem landingDust;
+    public GameObject spawnPoint;
 
     private float moveSpeed = 10;
     private float horizontalMove;
@@ -31,9 +32,13 @@ public class PlayerControlls : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
 
-        if (GameManager.respawnPoint != Vector2.zero )
+        if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
         {
             this.transform.position = GameManager.respawnPoint;
+        }
+        else if (GameManager.progressPoint == 0) 
+        {
+            transform.position = spawnPoint.transform.position;
         }
     } 
 

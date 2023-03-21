@@ -16,6 +16,7 @@ public class DeathPit : MonoBehaviour
         if (collision.tag == "Player") 
         {
             player.transform.position = GameManager.respawnPoint;
+            GameManager.playerHP -= 1;
         }
     }
 

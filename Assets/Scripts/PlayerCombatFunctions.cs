@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerCombatFunctions : MonoBehaviour
 {
     public PlayerControlls playerController;
-    public List<string> items;
+    public static List<string> items;
     private int knockBackForce = 25;
     private float invincibilityFrames = 1.5f;
     private float invincibilityTimer;
@@ -69,6 +69,7 @@ public class PlayerCombatFunctions : MonoBehaviour
 
             items.Add(itemType);
             print("Inventory length:" + items.Count);
+            GameManager.collectables++;
             Destroy(collision.gameObject);
         }
     }
