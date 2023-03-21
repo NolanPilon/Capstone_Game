@@ -15,6 +15,7 @@ TagManager:
   - DeathPit
   - Settings
   - Goal
+  - Obstacle
   layers:
   - Default
   - TransparentFX

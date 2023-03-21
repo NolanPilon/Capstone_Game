@@ -45,7 +45,15 @@ public class PlayerCombatFunctions : MonoBehaviour
             }
         }
 
-        if(collision.tag == "ParryBullet" && !ParryBehavior.inParry && GameManager.parryCombo <= 0)
+        if (collision.tag == "Obstacle")
+        {
+            if (invincibilityTimer <= 0)
+            {
+                takeDamage(collision.gameObject.transform.position);
+            }
+        }
+
+        if (collision.tag == "ParryBullet" && !ParryBehavior.inParry && GameManager.parryCombo <= 0)
         {
             if (invincibilityTimer <= 0)
             {

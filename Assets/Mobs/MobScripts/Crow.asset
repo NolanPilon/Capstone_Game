@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de42eca495b057c48901e26f0e27e4dc, type: 3}
+  m_Name: Crow
+  m_EditorClassIdentifier: 
+  health: 2
+  damage: 1
+  isDead: 0
+  targetTag: Player
+  activateDistance: 25
+  pathUpdateSeconds: 0.5
+  nextWaypointDistance: 1
+  mySpeed: 2000
+  attackRange: 0.8
+  safetyRange: 10
+  delayAfterAttack: 3
+  delayAfterGettingHit: 3
+  isRanger: 0
+  followEnabled: 1
+  directionLookEnabled: 1
+  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
