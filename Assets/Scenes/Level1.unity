@@ -58399,6 +58399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6768355254438001404, guid: 30c6cb79527867044988836c37438855, type: 3}
+      propertyPath: collectablesText
+      value: 
+      objectReference: {fileID: 1040380401}
     - target: {fileID: 6958737599951087512, guid: 30c6cb79527867044988836c37438855, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -58489,6 +58493,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1040380401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8564890200599985612, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
+  m_PrefabInstance: {fileID: 1686968217}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1080841982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8301248127051353147, guid: 8be3a49b351d25b4585ef9f866250ffb, type: 3}

@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager gameManager;
+    public Text collectablesText;
     public static int parryCombo = 0;
     public static int playerHP;
+    public static int collectables = 0;
     public static float playerSpeed;
 
     public int combo;
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
             gameManager = this;
         }
 
+        collectables = 0;
         progressPoint = 0;
 
     }
@@ -36,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         speed = playerSpeed;
         combo = parryCombo;
+
+        collectablesText.text = "X" + collectables.ToString();
 
         if (playerHP <= 0) 
         {
