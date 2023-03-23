@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3822447527296973861}
   - component: {fileID: 1483608844655857298}
   m_Layer: 0
-  m_Name: ParryTest
+  m_Name: ParryObject
   m_TagString: Parry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
