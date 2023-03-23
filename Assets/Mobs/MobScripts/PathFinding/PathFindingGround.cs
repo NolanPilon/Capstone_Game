@@ -158,12 +158,10 @@ public class PathFindingGround : MonoBehaviour
     public void RunAway()
     {
         // creates the vector towards the player
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 direction = new Vector2(rb.transform.position.x - target.transform.position.x, rb.transform.position.y - target.transform.position.y).normalized;
 
-        //reverses it 
-        direction.x = direction.x * -1;
+        //Adds wanted speed to movement
         Vector2 force = direction * mySpeed * Time.deltaTime;
-
 
         //Moves the mob
         rb.AddForce(force);

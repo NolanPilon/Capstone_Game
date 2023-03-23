@@ -78,6 +78,7 @@ public class EnemyGroundBrain : MonoBehaviour
                     // keeps the mob safe 
                     else if (movement.TargetDistance() <= safetyRange)
                     {
+                        print("Running");
                         movement.RunAway();
                     }
                     //if the mob is in between safe and attack it will now attack
