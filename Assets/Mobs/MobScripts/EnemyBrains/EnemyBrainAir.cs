@@ -57,7 +57,6 @@ public class EnemyBrainAir : MonoBehaviour
 
     private void FixedUpdate()
     {
-        print(onTerritory);
         //if alive 
         if (health > 0)
         {  

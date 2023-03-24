@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 1
   isDead: 0
   targetTag: UFO
-  activateDistance: 18
+  activateDistance: 100
   pathUpdateSeconds: 1
   nextWaypointDistance: 1
   mySpeed: 5000
@@ -27,4 +27,5 @@ MonoBehaviour:
   isRanger: 1
   followEnabled: 1
   directionLookEnabled: 1
+  isTerritorial: 1
   deathParticles: {fileID: 2464784198141276583, guid: f3e10b42b24042e418f242332ac7f527, type: 3}
