@@ -16,6 +16,7 @@ TagManager:
   - Settings
   - Goal
   - Obstacle
+  - UFO
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 144440806332013756}
   - component: {fileID: 3645869223275638818}
   m_Layer: 0
-  m_Name: Poison
+  m_Name: ScropionProjectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
