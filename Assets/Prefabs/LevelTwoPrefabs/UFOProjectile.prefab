@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6894426320055111564}
+  - component: {fileID: 3119558915488008425}
   m_Layer: 0
   m_Name: damageBox
   m_TagString: Untagged
@@ -115,6 +116,22 @@ Transform:
   m_Father: {fileID: 3804872307928805554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3119558915488008425
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290222601933671319}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4.81, y: 3.8}
+  m_Direction: 1
 --- !u!1 &3804872307928805566
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +143,6 @@ GameObject:
   - component: {fileID: 3804872307928805554}
   - component: {fileID: 3804872307928805552}
   - component: {fileID: 144440806332013756}
-  - component: {fileID: 4298885175310437206}
   m_Layer: 0
   m_Name: UFOProjectile
   m_TagString: Bullet
@@ -190,19 +206,3 @@ MonoBehaviour:
   colliderLayer:
     serializedVersion: 2
     m_Bits: 328
---- !u!70 &4298885175310437206
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3804872307928805566}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.53, y: 1.76}
-  m_Direction: 1
