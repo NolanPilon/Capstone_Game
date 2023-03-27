@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BossAI3HandR : MonoBehaviour
 {
-    [SerializeField] private GameObject ParryBullet;
-
     private void OnEnable()
     {
         StartCoroutine(StartShoot());
@@ -13,13 +11,13 @@ public class BossAI3HandR : MonoBehaviour
 
     IEnumerator StartShoot()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         ShootParry();
     }
 
     private void ShootParry()
     {
-        GameObject bullet = Instantiate(ParryBullet, transform.position, transform.rotation);
+        GameObject bullet = Instantiate(BossAI3.Instance.ParryBullet, transform.position, transform.rotation);
         bullet.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
         bullet.transform.rotation = this.transform.rotation;
         Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();

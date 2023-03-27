@@ -21,7 +21,7 @@ public class BossAI3 : MonoBehaviour
     [SerializeField] private Image healthbar;       //boss healthbar
     float healthValue;                              //boss health value
 
-    private PlayerCombatFunctions playerStat;               //for take damage function
+    public PlayerCombatFunctions playerStat;               //for take damage function
 
     private BossAI3()
     {
@@ -44,5 +44,12 @@ public class BossAI3 : MonoBehaviour
 
         healthValue = (float)(BossHealth / 3f);
         healthbar.fillAmount = healthValue;
+    }
+
+    public bool TargetInRange(GameObject boss)
+    {
+        if (Vector2.Distance(boss.transform.position, target.transform.position) < 15) //Distance bet player and boss is less than 10
+            return true;
+        return false;
     }
 }

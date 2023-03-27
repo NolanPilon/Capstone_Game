@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  ParryBullet: {fileID: 4511204462952703756, guid: e3f76c5196f9a204e8016a1169f17798, type: 3}
+  ParryBullet: {fileID: 8301248127051353145, guid: 2b77a7e6d4a34dd41a7781c199144043, type: 3}
   BossBody: {fileID: 3042910307698787224}
   BossHandR: {fileID: 6409585332553187554}
   BossHandL: {fileID: 5877931854441644573}
@@ -355,6 +355,7 @@ MonoBehaviour:
   targetSpawner: {fileID: 8731760724816709548}
   BossHealth: 0
   healthbar: {fileID: 0}
+  playerStat: {fileID: 0}
 --- !u!50 &6373724266640887386
 Rigidbody2D:
   serializedVersion: 4
@@ -387,6 +388,7 @@ GameObject:
   - component: {fileID: 7540608980571725231}
   - component: {fileID: 2264699734894201007}
   - component: {fileID: 3334511034994474724}
+  - component: {fileID: 4069861478433819088}
   m_Layer: 0
   m_Name: HandL
   m_TagString: Untagged
@@ -402,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5877931854441644573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.47, y: 9.4, z: 0}
+  m_LocalPosition: {x: -4.6, y: 10, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -473,7 +475,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b80e65f136b7e4abc3ab5d8ec1b165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParryBullet: {fileID: 8301248127051353145, guid: 2b77a7e6d4a34dd41a7781c199144043, type: 3}
+--- !u!61 &4069861478433819088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877931854441644573}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.62, y: 0.52}
+    newSize: {x: 0.62, y: 0.52}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.62, y: 0.52}
+  m_EdgeRadius: 0
 --- !u!1 &6409585332553187554
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +512,7 @@ GameObject:
   - component: {fileID: 6057612825943946419}
   - component: {fileID: 7931561901223918694}
   - component: {fileID: 71060022502519371}
+  - component: {fileID: 8090880996667850237}
   m_Layer: 0
   m_Name: HandR
   m_TagString: Untagged
@@ -500,7 +528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6409585332553187554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.66, y: 9.29, z: 0}
+  m_LocalPosition: {x: 4.5, y: 9.5, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -571,4 +599,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6059c0d5484880545b22a9d542f69fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParryBullet: {fileID: 8301248127051353145, guid: 2b77a7e6d4a34dd41a7781c199144043, type: 3}
+--- !u!61 &8090880996667850237
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409585332553187554}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.62, y: 0.52}
+    newSize: {x: 0.62, y: 0.52}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.62, y: 0.52}
+  m_EdgeRadius: 0
