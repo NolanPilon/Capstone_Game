@@ -34,12 +34,15 @@ public class EnemyBrainAir : MonoBehaviour
     [Header("Custom Behavior")]
     private bool followEnabled = true;
     private bool directionLookEnabled = true;
+    private bool isTerritorial = false;
+    [SerializeField] Collider2D territory;
 
 
     private GameObject deathParticles;
     private Path path;
     private int currentWaypoint = 0;
     private float NextAttack;
+    private bool onTerritory = false;
     bool isGrounded = false;
 
     PathFindingAir movement;
@@ -56,38 +59,52 @@ public class EnemyBrainAir : MonoBehaviour
     {
         //if alive 
         if (health > 0)
-        {   //checks if target is in agro distance and if the mob can move also added a delay if it attacks
-            if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
+        {  
+            //Forces territorial to have a reason to hunt while other dont need it
+            if(isTerritorial && onTerritory || !isTerritorial)
             {
-                // if in attack distance
-                if (movement.TargetDistance() > attackRange)
+                //checks if target is in agro distance and if the mob can move also added a delay if it attacks
+                if (movement.TargetInDistance() && followEnabled || Time.time > NextAttack)
                 {
-                    movement.PathFollow();
-                }
-                // keeps the mob safe 
-                else if (movement.TargetDistance() < safetyRange)
-                {
-                    movement.RunAway();
-                }
-                //if the mob is in between safe and attack it will now attack
-                else
-                {
-                    if (isRanger)
+                    // if in attack distance
+                    if (movement.TargetDistance() > attackRange)
                     {
-                        //delay attack
-                        if (Time.time > NextAttack)
+                        movement.PathFollow();
+                    }
+                    // keeps the mob safe 
+                    else if (movement.TargetDistance() < safetyRange)
+                    {
+                        movement.RunAway();
+                    }
+                    //if the mob is in between safe and attack it will now attack
+                    else
+                    {
+                        if (isRanger)
                         {
-                            rangeAttack.ShootBullet();
-                            NextAttack = Time.time + delayAfterAttack;
+                            //delay attack
+                            if (Time.time > NextAttack)
+                            {
+                                rangeAttack.ShootBullet();
+                                NextAttack = Time.time + delayAfterAttack;
+                            }
+
+                            movement.MovementStop();
                         }
 
                         movement.MovementStop();
                     }
 
-                    movement.MovementStop();
                 }
-
             }
+            else
+            {
+                if(movement.TargetDistance() > 5)
+                {
+                    movement.PathFollow();
+                }
+               
+            }
+              
         }
         else
         {
@@ -96,6 +113,7 @@ public class EnemyBrainAir : MonoBehaviour
         }
     }
 
+    //Combat
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && GameManager.parryCombo >= health)
@@ -111,6 +129,13 @@ public class EnemyBrainAir : MonoBehaviour
             NextAttack = Time.time + delayAfterAttack;
         }
     }
+
+    //SetOnTerritory
+    public void SetOnTerritory(bool On)
+    {
+        onTerritory = On;
+    }
+
     IEnumerator AttackFreeze()
     {
         Time.timeScale = 0f;
@@ -149,6 +174,7 @@ public class EnemyBrainAir : MonoBehaviour
         //Sets Custom Behavior
         followEnabled = EnemyAirInfo.followEnabled;
         directionLookEnabled = EnemyAirInfo.directionLookEnabled;
+        isTerritorial = EnemyAirInfo.isTerritorial;
 
         //Other
         deathParticles = EnemyAirInfo.deathParticles;
@@ -170,7 +196,7 @@ public class EnemyBrainAir : MonoBehaviour
                 {
                     movement.SetPathfindingInfo(target, seeker, activateDistance, pathUpdateSeconds);
                     movement.SetPhysicsInfo(rigidbody2D, nextWaypointDistance, mySpeed);
-                    movement.SetCustomBehavior(followEnabled, directionLookEnabled);
+                    movement.SetCustomBehavior(followEnabled, directionLookEnabled, isTerritorial);
                 }
             }
         }
