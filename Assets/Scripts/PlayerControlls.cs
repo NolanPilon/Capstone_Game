@@ -23,6 +23,8 @@ public class PlayerControlls : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
+    Animator animator;
     
 
     private Rigidbody2D playerRB;
@@ -30,6 +32,7 @@ public class PlayerControlls : MonoBehaviour
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         if (GameManager.respawnPoint != Vector2.zero )
         {
@@ -45,12 +48,30 @@ public class PlayerControlls : MonoBehaviour
             horizontalMove = Input.GetAxisRaw("Horizontal");
 
             PlayerMovement(horizontalMove);
+            
+            if(horizontalMove == 1)
+            {
+                animator.SetBool("WalkingRight", true);
+            }
+            else
+            {
+                animator.SetBool("WalkingRight", false);
+            }
+            
+            if (horizontalMove == -1) 
+            {
+                animator.SetBool("WalkingLeft", true);
+            }
+            else
+            {
+                animator.SetBool("WalkingLeft", false);
+            }
 
             // Jump buffer timer
             if (isGrounded())
             {
                 jumpBufferTimer = jumpBuffer;
-
+                animator.SetBool("Jumping", false);
                 // Reset parry combo
                 GameManager.parryCombo = 0;
             }
@@ -61,8 +82,10 @@ public class PlayerControlls : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
+                animator.SetBool("Jumping", true);
                 Jump();
             }
+          
 
             // Prevents double jump and allows for variable jump height
             if (Input.GetKeyUp(KeyCode.Space) && playerRB.velocity.y > 0)
@@ -73,19 +96,19 @@ public class PlayerControlls : MonoBehaviour
             }
 
             // Flip sprite
-            if (playerRB.velocity.x < 0)
-            {
-                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
-                    CreateDust();
-                GetComponent<SpriteRenderer>().flipX = true;
+            //if (playerRB.velocity.x < 0)
+            //{
+            //    if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
+            //        CreateDust();
+            //    GetComponent<SpriteRenderer>().flipX = true;
               
-            }
-            else 
-            {
-                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
-                    CreateDust();
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
+            //}
+            //else 
+            //{
+            //    if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
+            //        CreateDust();
+            //    GetComponent<SpriteRenderer>().flipX = false;
+            //}
 
             if (playerRB.velocity.y < -20)
             {
