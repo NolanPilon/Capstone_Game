@@ -10,6 +10,7 @@ public class LevelSelector : MonoBehaviour
     Sprite[] sprites;
     public Sprite locked;
     public Animator transition;
+    private string levelName;
 
     // Start is called before the first frame update
     void Start()
@@ -32,15 +33,32 @@ public class LevelSelector : MonoBehaviour
     {
         if (levels[i-1] == locked) return;
 
-        //SceneManager.LoadScene("Level" + i.ToString());
-        StartCoroutine(Transition());
+        levelName = "Level" + i.ToString();
+        StartCoroutine(Transition(levelName));
     }
 
-    IEnumerator Transition() 
+    IEnumerator Transition(string levelName) 
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(1.2f);
-        SceneManager.LoadScene("PrototypeLevel");
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void OnClickHome()
+    {
+        StartCoroutine(StartMainMenu());
+    }
+
+    IEnumerator StartMainMenu()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnClickExit()
+    {
+        Application.Quit();
     }
 
 }
