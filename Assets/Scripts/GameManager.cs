@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public static Vector2 respawnPoint = Vector2.zero;
     public static int progressPoint = 0;
 
+    public string playerName;   //For save player name
+
     public static GameManager Instance { get { return gameManager; } }
     void Awake()
     {
@@ -41,7 +43,8 @@ public class GameManager : MonoBehaviour
         speed = playerSpeed;
         combo = parryCombo;
 
-        collectablesText.text = "X" + collectables.ToString();
+        if (collectablesText != null)
+            collectablesText.text = "X" + collectables.ToString();
 
         if (playerHP <= 0) 
         {
