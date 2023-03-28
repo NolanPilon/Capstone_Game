@@ -38,7 +38,7 @@ public class EnemyBrainAir : MonoBehaviour
     [SerializeField] Collider2D territory;
 
 
-    private GameObject deathParticles;
+    private GameObject[] deathParticles;
     private Path path;
     private int currentWaypoint = 0;
     private float NextAttack;
@@ -145,7 +145,10 @@ public class EnemyBrainAir : MonoBehaviour
 
     void createDeathParticles()
     {
-        Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
+        for(int i = 0; i < deathParticles.Length; i++ )
+        {
+            Instantiate(deathParticles[i], gameObject.transform.position, gameObject.transform.rotation);
+        }
     }
 
     private void startUP()

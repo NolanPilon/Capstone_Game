@@ -34,7 +34,7 @@ public class EnemyAirInfo : ScriptableObject
     public bool isTerritorial = false;
 
     [Header("Other")]
-    public GameObject deathParticles;
+    public GameObject[] deathParticles;
 
     private Path path;
     private int currentWaypoint = 0;
