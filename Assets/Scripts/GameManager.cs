@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
         speed = playerSpeed;
         combo = parryCombo;
 
-        collectablesText.text = "X" + collectables.ToString();
+        if (collectablesText != null)
+            collectablesText.text = "X" + collectables.ToString();
 
         if (playerHP <= 0) 
         {

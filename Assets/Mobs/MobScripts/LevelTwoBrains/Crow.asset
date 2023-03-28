@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de42eca495b057c48901e26f0e27e4dc, type: 3}
   m_Name: Crow
   m_EditorClassIdentifier: 
-  health: 99
+  health: 2
   damage: 1
   isDead: 0
   targetTag: Player
   activateDistance: 25
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 1
-  mySpeed: 1000
+  mySpeed: 1500
   attackRange: 0.8
   safetyRange: 10
   delayAfterAttack: 3
@@ -27,4 +27,5 @@ MonoBehaviour:
   isRanger: 0
   followEnabled: 1
   directionLookEnabled: 1
-  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
+  isTerritorial: 0
+  deathParticles: {fileID: 3442738779280740017, guid: 57926cb67fd7c114592c5607e4888444, type: 3}
