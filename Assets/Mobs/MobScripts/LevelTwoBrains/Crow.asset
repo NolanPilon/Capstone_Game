@@ -19,7 +19,7 @@ MonoBehaviour:
   activateDistance: 25
   pathUpdateSeconds: 0.5
   nextWaypointDistance: 1
-  mySpeed: 1000
+  mySpeed: 0
   attackRange: 0.8
   safetyRange: 10
   delayAfterAttack: 3
@@ -28,4 +28,6 @@ MonoBehaviour:
   followEnabled: 1
   directionLookEnabled: 1
   isTerritorial: 0
-  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
+  deathParticles:
+  - {fileID: 3442738779280740017, guid: 57926cb67fd7c114592c5607e4888444, type: 3}
+  - {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}

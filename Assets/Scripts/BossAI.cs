@@ -141,11 +141,12 @@ public class BossAI : MonoBehaviour
                 }
                 if (attack && !start)
                 {
-                    bossRB.velocity = direction.normalized * speed;
+                    bossRB.velocity = direction.normalized * speed*2;
                 }
             }
             if (!Motion3)
             {
+                CameraShake.Instance.OnShakeCameraPosition(0.4f, 0.2f);
                 bossRB.velocity = Vector3.zero;
                 CreateSpawns();
                 StartCoroutine(bossResetTimer());

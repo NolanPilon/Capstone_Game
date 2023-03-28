@@ -39,7 +39,7 @@ public class EnemyGroundInfo : ScriptableObject
     public bool directionLookEnabled = true;
 
     [Header("Other")]
-    public GameObject deathParticles;
+    public GameObject[] deathParticles;
 
     private Path path;
     private int currentWaypoint = 0;
