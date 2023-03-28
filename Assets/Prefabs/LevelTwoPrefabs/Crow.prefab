@@ -168,7 +168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2753322101854496902}
-  - component: {fileID: 820503828}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -193,20 +192,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &820503828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2753322101854496901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e517f932e3bc1458f1e84000f266de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoneyBag: {fileID: 3442738779280740017, guid: 57926cb67fd7c114592c5607e4888444, type: 3}
-  parent: {fileID: 2753322102619554251}
 --- !u!1 &2753322102420479367
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyAirInfo: {fileID: 11400000, guid: 649f1de74d9e04641a9a525c3487501b, type: 2}
+  territory: {fileID: 0}
 --- !u!114 &2753322102619554242
 MonoBehaviour:
   m_ObjectHideFlags: 0

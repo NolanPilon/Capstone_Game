@@ -15,7 +15,6 @@ public class spawnOnDeath : MonoBehaviour
         if (parent || transform.position.x != 1000 && transform.position.y != 1000)
         {
             spawnPosition = getSpawnLocation();
-            Debug.Log(spawnPosition);
         }
         else 
         {
