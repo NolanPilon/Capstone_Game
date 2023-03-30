@@ -12,6 +12,9 @@ public class Snake2 : MonoBehaviour
     public Transform targetDir;
     public float targetDist;
     public float smoothSpeed;
+    public float wiggleSpeed;
+    public float wiggleMagnitude;
+    public Transform wiggleDir;
 
     private void Start()
     {
@@ -22,6 +25,8 @@ public class Snake2 : MonoBehaviour
 
     private void Update()
     {
+        wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
+
         segmentPoses[0] = targetDir.position;
 
         for (int i = 1; i < segmentPoses.Length; i++)
