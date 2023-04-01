@@ -69,16 +69,6 @@ public class PlayerControlls : MonoBehaviour
                 coyoteBufferTimer -= Time.deltaTime;
             }
 
-            // Buffer player jump
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                jumpBufferTimer = jumpBuffer;
-            }
-            else if (jumpBufferTimer > -0.5) 
-            {
-                jumpBufferTimer -= Time.deltaTime;
-            }
-
             if (jumpBufferTimer > 0 && coyoteBufferTimer > 0)
             {
                 jumpBufferTimer = 0;
@@ -122,6 +112,15 @@ public class PlayerControlls : MonoBehaviour
                 playedLanding = true;
             }
             
+        }
+        // Buffer player jump
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpBufferTimer = jumpBuffer;
+        }
+        else if (jumpBufferTimer > -0.5)
+        {
+            jumpBufferTimer -= Time.deltaTime;
         }
     }
 
