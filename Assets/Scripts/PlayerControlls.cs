@@ -18,9 +18,14 @@ public class PlayerControlls : MonoBehaviour
     private int jumpForce = 19;
 
     //Coyote time
+    private float coyoteBuffer = 0.2f;
+    private float coyoteBufferTimer;
+    private bool playedLanding = false;
+
+    //Jump buffering
     private float jumpBuffer = 0.2f;
     private float jumpBufferTimer;
-    private bool playedLanding = false;
+
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -51,21 +56,32 @@ public class PlayerControlls : MonoBehaviour
 
             PlayerMovement(horizontalMove);
 
-            // Jump buffer timer
+            // Coyote time timer
             if (isGrounded())
             {
-                jumpBufferTimer = jumpBuffer;
+                coyoteBufferTimer = coyoteBuffer;
 
                 // Reset parry combo
                 GameManager.parryCombo = 0;
             }
             else
             {
+                coyoteBufferTimer -= Time.deltaTime;
+            }
+
+            // Buffer player jump
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                jumpBufferTimer = jumpBuffer;
+            }
+            else if (jumpBufferTimer > -0.5) 
+            {
                 jumpBufferTimer -= Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
+            if (jumpBufferTimer > 0 && coyoteBufferTimer > 0)
             {
+                jumpBufferTimer = 0;
                 Jump();
             }
 
@@ -74,21 +90,25 @@ public class PlayerControlls : MonoBehaviour
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
 
-                jumpBufferTimer = 0;
+                coyoteBufferTimer = 0;
             }
 
             // Flip sprite
             if (playerRB.velocity.x < 0)
             {
-                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
+                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10) 
+                {
                     CreateDust();
+                }   
                 GetComponent<SpriteRenderer>().flipX = true;
               
             }
             else 
             {
-                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
+                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10) 
+                {
                     CreateDust();
+                }
                 GetComponent<SpriteRenderer>().flipX = false;
             }
 
