@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6894426320055111564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: damageBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3804872307928805552}
   - component: {fileID: 144440806332013756}
   - component: {fileID: 3645869223275638818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScropionProjectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6987213170680251281}
   - component: {fileID: 6488217406873694567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

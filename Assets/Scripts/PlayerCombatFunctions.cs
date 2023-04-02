@@ -15,7 +15,7 @@ public class PlayerCombatFunctions : MonoBehaviour
     private Rigidbody2D playerRB;
     private SpriteRenderer playerSprite;
 
-    [SerializeField] private Collider2D ComboatCollider;
+    [SerializeField] private Collider2D combatCollider;
 
     void Start()
     {
@@ -30,13 +30,12 @@ public class PlayerCombatFunctions : MonoBehaviour
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
-            ComboatCollider.enabled = false;
-
+            combatCollider.enabled = false; 
         }
         else 
         {
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
-            ComboatCollider.enabled = true;
+            combatCollider.enabled = true;
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3442738779280740172}
   - component: {fileID: 3442738779280740175}
   - component: {fileID: -5955645919334078611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoneyBag
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3442738779541135908}
   - component: {fileID: 3442738779541135909}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoneyBagVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 74f1bf861a147e548be84bb34927dbbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4992a53741496745b4270871561df36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1727623920}
   - component: {fileID: 2289606262742775426}
   - component: {fileID: 1067020326769395780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CrowHurtBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2753322101854496902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 09c3f5c688792354fa92a5d6bcf4dd63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ba94ea00055841479b39b04e4e83465, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2753322102619554240}
   - component: {fileID: 2753322102619554242}
   - component: {fileID: 2102249409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CrowPathFinding
   m_TagString: Enemy
   m_Icon: {fileID: 0}
