@@ -15,6 +15,8 @@ public class PlayerCombatFunctions : MonoBehaviour
     private Rigidbody2D playerRB;
     private SpriteRenderer playerSprite;
 
+    [SerializeField] private Collider2D combatCollider;
+
     void Start()
     {
         items = new List<string>();
@@ -28,10 +30,12 @@ public class PlayerCombatFunctions : MonoBehaviour
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
+            combatCollider.enabled = false; 
         }
         else 
         {
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
+            combatCollider.enabled = true;
         }
     }
 
