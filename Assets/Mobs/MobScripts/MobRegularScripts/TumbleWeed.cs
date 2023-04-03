@@ -28,11 +28,6 @@ public class TumbleWeed : MonoBehaviour
     
         jumpForce = Random.Range(minJumpForce, maxJumpForce);
 
-        if (checkIfGround())
-        {
-            Debug.Log("canJump");
-        }
-
         if (checkIfGround() && Random.Range(1,100) > jumpConsistentsy)
         {
             if(canJump)
