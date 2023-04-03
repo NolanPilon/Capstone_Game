@@ -8,13 +8,14 @@ public class TumbleWeed : MonoBehaviour
 
     [SerializeField] private Transform groundCheck = null;
     [SerializeField] private LayerMask groundLayer = 0;
+    [SerializeField] private int maxJumpForce;
+    [SerializeField] private int minJumpForce;
+    [SerializeField] private int jumpConsistentsy;
 
     private Rigidbody2D rb;
     private int jumpForce;
-
-    public int maxJumpForce;
-    public int minJumpForce;
-    public int jumpConsistentsy;
+    private bool canJump = true;
+  
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -27,7 +28,13 @@ public class TumbleWeed : MonoBehaviour
 
         if(checkIfGround() && Random.Range(1,100) > jumpConsistentsy)
         {
-            rb.AddForce(Vector2.up * jumpForce);
+            if(canJump)
+            {
+                rb.AddForce(Vector2.up * jumpForce);
+                canJump= false;
+                StartCoroutine(delayJump());
+            }
+
         }
     }
 
@@ -35,5 +42,12 @@ public class TumbleWeed : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
 
+    }
+
+    IEnumerator delayJump()
+    {
+        yield return new WaitForSeconds(1);
+
+        canJump = true;
     }
 }
