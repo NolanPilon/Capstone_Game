@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3285878374019039764}
   - component: {fileID: 4796524700966999650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6894426320055111564}
   - component: {fileID: 3119558915488008425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: damageBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3804872307928805554}
   - component: {fileID: 3804872307928805552}
   - component: {fileID: 144440806332013756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UFOProjectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}

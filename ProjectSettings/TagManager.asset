@@ -17,7 +17,7 @@ TagManager:
   - Goal
   - Obstacle
   - UFO
-  - Slot
+  - PlayerGroundCollider
   layers:
   - Default
   - TransparentFX
@@ -29,7 +29,7 @@ TagManager:
   - Mob
   - Player
   - MobOnly
-  - 
+  - PlayerGroundCollider
   - 
   - 
   - 
