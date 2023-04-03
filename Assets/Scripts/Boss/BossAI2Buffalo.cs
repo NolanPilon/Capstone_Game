@@ -25,7 +25,7 @@ public class BossAI2Buffalo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Wall"))
+        if (collision.collider.name == "Tilemap")
         {
             startmove = true;
         }
@@ -54,14 +54,14 @@ public class BossAI2Buffalo : MonoBehaviour
     private void InitialMove()
     {
         Rigidbody2D rigid = this.GetComponent<Rigidbody2D>();
-        Vector2 dirVec = new Vector2(-1, Mathf.Sin(Mathf.PI * 1));
+        Vector2 dirVec = new Vector2(1, Mathf.Sin(Mathf.PI * 1));
         rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
     }
 
     private void move()
     {
         Rigidbody2D rigid = this.GetComponent<Rigidbody2D>();
-        Vector2 dirVec = new Vector2(-1, 0);
+        Vector2 dirVec = new Vector2(1, 0);
         rigid.velocity = dirVec.normalized * speed;
     }
 }
