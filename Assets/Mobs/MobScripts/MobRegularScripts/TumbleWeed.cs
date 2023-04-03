@@ -19,19 +19,26 @@ public class TumbleWeed : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        OnDrawGizmos();
     }
 
     // Update is called once per frame
     void Update()
     {
+    
         jumpForce = Random.Range(minJumpForce, maxJumpForce);
 
-        if(checkIfGround() && Random.Range(1,100) > jumpConsistentsy)
+        if (checkIfGround())
+        {
+            Debug.Log("canJump");
+        }
+
+        if (checkIfGround() && Random.Range(1,100) > jumpConsistentsy)
         {
             if(canJump)
             {
                 rb.AddForce(Vector2.up * jumpForce);
-                canJump= false;
+                canJump = false;
                 StartCoroutine(delayJump());
             }
 
@@ -46,8 +53,14 @@ public class TumbleWeed : MonoBehaviour
 
     IEnumerator delayJump()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         canJump = true;
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(groundCheck.position, 0.4f);
+    }
+
 }
