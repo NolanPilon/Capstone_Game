@@ -25,7 +25,7 @@ public class BossAI2Wolf : MonoBehaviour
             BossAI2Snake.motionIndex = 2;
             BossAI2.Instance.playerStat.takeDamage(collision.transform.position - this.transform.position);
         }
-        else if (collision.collider.CompareTag("Wall"))
+        else if (collision.collider.CompareTag("Ground"))
         {
             move();
         }
