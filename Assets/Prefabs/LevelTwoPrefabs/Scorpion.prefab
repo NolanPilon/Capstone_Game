@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3964672855395869851}
   - component: {fileID: 3964672855395869850}
   - component: {fileID: 3964672855395869853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3964672854407740375}
   - component: {fileID: 3964672854407740374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScorpionVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3964672854854148262}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3964672856004163592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

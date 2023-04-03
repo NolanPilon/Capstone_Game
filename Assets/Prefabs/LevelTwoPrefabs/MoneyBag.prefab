@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3442738779280740172}
   - component: {fileID: 3442738779280740175}
   - component: {fileID: -5955645919334078611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoneyBag
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3442738779541135908}
   - component: {fileID: 3442738779541135909}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoneyBagVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

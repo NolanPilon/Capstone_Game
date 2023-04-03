@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4815983484867607929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MobStart
   m_TagString: UFO
   m_Icon: {fileID: 0}
@@ -234,9 +234,9 @@ GameObject:
   - component: {fileID: 4815983485419598958}
   - component: {fileID: 4815983485419598959}
   - component: {fileID: 4815983485419598952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UFOTerritory
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

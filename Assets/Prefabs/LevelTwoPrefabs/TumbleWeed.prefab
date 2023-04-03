@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8073115407299642171}
   - component: {fileID: 3690916004222003212}
   - component: {fileID: 3690916004222003211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TumbleWeedTracker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5656206045358524324}
   - component: {fileID: 5656206045358524323}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7687826095466265561}
   - component: {fileID: 7687826095466265560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,9 +308,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7687826096493306472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TumbleWeed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
