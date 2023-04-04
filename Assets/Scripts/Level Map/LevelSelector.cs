@@ -38,6 +38,7 @@ public class LevelSelector : MonoBehaviour
 
     IEnumerator Transition() 
     {
+        SoundManager.Instance.PlayMenu();
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene("PrototypeLevel");

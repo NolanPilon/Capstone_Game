@@ -45,8 +45,8 @@ public class BossAI : MonoBehaviour
     public Image healthbar;     //boss healthbar
     float healthValue;          //boss health value
 
+    Animator animator;
 
-    
 
     public void initalize()
     {
@@ -80,8 +80,8 @@ public class BossAI : MonoBehaviour
         height = rectTransform.rect.height * rectTransform.localScale.y;
         width = rectTransform.rect.width * rectTransform.localScale.x;
         playerStat = target.GetComponent<PlayerCombatFunctions>();
-        
-        
+        animator = GetComponentInChildren<Animator>();
+
         spawnsCreated = false;
         initalize();
     }
@@ -102,8 +102,10 @@ public class BossAI : MonoBehaviour
             }
             if (!Motion1)
             {
+                
                 if (bounceTime < maxBounces)
                 {
+                    animator.SetBool("Moving", true);
                     bossRB.velocity = direction.normalized * speed;
                     //transform.Translate(direction.normalized * speed * Time.deltaTime);
                 }
@@ -114,12 +116,15 @@ public class BossAI : MonoBehaviour
 
                     location = this.transform.position;
 
+                    
+
                     if (location == destination)
                     {
                         Motion1 = true;
                         Motion2 = false;
                         start = false;
                         bounceTime = 0;
+                        animator.SetBool("Moving", false);
                     }
                 }
             }
@@ -136,10 +141,12 @@ public class BossAI : MonoBehaviour
                     direction = target.transform.position - this.transform.position;
                     direction.y *= -1;
                     start = false;
+                    animator.SetBool("Attacking", false);
                     attack = true;
                 }
                 if (attack && !start)
                 {
+                    
                     bossRB.velocity = direction.normalized * speed;
                 }
             }
@@ -148,6 +155,7 @@ public class BossAI : MonoBehaviour
                 bossRB.velocity = Vector3.zero;
                 CreateSpawns();
                 StartCoroutine(bossResetTimer());
+                animator.SetBool("Attacking", true);
                 Motion3 = true;
             }
 
@@ -261,6 +269,7 @@ public class BossAI : MonoBehaviour
     {
         alive = false;
         bossRB.velocity = Vector2.zero;
+        animator.SetBool("Dying", true);
         Destroy(gameObject, 2);
     }
 

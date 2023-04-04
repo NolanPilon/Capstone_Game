@@ -63,12 +63,14 @@ public class Mainmenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
+        SoundManager.Instance.PlayMenu();
         StartCoroutine(StartGame());
     }
 
     IEnumerator StartGame() 
     {
         transition.SetTrigger("Start");
+        SoundManager.Instance.PlayMenu();
         yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene("LevelMap");
     }
@@ -76,11 +78,13 @@ public class Mainmenu : MonoBehaviour
 
     public void OnClickExit()
     {
+        SoundManager.Instance.PlayMenu();
         Application.Quit();
     }
 
     public void OnClickSettings()
     {
+        SoundManager.Instance.PlayMenu();
         SettingPopUp.SetActive(true);
     }
 

@@ -59500,6 +59500,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5064286051850134619, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228900868084750729, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_Size.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228900868084750729, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_Size.y
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228900868084750729, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72e9b40398a9e89449f30540a9b1cb83, type: 3}
+    - target: {fileID: 7228900868084750729, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7716553866460500273, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_Color.b
       value: 0.70980394
@@ -59560,6 +59580,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 402405993fe28034b9a4600fb5ec9ca5, type: 2}
+    - target: {fileID: 8582687330161885826, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582687330161885826, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582687330161885826, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582687330161885826, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
 --- !u!4 &1330528061 stripped
@@ -59858,7 +59894,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a339c0704e171b6448cf7dbfb6c3df92, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -59954,7 +59990,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 155e70a551683fc4db87defc806541b0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -60050,7 +60086,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60a06756457ffa042a7474d56c6d0752, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

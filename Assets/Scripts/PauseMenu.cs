@@ -66,6 +66,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnClickExit()
     {
+        SoundManager.Instance.PlayMenu();
         SettingPopUp.SetActive(false);
     }
 }
