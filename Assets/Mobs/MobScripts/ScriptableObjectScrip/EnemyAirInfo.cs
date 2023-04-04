@@ -31,9 +31,10 @@ public class EnemyAirInfo : ScriptableObject
     [Header("Custom Behavior")]
     public bool followEnabled = true;
     public bool directionLookEnabled = true;
+    public bool isTerritorial = false;
 
     [Header("Other")]
-    public GameObject deathParticles;
+    public GameObject[] deathParticles;
 
     private Path path;
     private int currentWaypoint = 0;

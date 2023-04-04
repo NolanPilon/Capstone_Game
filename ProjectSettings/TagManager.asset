@@ -15,6 +15,9 @@ TagManager:
   - DeathPit
   - Settings
   - Goal
+  - Obstacle
+  - UFO
+  - PlayerGroundCollider
   layers:
   - Default
   - TransparentFX
@@ -25,8 +28,8 @@ TagManager:
   - Obstacle
   - Mob
   - Player
-  - 
-  - 
+  - MobOnly
+  - PlayerGroundCollider
   - 
   - 
   - 

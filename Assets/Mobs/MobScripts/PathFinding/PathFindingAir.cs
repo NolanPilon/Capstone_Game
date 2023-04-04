@@ -18,6 +18,7 @@ public class PathFindingAir : MonoBehaviour
     [Header("Custom Behavior")]
     private bool followEnabled = true;
     private bool directionLookEnabled = true;
+    private bool TerritorialEnabled = false;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -27,8 +28,12 @@ public class PathFindingAir : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    private Vector2 TransospawnLocation;
+
     public void Start()
     {
+        //sets spawn location
+
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
 
@@ -47,10 +52,11 @@ public class PathFindingAir : MonoBehaviour
         rb = useThisRb;
     }
 
-    public void SetCustomBehavior(bool followEnable,bool directionLook)
+    public void SetCustomBehavior(bool followEnable,bool directionLook, bool isTerritorial)
     {
         followEnabled = followEnable;
         directionLookEnabled = directionLook;
+        TerritorialEnabled = isTerritorial;
     }
 
     public void UpdatePath()
@@ -107,11 +113,9 @@ public class PathFindingAir : MonoBehaviour
     public void RunAway()
     {
         // creates the vector towards the player
-        // Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 direction = (target.position - transform.position);
+        Vector2 direction = new Vector2(rb.transform.position.x - target.transform.position.x, rb.transform.position.y - target.transform.position.y).normalized;
 
-        //reverses it 
-        direction = direction * -1;
+        //Adds wanted speed to movement
         Vector2 force = direction * mySpeed * Time.deltaTime;
 
         //Moves the mob
@@ -133,6 +137,12 @@ public class PathFindingAir : MonoBehaviour
     public float TargetDistance()
     {
         return Vector2.Distance(transform.position, target.transform.position);
+    }
+
+    //setsTargetTag
+    public void SetNewTarget(Transform NewTarget)
+    {
+        target = NewTarget;
     }
 
     //activates when mob reaches the end of path

@@ -1299,7 +1299,7 @@ Transform:
   m_Children:
   - {fileID: 784910252}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &167332900
 PrefabInstance:
@@ -1437,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547855384768655421, guid: 364fc2d24ceb0be4bbdecd795d648ef4, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8547855384768655421, guid: 364fc2d24ceb0be4bbdecd795d648ef4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1863,6 +1863,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1330131751224595559, guid: e7f30560964eff64db49acac7bf02b43, type: 3}
   m_PrefabInstance: {fileID: 1973364176}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &378609473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378609474}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &378609474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378609473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.33, y: -1.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &398066448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2149,11 +2180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5872534546347512026, guid: 9aaccee7003bc4c48ac319628dcc0cf0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 375.41
+      value: 376.7
       objectReference: {fileID: 0}
     - target: {fileID: 5872534546347512026, guid: 9aaccee7003bc4c48ac319628dcc0cf0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -48.92
+      value: -44.61
       objectReference: {fileID: 0}
     - target: {fileID: 5872534546347512026, guid: 9aaccee7003bc4c48ac319628dcc0cf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54365,6 +54396,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899855354}
+  - component: {fileID: 899855356}
+  - component: {fileID: 899855355}
   m_Layer: 0
   m_Name: SnowDropsAreana
   m_TagString: Untagged
@@ -54388,6 +54421,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &899855355
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899855353}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.1072388, y: -10.87}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35.82782, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &899855356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899855353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee765a44bfd4801489c5d969e42d1541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowParticles: {fileID: 1679430583}
 --- !u!224 &918302594 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8564890201433696024, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
@@ -55676,7 +55748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844024354537411553, guid: 45653f71518b82547b3589a62c081c13, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3844024354537411553, guid: 45653f71518b82547b3589a62c081c13, type: 3}
       propertyPath: m_AnchorMax.x
@@ -56706,7 +56778,7 @@ Transform:
   - {fileID: 1873406572}
   - {fileID: 1094470163}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1512989643 stripped
 Transform:
@@ -56789,10 +56861,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 898469182, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1489422724, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: sm
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1489422724, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 378609473}
     - target: {fileID: 2041005998658260607, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_Name
       value: Player
@@ -57484,6 +57564,7 @@ GameObject:
   - component: {fileID: 1679430584}
   - component: {fileID: 1679430583}
   - component: {fileID: 1679430582}
+  - component: {fileID: 1679430585}
   m_Layer: 0
   m_Name: SnowDrops
   m_TagString: Untagged
@@ -57571,7 +57652,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679430581}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -57580,7 +57661,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -58206,9 +58287,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: -0.00000021505444, z: 0.00000008419109}
+    m_Position: {x: -9.7, y: -0.00000021505444, z: 0}
     m_Rotation: {x: 0, y: 180, z: 0}
-    m_Scale: {x: 32.4, y: 1, z: 2.29}
+    m_Scale: {x: 48.01, y: 1, z: 2.29}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -62354,13 +62435,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679430581}
   m_LocalRotation: {x: -0.70302206, y: 0.06358307, z: 0.06336151, w: 0.7054804}
-  m_LocalPosition: {x: 0.05432129, y: 8.173286, z: -8.492777}
+  m_LocalPosition: {x: 15.55, y: 8.173286, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.0421999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 899855354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.8, y: 10.3, z: 0}
+--- !u!58 &1679430585
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679430581}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06, y: -0.66}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &1711711829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62963,7 +63060,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.9
+  m_Intensity: 0.98
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -63038,7 +63135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1889551906
 PrefabInstance:
@@ -63053,7 +63150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564890199636036790, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8564890199636036790, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
       propertyPath: m_LocalPosition.x

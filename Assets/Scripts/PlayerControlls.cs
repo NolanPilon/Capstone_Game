@@ -11,6 +11,7 @@ public class PlayerControlls : MonoBehaviour
 
     public ParticleSystem dust;
     public ParticleSystem landingDust;
+    public GameObject spawnPoint;
 
     private float moveSpeed = 10;
     private float horizontalMove;
@@ -34,9 +35,13 @@ public class PlayerControlls : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        if (GameManager.respawnPoint != Vector2.zero )
+        if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
         {
             this.transform.position = GameManager.respawnPoint;
+        }
+        else if (GameManager.progressPoint == 0) 
+        {
+            transform.position = spawnPoint.transform.position;
         }
     } 
 
@@ -139,7 +144,7 @@ public class PlayerControlls : MonoBehaviour
     //Draws an invisible circle to check if on the ground
     public bool isGrounded() 
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.4f, groundLayer);
     }
 
     void CreateDust()
@@ -155,7 +160,7 @@ public class PlayerControlls : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(groundCheck.position, 0.5f);
+        Gizmos.DrawSphere(groundCheck.position, 0.4f);
     }
 }
 

@@ -34,4 +34,5 @@ MonoBehaviour:
   jumpEnabled: 1
   minJumpDistanceEnabled: 0
   directionLookEnabled: 1
-  deathParticles: {fileID: 2464784198141276583, guid: d3dfa21f71c3c074196cbc2ae864b69a, type: 3}
+  deathParticles:
+  - {fileID: 2464784198141276583, guid: d3dfa21f71c3c074196cbc2ae864b69a, type: 3}

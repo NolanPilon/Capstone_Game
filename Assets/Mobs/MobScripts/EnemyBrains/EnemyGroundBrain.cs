@@ -47,7 +47,7 @@ public class EnemyGroundBrain : MonoBehaviour
     private int currentWaypoint;
     private float NextAttack;
     private bool isGrounded = false;
-    private GameObject deathParticles;
+    private GameObject[] deathParticles;
 
 
     Seeker seeker;
@@ -151,7 +151,10 @@ public class EnemyGroundBrain : MonoBehaviour
  
     void createDeathParticles()
     {
-        Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
+        for (int i = 0; i < deathParticles.Length; i++)
+        {
+            Instantiate(deathParticles[i], gameObject.transform.position, gameObject.transform.rotation);
+        }
     }
 
     void StartUP()

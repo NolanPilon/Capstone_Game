@@ -7,13 +7,15 @@ using UnityEngine.Rendering.Universal;
 public class PlayerCombatFunctions : MonoBehaviour
 {
     public PlayerControlls playerController;
-    public List<string> items;
+    public static List<string> items;
     private int knockBackForce = 25;
     private float invincibilityFrames = 1.5f;
     private float invincibilityTimer;
 
     private Rigidbody2D playerRB;
     private SpriteRenderer playerSprite;
+
+    [SerializeField] private Collider2D combatCollider;
 
     void Start()
     {
@@ -28,10 +30,12 @@ public class PlayerCombatFunctions : MonoBehaviour
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
+            combatCollider.enabled = false; 
         }
         else 
         {
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 1f);
+            combatCollider.enabled = true;
         }
     }
 
@@ -45,7 +49,15 @@ public class PlayerCombatFunctions : MonoBehaviour
             }
         }
 
-        if(collision.tag == "ParryBullet" && !ParryBehavior.inParry && GameManager.parryCombo <= 0)
+        if (collision.tag == "Obstacle")
+        {
+            if (invincibilityTimer <= 0)
+            {
+                takeDamage(collision.gameObject.transform.position);
+            }
+        }
+
+        if (collision.tag == "ParryBullet" && !ParryBehavior.inParry && GameManager.parryCombo <= 0)
         {
             if (invincibilityTimer <= 0)
             {
@@ -69,6 +81,7 @@ public class PlayerCombatFunctions : MonoBehaviour
 
             items.Add(itemType);
             print("Inventory length:" + items.Count);
+            GameManager.collectables++;
             Destroy(collision.gameObject);
         }
     }
