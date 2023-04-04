@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SlotControl : MonoBehaviour
@@ -18,32 +13,69 @@ public class SlotControl : MonoBehaviour
     [SerializeField] private Image image;
     GameObject[] slots;
 
+    [SerializeField] private Button load;   //load button
+
     private void Update()
     {
         if (image.sprite == BgBlack)
         {
-            NameInputField.SetActive(true);
-            NameOutput.color = Color.white;
-
             if (DeleteControl.IsDelete)
             {
-                //DataManager.instance.DeleteData(slot);
+                //this.gameObject.SetActive(false);
+
+                DataManager.instance.nowSlot = slot;
+                DataManager.instance.DeleteData();
                 NameInputField.GetComponent<InputField>().text = string.Empty;
+                image.sprite = BgWhite;
                 DeleteControl.IsDelete = false;
+                SlotsSelect.savefile[slot] = false;
+            }
+            else if (SaveControl.IsSave)
+            {
+                DataManager.instance.nowSlot = slot;
+                image.sprite = BgWhite;
+                DataManager.instance.nowPlayer.name = NameInput.text;
+                DataManager.instance.SaveData();
+                SaveControl.IsSave = false;
+                SlotsSelect.savefile[slot] = true;
+            }
+            else
+            {
+                NameInputField.SetActive(true);
+                NameOutput.color = Color.white;
+            }
+
+            if (SlotsSelect.savefile[slot])
+            {
+                load.interactable = true;
             }
         }
         else
         {
             NameInputField.SetActive(false);
             NameOutput.color = Color.black;
+
+            load.interactable = false;
+
+            if (SlotsSelect.savefile[slot])
+            {
+                DataManager.instance.nowSlot = slot;
+                DataManager.instance.LoadData();
+                NameOutput.text = DataManager.instance.nowPlayer.name + " level " + DataManager.instance.nowPlayer.level;
+            }
+            else
+            {
+                NameOutput.text = "Empty";
+            }
         }
+        DataManager.instance.DataClear();
     }
 
     public void OnSlotClick()
     {
         if (image.sprite != BgBlack)
         {
-            slots = FindGameObjectsWithName("Slot");
+            slots = DataManager.instance.FindGameObjectsWithName("Slot");
 
             for (int i = 0; i < slots.Length; i++)
             {
@@ -51,22 +83,5 @@ public class SlotControl : MonoBehaviour
             }
             image.sprite = BgBlack;
         }
-    }
-
-    GameObject[] FindGameObjectsWithName(string name)
-    {
-        GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
-        GameObject[] arr = new GameObject[gameObjects.Length];
-        int FluentNumber = 0;
-        for (int i = 0; i < gameObjects.Length; i++)
-        {
-            if (gameObjects[i].name == name)
-            {
-                arr[FluentNumber] = gameObjects[i];
-                FluentNumber++;
-            }
-        }
-        Array.Resize(ref arr, FluentNumber);
-        return arr;
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
@@ -10,7 +8,7 @@ public class PlayerData
     // Name, level, date
     public string name;
     public int level;
-    public DateTime dateTime;
+    //public DateTime dateTime;
 }
 
 public class DataManager : MonoBehaviour
@@ -21,8 +19,7 @@ public class DataManager : MonoBehaviour
     public PlayerData nowPlayer = new PlayerData();    //new player data
 
     public string path;                //path of Json file
-    public int nowSlot;         //slot data can be identified by file name
-    public DateTime nowdateTime;
+    public int nowSlot;                 //slot data can be identified by file name
 
     private void Awake()
     {
@@ -53,14 +50,31 @@ public class DataManager : MonoBehaviour
         nowPlayer = JsonUtility.FromJson<PlayerData>(data); //chand Json data to PlayerData type
     }
 
-    public void DeleteData(int slot)
+    public void DeleteData()
     {
-        File.Delete(path + slot.ToString());
+        File.Delete(path + nowSlot.ToString());
     }
 
     public void DataClear()
     {
         nowSlot = -1;
         nowPlayer = new PlayerData();
+    }
+
+    public GameObject[] FindGameObjectsWithName(string name)
+    {
+        GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
+        GameObject[] arr = new GameObject[gameObjects.Length];
+        int FluentNumber = 0;
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            if (gameObjects[i].name == name)
+            {
+                arr[FluentNumber] = gameObjects[i];
+                FluentNumber++;
+            }
+        }
+        Array.Resize(ref arr, FluentNumber);
+        return arr;
     }
 }
