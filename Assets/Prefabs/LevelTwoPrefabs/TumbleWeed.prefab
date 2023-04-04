@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8073115407299642171}
   - component: {fileID: 3690916004222003212}
   - component: {fileID: 3690916004222003211}
+  - component: {fileID: 8570665529580841157}
   m_Layer: 7
   m_Name: TumbleWeedTracker
   m_TagString: Enemy
@@ -37,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 7687826095466265561}
   m_Father: {fileID: 7687826096493306472}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3690916004222003203
 Rigidbody2D:
@@ -165,9 +166,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034237124, y: 0.09}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.47324014
+  m_Radius: 0.46
+--- !u!114 &8570665529580841157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690916004222003204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5d77c39b8f0104fb4666d8b9898f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5656206045358524327
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,12 +206,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5656206045358524327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.36222, y: 0.18, z: 1.7521414}
+  m_LocalPosition: {x: -0.010000467, y: -0.5699997, z: 1.7521414}
   m_LocalScale: {x: 1.9995, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7687826096493306472}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5656206045358524323
 MonoBehaviour:
@@ -213,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3690916004222003204}
-  yOffset: -0.36
+  yOffset: -0.56
   xOffset: 0
 --- !u!1 &7687826095466265562
 GameObject:
@@ -239,9 +252,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7687826095466265562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.26, y: 0.51, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3690916004222003200}
@@ -322,13 +335,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7687826096493306473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.337781, y: -2.620548, z: -1.7521414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.24, y: -7.76, z: -1.8708861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3690916004222003200}
   - {fileID: 5656206045358524324}
+  - {fileID: 3690916004222003200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
