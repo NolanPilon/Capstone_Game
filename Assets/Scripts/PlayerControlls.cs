@@ -24,13 +24,15 @@ public class PlayerControlls : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    
+
+    Animator animator;
 
     private Rigidbody2D playerRB;
 
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
         {
@@ -51,10 +53,29 @@ public class PlayerControlls : MonoBehaviour
 
             PlayerMovement(horizontalMove);
 
+            if (horizontalMove == -1)
+            {
+                animator.SetBool("WalkingRight", true);
+            }
+            else
+            {
+                animator.SetBool("WalkingRight", false);
+            }
+
+            if (horizontalMove == 1)
+            {
+                animator.SetBool("WalkingLeft", true);
+            }
+            else
+            {
+                animator.SetBool("WalkingLeft", false);
+            }
+
             // Jump buffer timer
             if (isGrounded())
             {
                 jumpBufferTimer = jumpBuffer;
+                animator.SetBool("Jumping", false);
 
                 // Reset parry combo
                 GameManager.parryCombo = 0;
@@ -66,6 +87,8 @@ public class PlayerControlls : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
+                animator.SetBool("Jumping", true);
+                Debug.Log("Jeped");
                 Jump();
             }
 
@@ -77,20 +100,7 @@ public class PlayerControlls : MonoBehaviour
                 jumpBufferTimer = 0;
             }
 
-            // Flip sprite
-            if (playerRB.velocity.x < 0)
-            {
-                if (GetComponent<SpriteRenderer>().flipX != true && playerRB.velocity.x < 10)
-                    CreateDust();
-                GetComponent<SpriteRenderer>().flipX = true;
-              
-            }
-            else 
-            {
-                if (GetComponent<SpriteRenderer>().flipX != false && playerRB.velocity.x > -10)
-                    CreateDust();
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
+           
 
             if (playerRB.velocity.y < -20)
             {
