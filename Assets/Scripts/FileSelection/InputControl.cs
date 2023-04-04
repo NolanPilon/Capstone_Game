@@ -15,6 +15,8 @@ public class InputControl : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Text NameInput;
     [SerializeField] private Text NameOutput;
 
+    [SerializeField] private Selectable save;
+
     private void OnEnable()
     {
         NameOutput.text = "";
@@ -23,12 +25,13 @@ public class InputControl : MonoBehaviour, IPointerClickHandler
 
     private void OnDisable()
     {
-        NameOutput.text = NameInput.text;
+        this.GetComponent<InputField>().interactable = false;
+        save.interactable = false;
     }
 
     void OnMousDoubleClick()
-    {        
-        GameObject[] slots = FindGameObjectsWithName("Slot");
+    {
+        GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -38,6 +41,8 @@ public class InputControl : MonoBehaviour, IPointerClickHandler
         slot.GetComponent<Selectable>().interactable = true;
 
         this.GetComponent<InputField>().interactable = true;
+
+        save.interactable = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -52,22 +57,5 @@ public class InputControl : MonoBehaviour, IPointerClickHandler
             clickTime = Time.time;
         }
         
-    }
-
-    GameObject[] FindGameObjectsWithName(string name)
-    {
-        GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
-        GameObject[] arr = new GameObject[gameObjects.Length];
-        int FluentNumber = 0;
-        for (int i = 0; i < gameObjects.Length; i++)
-        {
-            if (gameObjects[i].name == name)
-            {
-                arr[FluentNumber] = gameObjects[i];
-                FluentNumber++;
-            }
-        }
-        Array.Resize(ref arr, FluentNumber);
-        return arr;
     }
 }

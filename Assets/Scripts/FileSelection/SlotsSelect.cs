@@ -7,13 +7,10 @@ using System.IO;
 
 public class SlotsSelect : MonoBehaviour
 {
-    public GameObject create;
     public Text[] slotText;
-    public Text newPlayerName;
+    [SerializeField] private InputField[] NameInputField;
 
-    bool[] savefile = new bool[4];
-
-    public Button[] slot = new Button[4];
+    public static bool[] savefile = new bool[4];
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +23,12 @@ public class SlotsSelect : MonoBehaviour
                 savefile[i] = true;
                 DataManager.instance.nowSlot = i;
                 DataManager.instance.LoadData();
-                slotText[i].text = DataManager.instance.nowPlayer.name;
+                NameInputField[i].text = DataManager.instance.nowPlayer.name;
+                slotText[i].text = DataManager.instance.nowPlayer.name + " level " + DataManager.instance.nowPlayer.level;
             }
             else
             {
-                slotText[i].text = "";
+                slotText[i].text = "Empty";
             }
         }
         DataManager.instance.DataClear();   //reset values after check
@@ -40,32 +38,27 @@ public class SlotsSelect : MonoBehaviour
     {
         DataManager.instance.nowSlot = number;
 
-        //if no data
         if (savefile[number])
         {
             DataManager.instance.LoadData();
-            LoadGame();
         }
-        else    //if have data -> load file and go to the game scene
-        {
-            Create();
-        }
-
     }
 
-    public void Create()
+    public void SaveGame()
     {
-        create.gameObject.SetActive(true);
+        DataManager.instance.SaveData();
     }
 
     public void LoadGame()
     {
-        if (!savefile[DataManager.instance.nowSlot])
+        if (savefile[DataManager.instance.nowSlot])
         {
-            DataManager.instance.nowPlayer.name = newPlayerName.text;
-            DataManager.instance.SaveData();
+            SceneManager.LoadScene("LevelMap");
         }
-        SceneManager.LoadScene("Game");
+        else
+        {
+            Debug.Log("There's no file");
+        }
     }
 
 }
