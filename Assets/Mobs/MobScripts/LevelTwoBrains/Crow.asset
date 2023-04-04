@@ -29,5 +29,5 @@ MonoBehaviour:
   directionLookEnabled: 1
   isTerritorial: 0
   deathParticles:
-  - {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
+  - {fileID: 2464784198141276583, guid: 2258fa056e2151f4592db859f8cdb9af, type: 3}
   - {fileID: 3442738779280740017, guid: 57926cb67fd7c114592c5607e4888444, type: 3}
