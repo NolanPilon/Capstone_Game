@@ -7,10 +7,15 @@ public class SoundManager : MonoBehaviour
 {
     private static SoundManager soundManager;
     private AudioSource[] soundEffectAudio;
+    //Player Noises
     private AudioSource jump;
     private AudioSource hit;
     private AudioSource hurt;
-    private AudioSource qTE;  
+    private AudioSource qTE;
+
+    //Mobs
+    //Level one
+    private AudioSource mobDeath;
     private AudioSource enemyAttack;
     private AudioSource enemyDeath;
     private AudioSource Menu;
@@ -34,6 +39,7 @@ public class SoundManager : MonoBehaviour
 
         jump = soundEffectAudio[0];
         hurt = soundEffectAudio[1];
+        mobDeath = soundEffectAudio[2];
         //hit = soundEffectAudio[2];
         //qTE = soundEffectAudio[3];
         //enemyAttack = soundEffectAudio[4];
@@ -76,4 +82,10 @@ public class SoundManager : MonoBehaviour
         Menu.Play();
     }
 
+    ///////////////////////////////////
+    public void mobDeathNoise(AudioClip DeathNoise)
+    {
+        mobDeath.clip = DeathNoise;
+        mobDeath.Play();
+    }
 }
