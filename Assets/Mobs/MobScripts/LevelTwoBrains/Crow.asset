@@ -31,3 +31,4 @@ MonoBehaviour:
   deathParticles:
   - {fileID: 2464784198141276583, guid: 2258fa056e2151f4592db859f8cdb9af, type: 3}
   - {fileID: 3442738779280740017, guid: 57926cb67fd7c114592c5607e4888444, type: 3}
+  deathSound: {fileID: 8300000, guid: 418d240e33391444cb39b360cd3248ea, type: 3}

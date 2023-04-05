@@ -30,3 +30,4 @@ MonoBehaviour:
   isTerritorial: 1
   deathParticles:
   - {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
+  deathSound: {fileID: 8300000, guid: 9afa0a4cb5a648f4bac042c796b90cec, type: 3}
