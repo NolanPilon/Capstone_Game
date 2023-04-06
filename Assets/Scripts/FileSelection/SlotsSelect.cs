@@ -53,10 +53,6 @@ public class SlotsSelect : MonoBehaviour
         {
             SceneManager.LoadScene("LevelMap");
         }
-        else
-        {
-            Debug.Log("There's no file");
-        }
     }
 
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class SlotControl : MonoBehaviour
 {
@@ -19,73 +20,81 @@ public class SlotControl : MonoBehaviour
 
     [SerializeField]private Animator transition;    //for move to levelmap scene
 
+    private bool IsChangedWhite;
+    private bool IsChangedBlack;
+
+    private void Start()
+    {
+        WhiteBG();
+    }
+
     private void Update()
     {
-        if (image.sprite == BgBlack)
+        if (IsChangedBlack)
         {
-            if (DeleteControl.IsDelete)
+            if (image.sprite == BgBlack)
             {
-                //this.gameObject.SetActive(false);
-
-                DataManager.instance.nowSlot = slot;
-                DataManager.instance.DeleteData();
-                NameInputField.GetComponent<InputField>().text = string.Empty;
-                image.sprite = BgWhite;
-                DeleteControl.IsDelete = false;
-                SlotsSelect.savefile[slot] = false;
-            }
-            else if (SaveControl.IsSave)
-            {
-                image.sprite = BgWhite;
-                DataManager.instance.nowSlot = slot;
-                if (!SlotsSelect.savefile[slot])
+                if (DeleteControl.IsDelete)
                 {
-                    DataManager.instance.nowPlayer.level = 1;
+                    //this.gameObject.SetActive(false);
+
+                    DataManager.instance.nowSlot = slot;
+                    DataManager.instance.DeleteData();
+                    NameInputField.GetComponent<InputField>().text = string.Empty;
+                    DeleteControl.IsDelete = false;
+                    SlotsSelect.savefile[slot] = false;
+                    image.sprite = BgWhite;
+                    IsChangedWhite = true;
+                    IsChangedBlack = false;
                 }
-                DataManager.instance.nowPlayer.name = NameInput.text;
-                DataManager.instance.SaveData();
-                SaveControl.IsSave = false;
-                SlotsSelect.savefile[slot] = true;
-            }
-            else
-            {
-                NameInputField.SetActive(true);
-                NameOutput.color = Color.white;
-            }
-
-            DataManager.instance.DataClear();
-
-            if (SlotsSelect.savefile[slot])
-            {
-                load.interactable = true;
-
-                if (LoadControl.IsLoad)
+                else if (SaveControl.IsSave)
                 {
                     DataManager.instance.nowSlot = slot;
-                    DataManager.instance.LoadData();
-                    LoadControl.IsLoad = false;
+                    if (!SlotsSelect.savefile[slot])
+                    {
+                        DataManager.instance.nowPlayer.level = 1;
+                    }
+                    DataManager.instance.nowPlayer.name = NameInput.text;
+                    DataManager.instance.SaveData();
+                    SaveControl.IsSave = false;
+                    SlotsSelect.savefile[slot] = true;
                     image.sprite = BgWhite;
-                    MoveToLevelMap();
+                    IsChangedWhite = true;
+                    IsChangedBlack = false;
+                }
+                else
+                {
+                    NameInputField.SetActive(true);
+                    NameOutput.color = Color.white;
+                }
+
+                DataManager.instance.DataClear();
+
+                if (SlotsSelect.savefile[slot])
+                {
+                    load.interactable = true;
+
+                    if (LoadControl.IsLoad)
+                    {
+                        DataManager.instance.nowSlot = slot;
+                        DataManager.instance.LoadData();
+                        LoadControl.IsLoad = false;
+                        //image.sprite = BgWhite;
+                        MoveToLevelMap();
+                        IsChangedWhite = false;
+                        IsChangedBlack = false;
+                    }
+                }
+                else
+                {
+                    load.interactable = false;
                 }
             }
         }
-        else
+
+        if (IsChangedWhite)
         {
-            NameInputField.SetActive(false);
-            NameOutput.color = Color.black;
-
-            load.interactable = false;
-
-            if (SlotsSelect.savefile[slot])
-            {
-                DataManager.instance.nowSlot = slot;
-                DataManager.instance.LoadData();
-                NameOutput.text = DataManager.instance.nowPlayer.name + " level " + DataManager.instance.nowPlayer.level;
-            }
-            else
-            {
-                NameOutput.text = "Empty";
-            }
+            WhiteBG();
         }
     }
 
@@ -100,6 +109,7 @@ public class SlotControl : MonoBehaviour
                 slots[i].GetComponent<Image>().sprite = BgWhite;
             }
             image.sprite = BgBlack;
+            IsChangedBlack = true;
         }
     }
 
@@ -113,5 +123,24 @@ public class SlotControl : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene("LevelMap");
+    }
+
+    public void WhiteBG()
+    {
+        NameInputField.SetActive(false);
+        NameOutput.color = Color.black;
+
+        if (SlotsSelect.savefile[slot])
+        {
+            DataManager.instance.nowSlot = slot;
+            DataManager.instance.LoadData();
+            NameOutput.text = DataManager.instance.nowPlayer.name + " level " + DataManager.instance.nowPlayer.level;
+        }
+        else
+        {
+            NameOutput.text = "Empty";
+        }
+        DataManager.instance.DataClear();
+        IsChangedWhite = false;
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeleteControl : MonoBehaviour
 {
@@ -6,5 +7,12 @@ public class DeleteControl : MonoBehaviour
     public void OnClickDelete()
     {
         IsDelete = true;
+
+        GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].GetComponent<Selectable>().interactable = true;
+        }
     }
 }
