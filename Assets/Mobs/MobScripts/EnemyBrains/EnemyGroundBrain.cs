@@ -48,6 +48,7 @@ public class EnemyGroundBrain : MonoBehaviour
     private float NextAttack;
     private bool isGrounded = false;
     private GameObject[] deathParticles;
+    private AudioClip deathSound;
 
 
     Seeker seeker;
@@ -129,6 +130,7 @@ public class EnemyGroundBrain : MonoBehaviour
     {
         if (collision.tag == "Player" && GameManager.parryCombo >= health)
         {
+            SoundManager.Instance.mobDeathNoise(deathSound);
             StartCoroutine(AttackFreeze());
             createDeathParticles();
             
@@ -193,6 +195,7 @@ public class EnemyGroundBrain : MonoBehaviour
         
         //other
         deathParticles = EnemyGroundInfo.deathParticles;
+        deathSound = EnemyGroundInfo.deathSound;
 
         if (followEnabled)
         {

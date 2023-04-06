@@ -6,12 +6,18 @@ using UnityEngine;
 public class SpawnSnow : MonoBehaviour
 {
     public ParticleSystem snowParticles;
+    [SerializeField] private GameObject boss;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!GameObject.Find("Boss").GetComponent<BossAI>().getIfMotion2())
+        if(collision.tag == "Boss")
         {
-            snowParticles.Play();
+            if (!boss.GetComponent<BossAI>().getIfMotion2())
+            {
+                SoundManager.Instance.PlayBossAt2();
+                snowParticles.Play();
+            }
         }
+        
     }
 
 

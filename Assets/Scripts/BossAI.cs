@@ -180,7 +180,9 @@ public class BossAI : MonoBehaviour
         {
             if (GameManager.parryCombo >= 2 && canTakeDamage)
             {
+                
                 BossHealth--;
+                SoundManager.Instance.PlayBossHit();
                 transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
                 playerStat.launchOpposite();
                 transform.position = spawnPos;
@@ -202,8 +204,8 @@ public class BossAI : MonoBehaviour
                 if (bounceTime < maxBounces)
                 {
                     direction = Vector2.Reflect(direction.normalized, collision.contacts[0].normal);
-
                     bounceTime++;
+                    SoundManager.Instance.PlayBossBounce();
                 }
 
                 if (bounceTime == maxBounces)
@@ -218,7 +220,8 @@ public class BossAI : MonoBehaviour
                 {
                     direction = target.transform.position - this.transform.position;
                     bounceTime++;
-                }
+                    SoundManager.Instance.PlayBossBounce();
+                    }
                 else
                 {
                     direction = Vector2.zero;
@@ -267,6 +270,7 @@ public class BossAI : MonoBehaviour
     void Die() 
     {
         alive = false;
+        SoundManager.Instance.PlayBossDeath();
         bossRB.velocity = Vector2.zero;
         animator.SetBool("Dying", true);
         Destroy(gameObject, 2);

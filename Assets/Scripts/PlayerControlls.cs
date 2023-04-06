@@ -88,7 +88,6 @@ public class PlayerControlls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
                 animator.SetBool("Jumping", true);
-                Debug.Log("Jeped");
                 Jump();
             }
 

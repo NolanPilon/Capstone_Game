@@ -36,3 +36,4 @@ MonoBehaviour:
   directionLookEnabled: 1
   deathParticles:
   - {fileID: 2464784198141276583, guid: 498224ae287aa6e4a8504f42e3653cf9, type: 3}
+  deathSound: {fileID: 8300000, guid: 0f56d5fcf608d744b914589a41dc891c, type: 3}

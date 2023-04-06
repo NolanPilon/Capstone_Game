@@ -6,6 +6,8 @@ public class IcicleFall : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject DropParticle;
+
+    private bool Played = false;
     void Start()
     {
        rb = GetComponent<Rigidbody2D>();
@@ -18,7 +20,15 @@ public class IcicleFall : MonoBehaviour
        if(rb.IsAwake())
         {
             DropParticle.SetActive(false);
+            if(!Played)
+            {
+                SoundManager.Instance.Playicicle();
+                Played = true;
+
+            }
         }
+
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

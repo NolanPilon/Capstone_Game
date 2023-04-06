@@ -39,6 +39,8 @@ public class EnemyBrainAir : MonoBehaviour
 
 
     private GameObject[] deathParticles;
+    private AudioClip deathSound;
+
     private Path path;
     private int currentWaypoint = 0;
     private float NextAttack;
@@ -118,6 +120,7 @@ public class EnemyBrainAir : MonoBehaviour
     {
         if (collision.tag == "Player" && GameManager.parryCombo >= health)
         {
+            SoundManager.Instance.mobDeathNoise(deathSound);
             StartCoroutine(AttackFreeze());
             createDeathParticles();
 
@@ -181,6 +184,7 @@ public class EnemyBrainAir : MonoBehaviour
 
         //Other
         deathParticles = EnemyAirInfo.deathParticles;
+        deathSound = EnemyAirInfo?.deathSound;
 
         if (followEnabled)
         {

@@ -35,6 +35,7 @@ public class EnemyAirInfo : ScriptableObject
 
     [Header("Other")]
     public GameObject[] deathParticles;
+    public AudioClip deathSound;
 
     private Path path;
     private int currentWaypoint = 0;
