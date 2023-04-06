@@ -20,7 +20,7 @@ public class SlotControl : MonoBehaviour
 
     [SerializeField]private Animator transition;    //for move to levelmap scene
 
-    private bool IsChangedWhite;
+    public bool IsChangedWhite;
     private bool IsChangedBlack;
 
     private void Start()
@@ -107,6 +107,7 @@ public class SlotControl : MonoBehaviour
             for (int i = 0; i < slots.Length; i++)
             {
                 slots[i].GetComponent<Image>().sprite = BgWhite;
+                slots[i].GetComponent<SlotControl>().IsChangedWhite = true;
             }
             image.sprite = BgBlack;
             IsChangedBlack = true;
