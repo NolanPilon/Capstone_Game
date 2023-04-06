@@ -1,3 +1,5 @@
+//Audio from soundsnap.com
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +16,20 @@ public class SoundManager : MonoBehaviour
     private AudioSource qTE;
 
     //Mobs
-    //Level one
     private AudioSource mobDeath;
-    private AudioSource enemyAttack;
-    private AudioSource enemyDeath;
+
+    //Boss1
+    private AudioSource BossHit;
+    private AudioSource BossDeath;
+    private AudioSource BossAt2;
+    private AudioSource BossBounce;
+
+    //Level1Obstacles
+    private AudioSource Icicle;
+
     private AudioSource Menu;
+
+    private int rando;
 
     public static SoundManager Instance { get { return soundManager; } }
     void Awake()
@@ -40,6 +51,11 @@ public class SoundManager : MonoBehaviour
         jump = soundEffectAudio[0];
         hurt = soundEffectAudio[1];
         mobDeath = soundEffectAudio[2];
+        BossHit = soundEffectAudio[3];
+        BossDeath = soundEffectAudio[4];
+        BossAt2 = soundEffectAudio[5];
+        BossBounce = soundEffectAudio[6];
+        Icicle = soundEffectAudio[7];
         //hit = soundEffectAudio[2];
         //qTE = soundEffectAudio[3];
         //enemyAttack = soundEffectAudio[4];
@@ -67,14 +83,29 @@ public class SoundManager : MonoBehaviour
         qTE.Play();
     }
 
-    public void PlayEAttack()
+    public void PlayBossHit()
     {
-        enemyAttack.Play();
+        BossHit.Play();
     }
 
-    public void PlayEDeath()
+    public void PlayBossDeath()
     {
-        enemyDeath.Play();
+        BossDeath.Play();
+    }
+
+    public void PlayBossAt2()
+    {
+        BossAt2.Play();
+    }
+
+    public void PlayBossBounce()
+    {
+            BossBounce.Play();
+    }
+
+    public void Playicicle()
+    {
+        Icicle.Play();
     }
 
     public void PlayMenu()

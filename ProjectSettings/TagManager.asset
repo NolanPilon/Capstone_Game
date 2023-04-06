@@ -18,6 +18,7 @@ TagManager:
   - Obstacle
   - UFO
   - PlayerGroundCollider
+  - Boss
   layers:
   - Default
   - TransparentFX
