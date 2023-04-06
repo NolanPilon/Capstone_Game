@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DeleteControl : MonoBehaviour
+public class LoadControl : MonoBehaviour
 {
-    public static bool IsDelete;
-    public void OnClickDelete()
+    public static bool IsLoad;
+
+    public void OnClickLoad()
     {
-        IsDelete = true;
+        IsLoad = true;
 
         GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
 

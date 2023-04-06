@@ -2,25 +2,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SaveControl : MonoBehaviour, IPointerClickHandler
+public class SaveControl : MonoBehaviour
 {
-    [SerializeField] private Image[] Slots;
-    [SerializeField] private GameObject[] NameInputField;
-    [SerializeField] private Text[] PlayerName;
-    [SerializeField] private Sprite BgWhite;
-
     public static bool IsSave;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnClickSave()
     {
         IsSave = true;
-
-        //for (int i = 0;i < 4; i++)
-        //{
-        //    NameInputField[i].SetActive(false);
-        //    PlayerName[i].color = Color.black;
-        //    Slots[i].sprite = BgWhite;
-        //}
 
         GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
 

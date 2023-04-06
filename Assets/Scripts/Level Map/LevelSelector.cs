@@ -15,14 +15,15 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(DataManager.instance.nowPlayer.level);
         sprites= new Sprite[levels.Length];
 
-        for (int i = 0; i < levels.Length; i++)
+        for (int i = 0; i < DataManager.instance.nowPlayer.level; i++)
         {
             sprites[i] = levels[i].image.sprite;
         }
 
-        for (int i = 1; i < levels.Length; i++)
+        for (int i = DataManager.instance.nowPlayer.level; i < levels.Length; i++)
         {
             levels[i].image.sprite = locked;
         }
