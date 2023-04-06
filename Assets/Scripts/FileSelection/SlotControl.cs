@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SlotControl : MonoBehaviour
@@ -14,6 +16,8 @@ public class SlotControl : MonoBehaviour
     GameObject[] slots;
 
     [SerializeField] private Button load;   //load button
+
+    [SerializeField]private Animator transition;    //for move to levelmap scene
 
     private void Update()
     {
@@ -32,8 +36,12 @@ public class SlotControl : MonoBehaviour
             }
             else if (SaveControl.IsSave)
             {
-                DataManager.instance.nowSlot = slot;
                 image.sprite = BgWhite;
+                DataManager.instance.nowSlot = slot;
+                if (!SlotsSelect.savefile[slot])
+                {
+                    DataManager.instance.nowPlayer.level = 1;
+                }
                 DataManager.instance.nowPlayer.name = NameInput.text;
                 DataManager.instance.SaveData();
                 SaveControl.IsSave = false;
@@ -45,9 +53,20 @@ public class SlotControl : MonoBehaviour
                 NameOutput.color = Color.white;
             }
 
+            DataManager.instance.DataClear();
+
             if (SlotsSelect.savefile[slot])
             {
                 load.interactable = true;
+
+                if (LoadControl.IsLoad)
+                {
+                    DataManager.instance.nowSlot = slot;
+                    DataManager.instance.LoadData();
+                    LoadControl.IsLoad = false;
+                    image.sprite = BgWhite;
+                    MoveToLevelMap();
+                }
             }
         }
         else
@@ -68,7 +87,6 @@ public class SlotControl : MonoBehaviour
                 NameOutput.text = "Empty";
             }
         }
-        DataManager.instance.DataClear();
     }
 
     public void OnSlotClick()
@@ -83,5 +101,17 @@ public class SlotControl : MonoBehaviour
             }
             image.sprite = BgBlack;
         }
+    }
+
+    public void MoveToLevelMap()
+    {
+        StartCoroutine(StartLevelMap());
+    }
+
+    IEnumerator StartLevelMap()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene("LevelMap");
     }
 }

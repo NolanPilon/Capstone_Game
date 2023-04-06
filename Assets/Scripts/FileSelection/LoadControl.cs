@@ -1,14 +1,13 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SaveControl : MonoBehaviour
+public class LoadControl : MonoBehaviour
 {
-    public static bool IsSave;
+    public static bool IsLoad;
 
-    public void OnClickSave()
+    public void OnClickLoad()
     {
-        IsSave = true;
+        IsLoad = true;
 
         GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
 
