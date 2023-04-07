@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static int parryCombo = 0;
     public static int playerHP;
     public static int collectables = 0;
+    public static int TotalCollectables = 0;
     public static float playerSpeed;
 
     public int combo;
@@ -43,8 +44,10 @@ public class GameManager : MonoBehaviour
         speed = playerSpeed;
         combo = parryCombo;
 
-        if (collectablesText != null)
+        if (collectablesText != null) 
+        {
             collectablesText.text = "X" + collectables.ToString();
+        }
 
         if (playerHP <= 0) 
         {
