@@ -75,6 +75,7 @@ public class BossAI2 : MonoBehaviour
         if (motion[4])
         {
             Die();
+            GameManager.Instance.BossDied = true;
         }
     }
 

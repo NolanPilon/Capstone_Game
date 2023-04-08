@@ -165,6 +165,7 @@ public class BossAI : MonoBehaviour
             if (BossHealth <= 0)
             {
                 Die();
+                GameManager.Instance.BossDied = true;
             }
         }
     }

@@ -8,7 +8,6 @@ public class PlayerData
     // Name, level, date
     public string name;
     public int level;
-    //public DateTime dateTime;
 }
 
 public class DataManager : MonoBehaviour
@@ -20,6 +19,8 @@ public class DataManager : MonoBehaviour
 
     public string path;                //path of Json file
     public int nowSlot;                 //slot data can be identified by file name
+
+    public int nowLevel;
 
     private void Awake()
     {

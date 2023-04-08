@@ -27,6 +27,8 @@ public class GameUI : MonoBehaviour
     private int time;
     private int playerhp;
 
+    [SerializeField] private GameObject levelEndScreen;
+
     void Start()
     {
         //SetHealthText(200); //Need to get initial health from player class
@@ -46,7 +48,12 @@ public class GameUI : MonoBehaviour
 
         SetCombo(GameManager.parryCombo);   //Update the parry combo bar
 
-        SetCollectablesText(0);             //Neeed to change the argument after collectable script done
+        SetCollectablesText(GameManager.collectables);  //Update the collectable text
+
+        if (GameManager.Instance.BossDied)
+        {
+           levelEndScreen.SetActive(true);
+        }
     }
 
 
