@@ -15,7 +15,6 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(DataManager.instance.nowPlayer.level);
         sprites= new Sprite[levels.Length];
 
         for (int i = 0; i < DataManager.instance.nowPlayer.level; i++)
@@ -33,6 +32,8 @@ public class LevelSelector : MonoBehaviour
     public void OpenScene(int i)
     {
         if (levels[i-1] == locked) return;
+
+        DataManager.instance.nowLevel = i;  //for LevelEnd screen
 
         levelName = "Level" + i.ToString();
         StartCoroutine(Transition(levelName));
