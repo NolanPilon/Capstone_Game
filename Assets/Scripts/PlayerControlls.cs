@@ -53,7 +53,7 @@ public class PlayerControlls : MonoBehaviour
 
             PlayerMovement(horizontalMove);
 
-            if (horizontalMove == -1)
+            if (horizontalMove == 1)
             {
                 animator.SetBool("WalkingRight", true);
             }
@@ -62,7 +62,7 @@ public class PlayerControlls : MonoBehaviour
                 animator.SetBool("WalkingRight", false);
             }
 
-            if (horizontalMove == 1)
+            if (horizontalMove == -1)
             {
                 animator.SetBool("WalkingLeft", true);
             }

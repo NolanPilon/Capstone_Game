@@ -13,7 +13,6 @@ public class GameUI : MonoBehaviour
 
     // Coding the UI
     [SerializeField] private Image[] Lives;
-    [SerializeField] private Text collectablesText;
     [SerializeField] private Sprite HeartAlive;
     [SerializeField] private Sprite HeartDead;
     [SerializeField] private Image comboBar;
@@ -48,7 +47,7 @@ public class GameUI : MonoBehaviour
         SetHP();                            //Update the player HP UI
 
         SetCombo(GameManager.parryCombo);   //Update the parry combo bar
-
+        
         SetCollectablesText(GameManager.collectables);  //Update the collectable text
 
         if (GameManager.Instance.BossDied)
@@ -87,12 +86,6 @@ public class GameUI : MonoBehaviour
 
         comboBar.fillAmount = (float)combo / 3.0f;
     }
-
-    public void SetCollectablesText(int collectables)
-    {
-        collectablesText.text = "x" + collectables; 
-    }
-
     public void SetHP()
     {
         playerhp = 3 - GameManager.playerHP;

@@ -7,7 +7,6 @@ using UnityEngine.Rendering.Universal;
 public class PlayerCombatFunctions : MonoBehaviour
 {
     public PlayerControlls playerController;
-    public static List<string> items;
     private int knockBackForce = 25;
     private float invincibilityFrames = 1.5f;
     private float invincibilityTimer;
@@ -19,8 +18,6 @@ public class PlayerCombatFunctions : MonoBehaviour
 
     void Start()
     {
-        items = new List<string>();
-
         playerSprite = GetComponent<SpriteRenderer>();
         playerRB = GetComponent<Rigidbody2D>();
         GameManager.playerHP = 3;
@@ -71,18 +68,6 @@ public class PlayerCombatFunctions : MonoBehaviour
             {
                 takeDamage(collision.gameObject.transform.position);
             }
-        }
-
-        if (collision.tag == ("Collectable"))
-        {
-            print("we have collected an item");
-            string itemType = collision.gameObject.GetComponent<CollectScript>().itemType;
-            print("we have collected a: " + itemType);
-
-            items.Add(itemType);
-            print("Inventory length:" + items.Count);
-            GameManager.collectables++;
-            Destroy(collision.gameObject);
         }
     }
 
