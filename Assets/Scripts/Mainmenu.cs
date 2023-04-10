@@ -63,6 +63,7 @@ public class Mainmenu : MonoBehaviour
     // functions for load the new scene
     public void OnClickStart()
     {
+        SoundManager.Instance.PlayMenu();
         StartCoroutine(StartGame());
     }
 
@@ -76,11 +77,13 @@ public class Mainmenu : MonoBehaviour
 
     public void OnClickExit()
     {
+        SoundManager.Instance.PlayMenu();
         Application.Quit();
     }
 
     public void OnClickSettings()
     {
+        SoundManager.Instance.PlayMenu();
         SettingPopUp.SetActive(true);
     }
 

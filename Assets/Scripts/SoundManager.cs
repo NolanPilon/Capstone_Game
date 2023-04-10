@@ -56,8 +56,9 @@ public class SoundManager : MonoBehaviour
         BossAt2 = soundEffectAudio[5];
         BossBounce = soundEffectAudio[6];
         Icicle = soundEffectAudio[7];
-        //hit = soundEffectAudio[2];
-        //qTE = soundEffectAudio[3];
+        hit = soundEffectAudio[8];
+        qTE = soundEffectAudio[9];
+        Menu = soundEffectAudio[10];
         //enemyAttack = soundEffectAudio[4];
         //enemyDeath = soundEffectAudio[5];
         //Menu = soundEffectAudio[6];
