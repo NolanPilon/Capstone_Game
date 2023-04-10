@@ -14,7 +14,6 @@ public class ParryBehavior : MonoBehaviour
     [SerializeField] private GameObject playerGlow;
     private Rigidbody2D playerRB;
     private Rigidbody2D bulletRb = null;
-    private Transform bulletPos = null;
     private float launchSpeed = 20.0f;
     private float launchMultiplier = 3.5f;
     private Vector2 launchDir;
@@ -56,15 +55,7 @@ public class ParryBehavior : MonoBehaviour
         {
             if (bulletRb == null) 
             {
-                bulletRb = collision.gameObject.GetComponent<Rigidbody2D>();
-                bulletPos = collision.gameObject.GetComponent<Transform>();
                 playerGlow.SetActive(true);
-            }
-
-            // Stop the bullet if moving
-            if (bulletRb != null && inParry) 
-            {
-                bulletRb.velocity = Vector2.zero;
             }
 
             canParry = true;
@@ -91,8 +82,6 @@ public class ParryBehavior : MonoBehaviour
         if (inParry && Input.GetKeyUp(KeyCode.Space))
         {
             launchDir = (parryArrow.transform.position - playerObject.transform.position);
-            if (bulletRb != null)
-                bulletRb.AddForce((-launchDir) * 10, ForceMode2D.Impulse);
             playerRB.AddForce(launchDir * (launchSpeed + (launchMultiplier * GameManager.parryCombo)), ForceMode2D.Impulse);
             GameManager.parryCombo += 1;
         }
