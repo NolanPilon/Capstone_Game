@@ -17,14 +17,18 @@ public class GameManager : MonoBehaviour
     private bool IsComboAdd;            //for add combo score per 3 combo
     public bool BossDied;               //for trigger Level End Screen
 
+    public Text collectablesText;
     public int combo;
     public float speed;
-    public static Vector2 respawnPoint = Vector2.zero;
+    public Transform spawnPoint;
+    public static Vector3 respawnPoint;
     public static int progressPoint = 0;
 
     public static GameManager Instance { get { return gameManager; } }
     void Awake()
     {
+        respawnPoint = spawnPoint.position;
+
         if (gameManager != null && gameManager != this)
         {
             Destroy(this.gameObject);

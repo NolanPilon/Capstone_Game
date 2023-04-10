@@ -2346,7 +2346,7 @@ GameObject:
   - component: {fileID: 758470716}
   - component: {fileID: 758470717}
   m_Layer: 0
-  m_Name: Spawn
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3466,6 +3466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6768355254438001404, guid: 30c6cb79527867044988836c37438855, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 758470716}
     - target: {fileID: 6768355254438001404, guid: 30c6cb79527867044988836c37438855, type: 3}
       propertyPath: collectablesText
       value: 

@@ -34,7 +34,7 @@ public class PlayerControlls : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
+        if (GameManager.respawnPoint != spawnPoint.transform.position && GameManager.progressPoint != 0)
         {
             this.transform.position = GameManager.respawnPoint;
         }
