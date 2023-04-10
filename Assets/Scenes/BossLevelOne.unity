@@ -1454,6 +1454,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768355254438001404, guid: 30c6cb79527867044988836c37438855, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 378609474}
+    - target: {fileID: 6768355254438001404, guid: 30c6cb79527867044988836c37438855, type: 3}
       propertyPath: collectablesText
       value: 
       objectReference: {fileID: 1889551907}

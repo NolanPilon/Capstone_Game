@@ -48,7 +48,6 @@ public class GameUI : MonoBehaviour
 
         SetCombo(GameManager.parryCombo);   //Update the parry combo bar
         
-        SetCollectablesText(GameManager.collectables);  //Update the collectable text
 
         if (GameManager.Instance.BossDied)
         {
