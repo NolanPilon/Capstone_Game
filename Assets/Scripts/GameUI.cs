@@ -26,6 +26,8 @@ public class GameUI : MonoBehaviour
     private int time;
     private int playerhp;
 
+    [SerializeField] private GameObject levelEndScreen;
+
     void Start()
     {
         //SetHealthText(200); //Need to get initial health from player class
@@ -44,6 +46,13 @@ public class GameUI : MonoBehaviour
         SetHP();                            //Update the player HP UI
 
         SetCombo(GameManager.parryCombo);   //Update the parry combo bar
+        
+        SetCollectablesText(GameManager.collectables);  //Update the collectable text
+
+        if (GameManager.Instance.BossDied)
+        {
+           levelEndScreen.SetActive(true);
+        }
     }
 
 
