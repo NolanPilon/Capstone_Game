@@ -34,7 +34,7 @@ public class LevelSelector : MonoBehaviour
         if (levels[i-1] == locked) return;
 
         DataManager.instance.nowLevel = i;  //for LevelEnd screen
-
+        SoundManager.Instance.PlayMenu();
         levelName = "Level" + i.ToString();
         StartCoroutine(Transition(levelName));
     }
@@ -49,6 +49,7 @@ public class LevelSelector : MonoBehaviour
     public void OnClickHome()
     {
         StartCoroutine(StartMainMenu());
+        SoundManager.Instance.PlayMenu();
     }
 
     IEnumerator StartMainMenu()
@@ -60,6 +61,7 @@ public class LevelSelector : MonoBehaviour
 
     public void OnClickExit()
     {
+        SoundManager.Instance.PlayMenu();
         Application.Quit();
     }
 
