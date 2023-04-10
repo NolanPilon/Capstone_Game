@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -52,7 +53,13 @@ public class GameUI : MonoBehaviour
 
         if (GameManager.Instance.BossDied)
         {
-           levelEndScreen.SetActive(true);
+            StartCoroutine("LevelEndActive");
+            
+            if (DataManager.instance.nowLevel == DataManager.instance.nowPlayer.level)
+            {
+                DataManager.instance.nowPlayer.level = DataManager.instance.nowLevel + 1;
+                DataManager.instance.SaveData();
+            }
         }
     }
 
@@ -66,6 +73,12 @@ public class GameUI : MonoBehaviour
             //SetTimeText(time);
         }
         
+    }
+
+    IEnumerator LevelEndActive()
+    {
+        yield return new WaitForSeconds(1.5f);
+        levelEndScreen.SetActive(true);
     }
 
     public void SetCombo(int combo)

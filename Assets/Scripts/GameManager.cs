@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static int collectables = 0;
     public static float playerSpeed;
     public static int TotalCombo;       //for display Level End Screen
+    private bool IsComboAdd;            //for add combo score per 3 combo
     public bool BossDied;               //for trigger Level End Screen
 
     public int combo;
@@ -50,7 +51,15 @@ public class GameManager : MonoBehaviour
 
         if (parryCombo == 3)
         {
-            TotalCombo++;
+            if (!IsComboAdd)
+            {
+                TotalCombo++;
+                IsComboAdd = true;
+            }
+        }
+        else
+        {
+            IsComboAdd = false;
         }
     }
 
