@@ -10,6 +10,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.tag == "Player") 
         {
+            GameManager.Instance.updateTotalCollectables(GameManager.collectables);
             LoadNextScene(sceneName);
         }
     }

@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class GameManager : MonoBehaviour
     public static int parryCombo = 0;
     public static int playerHP;
     public static int collectables = 0;
-    public static int TotalCollectables = 0;
     public static float playerSpeed;
     public static int TotalCombo;       //for display Level End Screen
     private bool IsComboAdd;            //for add combo score per 3 combo
@@ -76,5 +76,10 @@ public class GameManager : MonoBehaviour
     private void playerDie() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void updateTotalCollectables(int collectableAmount)
+    {
+        CollectableData.totalCollectables += collectableAmount;
     }
 }

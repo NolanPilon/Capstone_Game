@@ -31,6 +31,8 @@ public class LevelEnd : MonoBehaviour
     {
         BestTime = PlayerPrefs.GetInt("BestScore " + PlayerName + " " + NowLevel.ToString(), 5);
 
+        GameManager.Instance.updateTotalCollectables(GameManager.collectables);
+
         UpdateValue();
     }
 

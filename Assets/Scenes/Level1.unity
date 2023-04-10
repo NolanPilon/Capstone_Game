@@ -60742,38 +60742,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1788727043793015785, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788727043793015785, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788727043793015785, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788727043793015785, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6066765602824832554, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6066765602824832554, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6066765602824832554, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6066765602824832554, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8564890199636036789, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
       propertyPath: m_Name
       value: GameUI
@@ -60821,14 +60789,6 @@ PrefabInstance:
     - target: {fileID: 8564890199636036790, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564890200038187051, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564890200599985612, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
-      propertyPath: m_Text
-      value: x0
       objectReference: {fileID: 0}
     - target: {fileID: 8564890201433696025, guid: 3b284484cd79ee24eb261706de49195f, type: 3}
       propertyPath: playerTransform
