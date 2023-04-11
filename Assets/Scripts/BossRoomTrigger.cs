@@ -8,6 +8,7 @@ public class BossRoomTrigger : MonoBehaviour
     [SerializeField] private Camera MainCam;
     [SerializeField] private Transform bossRoomPos;
     [SerializeField] private int camSize;
+    [SerializeField] private Collider2D doorCollider;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,7 @@ public class BossRoomTrigger : MonoBehaviour
     {
         bossDoor.SetActive(false);
         yield return new WaitForSecondsRealtime(0.3f);
+        doorCollider.enabled = false;
         bossDoor.SetActive(true);
         MainCam.orthographicSize = camSize;
         MainCam.transform.position = bossRoomPos.transform.position;
