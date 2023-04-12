@@ -34,7 +34,7 @@ public class PlayerControlls : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        if (GameManager.respawnPoint != Vector2.zero && GameManager.progressPoint != 0)
+        if (GameManager.respawnPoint != spawnPoint.transform.position && GameManager.progressPoint != 0)
         {
             this.transform.position = GameManager.respawnPoint;
         }
@@ -53,7 +53,7 @@ public class PlayerControlls : MonoBehaviour
 
             PlayerMovement(horizontalMove);
 
-            if (horizontalMove == -1)
+            if (horizontalMove == 1)
             {
                 animator.SetBool("WalkingRight", true);
             }
@@ -62,7 +62,7 @@ public class PlayerControlls : MonoBehaviour
                 animator.SetBool("WalkingRight", false);
             }
 
-            if (horizontalMove == 1)
+            if (horizontalMove == -1)
             {
                 animator.SetBool("WalkingLeft", true);
             }

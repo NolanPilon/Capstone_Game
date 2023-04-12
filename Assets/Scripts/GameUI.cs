@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -12,7 +11,6 @@ public class GameUI : MonoBehaviour
 
     // Coding the UI
     [SerializeField] private Image[] Lives;
-    [SerializeField] private Text collectablesText;
     [SerializeField] private Sprite HeartAlive;
     [SerializeField] private Sprite HeartDead;
     [SerializeField] private Image comboBar;
@@ -26,6 +24,8 @@ public class GameUI : MonoBehaviour
     private bool isGameOver;
     private int time;
     private int playerhp;
+
+    [SerializeField] private GameObject levelEndScreen;
 
     void Start()
     {
@@ -45,8 +45,18 @@ public class GameUI : MonoBehaviour
         SetHP();                            //Update the player HP UI
 
         SetCombo(GameManager.parryCombo);   //Update the parry combo bar
+        
 
-        SetCollectablesText(0);             //Neeed to change the argument after collectable script done
+        if (GameManager.Instance.BossDied)
+        {
+            StartCoroutine("LevelEndActive");
+            
+            if (DataManager.instance.nowLevel == DataManager.instance.nowPlayer.level)
+            {
+                DataManager.instance.nowPlayer.level = DataManager.instance.nowLevel + 1;
+                DataManager.instance.SaveData();
+            }
+        }
     }
 
 
@@ -61,18 +71,18 @@ public class GameUI : MonoBehaviour
         
     }
 
+    IEnumerator LevelEndActive()
+    {
+        yield return new WaitForSeconds(1.5f);
+        levelEndScreen.SetActive(true);
+    }
+
     public void SetCombo(int combo)
     {
         if (combo > 3) return; //update the bar until 3 combos
 
         comboBar.fillAmount = (float)combo / 3.0f;
     }
-
-    public void SetCollectablesText(int collectables)
-    {
-        collectablesText.text = "x" + collectables; 
-    }
-
     public void SetHP()
     {
         playerhp = 3 - GameManager.playerHP;
