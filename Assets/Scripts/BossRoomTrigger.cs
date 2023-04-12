@@ -11,6 +11,7 @@ public class BossRoomTrigger : MonoBehaviour
     [SerializeField] private int camSize;
 
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") 
