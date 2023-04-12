@@ -19,7 +19,6 @@ public class TumbleWeed : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        OnDrawGizmos();
     }
 
     // Update is called once per frame
@@ -52,10 +51,4 @@ public class TumbleWeed : MonoBehaviour
 
         canJump = true;
     }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(groundCheck.position, 0.4f);
-    }
-
 }

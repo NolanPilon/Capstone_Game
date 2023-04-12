@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
             gameManager = this;
         }
 
+        playerHP = 3;
         collectables = 0;
         progressPoint = 0;
 
