@@ -59245,6 +59245,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2103396791793917694, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103396791793917694, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103396791793917694, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5064286051850134619, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.34
@@ -59299,6 +59311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65014067, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
+    - {fileID: 3850707482538488725, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
 --- !u!4 &1330528061 stripped
 Transform:

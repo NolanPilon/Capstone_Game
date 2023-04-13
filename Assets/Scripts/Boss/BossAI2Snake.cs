@@ -9,12 +9,14 @@ public class BossAI2Snake : MonoBehaviour
     private Vector2 InitialPos;
     public Transform ParryPos;
     public float speed = 2.0f;
+    public float headSpeed = 20.0f;
 
     public GameObject parry;
     private int curPatternCount;
     public int maxPatternCount;
     private bool shootStart;
     private GameObject bullet;
+    [SerializeField] private GameObject snakeHead;
 
     // Start is called before the first frame update
     void Start()
@@ -62,11 +64,13 @@ public class BossAI2Snake : MonoBehaviour
 
     private void move()
     {
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, new Vector2(snakeHead.transform.position.x, 54.2f), headSpeed * Time.deltaTime);
         transform.position = Vector2.MoveTowards(transform.position, ParryPos.position, speed * Time.deltaTime);
     }
 
     private void moveback()
     {
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, new Vector2(snakeHead.transform.position.x, 49.89f), headSpeed * Time.deltaTime);
         transform.position = Vector2.MoveTowards(transform.position, InitialPos, speed * Time.deltaTime);
     }
 
