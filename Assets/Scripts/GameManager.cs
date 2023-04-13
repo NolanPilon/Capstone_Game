@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
             gameManager = this;
         }
 
+        playerHP = 3;
         collectables = 0;
         progressPoint = 0;
+        playerHP = 3;
 
         BossDied = false;
     }
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
     private void playerDie() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        playerHP = 3;
     }
 
     public void updateTotalCollectables(int collectableAmount)

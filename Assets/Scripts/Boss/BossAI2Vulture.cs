@@ -33,6 +33,7 @@ public class BossAI2Vulture : MonoBehaviour
         if (collision.gameObject == BossAI2.Instance.boundary)
         {
             dirVec = -1 * dirVec;
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
 

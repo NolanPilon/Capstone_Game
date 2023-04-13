@@ -59297,7 +59297,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65014067, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 541e93d0a70937744ad5a72b33d88bab, type: 3}
 --- !u!4 &1330528061 stripped
 Transform:
@@ -59591,6 +59592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 780367440191728203, guid: 207db2532946ca640be5e78149596b17, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1625124361631618874, guid: 207db2532946ca640be5e78149596b17, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -59638,6 +59643,14 @@ PrefabInstance:
     - target: {fileID: 1625124361631618875, guid: 207db2532946ca640be5e78149596b17, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565533318899953166, guid: 207db2532946ca640be5e78149596b17, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740533688393339789, guid: 207db2532946ca640be5e78149596b17, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207db2532946ca640be5e78149596b17, type: 3}
