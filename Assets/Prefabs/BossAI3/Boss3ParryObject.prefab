@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 8301248127051353147}
   - component: {fileID: 8301248127051353146}
   - component: {fileID: 3822447527296973861}
-  - component: {fileID: 1483608844655857298}
-  - component: {fileID: 4651440079312415636}
   m_Layer: 0
-  m_Name: TestBullet
+  m_Name: Boss3ParryObject
   m_TagString: Parry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81c988a74ae53c046b391c77a56e686f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,40 +103,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &1483608844655857298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8301248127051353145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0062062f44ed24b99204beff0c4b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beenParried: 0
---- !u!50 &4651440079312415636
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8301248127051353145}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8458438706219327064
 GameObject:
   m_ObjectHideFlags: 0

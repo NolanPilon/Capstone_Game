@@ -9,14 +9,14 @@ public class BossAI3Parry : MonoBehaviour
 
     private void Update()
     {
-        if (hitSomething()) 
+        if (hitSomething())
         {
             transform.position = new Vector2(1000, 1000);
             Destroy(gameObject, 0.1f);
         }
     }
 
-    private bool hitSomething() 
+    private bool hitSomething()
     {
         return Physics2D.OverlapCircle(colliderPos.position, 0.2f, colliderLayer);
     }

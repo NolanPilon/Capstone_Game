@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class BossAI3Body : MonoBehaviour
 {
-    public GameObject Boss3;
-    [SerializeField] private LayerMask colliderLayer;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask groundLayer;
     private Vector2 size;
-    RectTransform rectTransform;
+    private RectTransform rectTransform;
     private float height;
     private float width;
     private bool start = false;
@@ -23,29 +24,42 @@ public class BossAI3Body : MonoBehaviour
 
     private void Update()
     {
+        if (hitWall())
+        {
+            BossAI3.Instance.velocity = -BossAI3.Instance.velocity;
+            BossAI3.Instance.BossMove();
+        }
+
         if (start) return;
 
-        if (hitSomething())
+        if (hitGround())
         {
-            BossAI3.Instance.BossHandR.SetActive(true);
-            BossAI3.Instance.BossHandL.SetActive(true);
+            BossAI3.Instance.rbZero();
+        }
+
+        if (hitPlayer())
+        {
             start = true;
+            BossAI3.Instance.BossHandL.SetActive(true);
+            BossAI3.Instance.BossHandR.SetActive(true);
+            BossAI3.Instance.phase = BossAI3.Phases.Phase1;
+            BossAI3.Instance.startPhase();
         }
     }
 
-    private bool hitSomething()
+    private bool hitWall()
     {
-        return Physics2D.OverlapBox(transform.position, size, 0.0f, colliderLayer);
+        return Physics2D.OverlapBox(transform.position, new Vector2(width, width), 0.0f, wallLayer);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private bool hitPlayer()
     {
-        if (collision.CompareTag("Wall"))
-        {
-            Rigidbody2D rd = Boss3.GetComponent<Rigidbody2D>();
-            rd.gravityScale = 0;
-            rd.velocity = Vector2.zero;
-        }
+        return Physics2D.OverlapBox(transform.position, size, 0.0f, playerLayer);
+    }
+
+    private bool hitGround()
+    {
+        return Physics2D.OverlapBox(transform.position, new Vector2(width/2, height), 0.0f, groundLayer);
     }
 
     // Check the size of OverlapBox
@@ -53,5 +67,7 @@ public class BossAI3Body : MonoBehaviour
     //{
     //    Gizmos.color = Color.red;
     //    Gizmos.DrawWireCube(transform.position, size);
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawCube(transform.position, new Vector2(width,width));
     //}
 }
