@@ -246,8 +246,7 @@ GameObject:
   - component: {fileID: 4511204462952703747}
   - component: {fileID: 4511204462952703746}
   - component: {fileID: 4093245426692351888}
-  - component: {fileID: -6050649531472123085}
-  - component: {fileID: -2176267064338476012}
+  - component: {fileID: 8373435922335073469}
   m_Layer: 0
   m_Name: Boss3ParryBullet
   m_TagString: Parry
@@ -312,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.27058825, b: 0.7294118, a: 0.4627451}
   m_FlipX: 0
@@ -361,7 +360,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.01
---- !u!114 &-6050649531472123085
+--- !u!114 &8373435922335073469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,16 +376,3 @@ MonoBehaviour:
   colliderLayer:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &-2176267064338476012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511204462952703756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0062062f44ed24b99204beff0c4b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beenParried: 0
