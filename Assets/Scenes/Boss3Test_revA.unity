@@ -53033,7 +53033,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2264699734894201007, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2463804567834671696, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: offset
@@ -53053,6 +53053,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2830943335618603287, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042910307698787224, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4069861478433819088, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
@@ -53091,6 +53095,18 @@ PrefabInstance:
       propertyPath: EyeAttackPos
       value: 
       objectReference: {fileID: 1891013826}
+    - target: {fileID: 5138096057865708170, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138096057865708170, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138096057865708170, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5566538470608629257, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -53157,11 +53173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645854814767744175, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7931561901223918694, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8090880996667850237, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_Enabled
