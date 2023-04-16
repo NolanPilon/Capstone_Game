@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
   m_Name: BasicGroundRanger
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   damage: 1
   isDead: 0
   targetTag: Player
@@ -34,4 +34,8 @@ MonoBehaviour:
   jumpEnabled: 0
   minJumpDistanceEnabled: 0
   directionLookEnabled: 1
-  deathParticles: {fileID: 2464784198141276583, guid: f3e10b42b24042e418f242332ac7f527, type: 3}
+  deathParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deathSound: {fileID: 0}

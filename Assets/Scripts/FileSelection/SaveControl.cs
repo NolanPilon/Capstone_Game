@@ -10,6 +10,9 @@ public class SaveControl : MonoBehaviour
     {
         IsSave = true;
 
+        SoundManager.Instance.PlayMenu();
+
+
         GameObject[] slots = DataManager.instance.FindGameObjectsWithName("Slot");
 
         for (int i = 0; i < slots.Length; i++)

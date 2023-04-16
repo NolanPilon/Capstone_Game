@@ -198,6 +198,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParryGlow 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.97121596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.9384775
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670800224380423673, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7405291491013555455, guid: ac3e0f5dec4917c49adfe309042cbfe4, type: 3}
       propertyPath: m_RootOrder
       value: 1

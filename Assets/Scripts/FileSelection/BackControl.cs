@@ -8,6 +8,7 @@ public class BackControl : MonoBehaviour
 
     public void OnClickBack()
     {
+        SoundManager.Instance.PlayMenu();
         StartCoroutine(StartMainMenu());
     }
 

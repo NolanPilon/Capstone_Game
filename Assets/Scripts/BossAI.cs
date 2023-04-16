@@ -179,7 +179,7 @@ public class BossAI : MonoBehaviour
             
         if (collision.collider.CompareTag("Player"))
         {
-            if (GameManager.parryCombo >= 2 && canTakeDamage)
+            if (GameManager.parryCombo >= 3 && canTakeDamage)
             {
                 
                 BossHealth--;
