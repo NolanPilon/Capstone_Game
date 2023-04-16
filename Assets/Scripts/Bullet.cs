@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("fuck");
         transform.position = new Vector2(1000, 1000);
         Destroy(gameObject, 0.1f);
     }
