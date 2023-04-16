@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelMap.unity
     guid: 83c9cf0a195ca27448458819500f5a50
   - enabled: 1
+    path: Assets/Scenes/PrototypeLevel.unity
+    guid: 194005954569b754dbe9368066decd42
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 65f0a2a874112124ab39d80428ef7fe4
   - enabled: 1

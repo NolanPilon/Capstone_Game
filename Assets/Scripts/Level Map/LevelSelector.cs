@@ -39,6 +39,13 @@ public class LevelSelector : MonoBehaviour
         StartCoroutine(Transition(levelName));
     }
 
+    public void OpenTutorialScene()
+    {
+        SoundManager.Instance.PlayMenu();
+        levelName = "PrototypeLevel";
+        StartCoroutine(Transition(levelName));
+    }
+
     IEnumerator Transition(string levelName) 
     {
         transition.SetTrigger("Start");
