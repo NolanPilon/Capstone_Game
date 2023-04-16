@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
   m_Name: Scorpion
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   damage: 1
   isDead: 0
   targetTag: Player

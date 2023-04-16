@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851a466868156e741bd5ed6089db8b8d, type: 3}
   m_Name: Basic
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   damage: 1
   isDead: 0
   targetTag: Player
@@ -29,8 +29,13 @@ MonoBehaviour:
   delayAfterAttack: 3
   delayAfterGettingHit: 3
   isRanger: 0
+  isTurret: 0
   followEnabled: 1
   jumpEnabled: 1
   minJumpDistanceEnabled: 0
   directionLookEnabled: 0
-  deathParticles: {fileID: 2464784198141276583, guid: 4590169913854b841899c7947da4b3a2, type: 3}
+  deathParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  deathSound: {fileID: 0}

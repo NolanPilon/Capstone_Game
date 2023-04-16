@@ -7,10 +7,13 @@ public class BossAI2Snake : MonoBehaviour
 {
     public static int motionIndex;
     private Vector2 InitialPos;
+    private Vector2 snakeHeadPos;
     public Transform ParryPos;
+    public Transform snakeSitPos;
     public float speed = 2.0f;
 
     public GameObject parry;
+    public GameObject snakeHead;
     private int curPatternCount;
     public int maxPatternCount;
     private bool shootStart;
@@ -20,6 +23,7 @@ public class BossAI2Snake : MonoBehaviour
     void Start()
     {
         InitialPos = transform.position;
+        snakeHeadPos = snakeHead.transform.position; 
         curPatternCount = 0;
         motionIndex = 0;
         shootStart= false;
@@ -50,7 +54,7 @@ public class BossAI2Snake : MonoBehaviour
     {
         if (collision.gameObject == BossAI2.Instance.target && BossAI2.Instance.motion[0])
         {
-            if (GameManager.parryCombo >= 2)
+            if (GameManager.parryCombo >= 3)
             {
                 BossAI2.Instance.BossHealth--;
                 curPatternCount = 0;
@@ -63,11 +67,13 @@ public class BossAI2Snake : MonoBehaviour
     private void move()
     {
         transform.position = Vector2.MoveTowards(transform.position, ParryPos.position, speed * Time.deltaTime);
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeSitPos.position, speed * Time.deltaTime);
     }
 
     private void moveback()
     {
         transform.position = Vector2.MoveTowards(transform.position, InitialPos, speed * Time.deltaTime);
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeHeadPos, speed * Time.deltaTime);
     }
 
     private void ParryShoot()
