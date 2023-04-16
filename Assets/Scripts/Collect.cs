@@ -9,7 +9,6 @@ public class Collect : MonoBehaviour
         if (collision.tag == "Player") 
         {
             GameManager.collectables++;
-            GameManager.TotalCollectables++;
             Destroy(gameObject);
         }
     }

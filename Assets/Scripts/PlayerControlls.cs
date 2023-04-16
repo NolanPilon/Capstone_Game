@@ -16,6 +16,7 @@ public class PlayerControlls : MonoBehaviour
     private float moveSpeed = 10;
     private float horizontalMove;
     private int jumpForce = 19;
+    private SpriteRenderer playerSprite;
 
     //Coyote time
     private float jumpBuffer = 0.2f;
@@ -33,6 +34,7 @@ public class PlayerControlls : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
 
         if (GameManager.respawnPoint != spawnPoint.transform.position && GameManager.progressPoint != 0)
         {
@@ -76,18 +78,26 @@ public class PlayerControlls : MonoBehaviour
             {
                 jumpBufferTimer = jumpBuffer;
                 animator.SetBool("Jumping", false);
+                playerSprite.flipX = false;
+
 
                 // Reset parry combo
                 GameManager.parryCombo = 0;
             }
             else
             {
+                animator.SetBool("Jumping", true);
                 jumpBufferTimer -= Time.deltaTime;
+
+                // Fix for jump facing wrong way
+                if (playerRB.velocity.x < 0)
+                {
+                    playerSprite.flipX = true;
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && jumpBufferTimer > 0)
             {
-                animator.SetBool("Jumping", true);
                 Jump();
             }
 
@@ -98,8 +108,6 @@ public class PlayerControlls : MonoBehaviour
 
                 jumpBufferTimer = 0;
             }
-
-           
 
             if (playerRB.velocity.y < -20)
             {

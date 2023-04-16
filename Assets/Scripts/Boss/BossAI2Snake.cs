@@ -57,10 +57,6 @@ public class BossAI2Snake : MonoBehaviour
                 BossAI2.Instance.motion[0] = false;
                 shootStart = false;
             }
-            else
-            {
-                BossAI2.Instance.playerStat.takeDamage(collision.transform.position - this.transform.position);
-            }
         }
     }
 
@@ -78,7 +74,7 @@ public class BossAI2Snake : MonoBehaviour
     {
         if (!BossAI2.Instance.motion[0]) return;
 
-        int roundNumA = 20;
+        int roundNumA = 10;
 
         for (int i = 0; i < roundNumA; i++)
         {

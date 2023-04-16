@@ -45,14 +45,14 @@ public class BossAI2Wolf : MonoBehaviour
     private void InitialMove()
     {
         Rigidbody2D rigid = this.GetComponent<Rigidbody2D>();
-        Vector2 dirVec = new Vector2(1, Mathf.Sin(Mathf.PI * 1));
+        Vector2 dirVec = new Vector2(-1, Mathf.Sin(Mathf.PI * 1));
         rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
     }
 
     private void move()
     {
         Rigidbody2D rigid = this.GetComponent<Rigidbody2D>();
-        Vector2 dirVec = new Vector2(1, 1);
+        Vector2 dirVec = new Vector2(-1, 1);
         rigid.AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
     }
 }

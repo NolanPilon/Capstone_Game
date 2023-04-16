@@ -48,12 +48,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        SoundManager.Instance.PlayMenu();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
     public void BackToMap()
     {
+        SoundManager.Instance.PlayMenu();
         Time.timeScale = 1f;
         //Destroy(GameObject.FindGameObjectWithTag("BGM"));
         SceneManager.LoadScene("LevelMap");
@@ -61,11 +63,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Settings()
     {
+        SoundManager.Instance.PlayMenu();
         SettingPopUp.SetActive(true);
     }
 
     public void OnClickExit()
     {
+        SoundManager.Instance.PlayMenu();
         SettingPopUp.SetActive(false);
     }
 }
