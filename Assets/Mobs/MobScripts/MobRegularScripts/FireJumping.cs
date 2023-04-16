@@ -16,7 +16,6 @@ public class FireJumping : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        OnDrawGizmos();
     }
 
     // Update is called once per frame
@@ -28,7 +27,8 @@ public class FireJumping : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
 
              rb.AddForce(Vector2.up * jumpForce);
-            //canJump = false;
+            StartCoroutine(delayJump());
+            canJump = false;
         }
     }
 
@@ -40,14 +40,9 @@ public class FireJumping : MonoBehaviour
 
     IEnumerator delayJump()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         canJump = true;
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(groundCheck.position, 0.4f);
     }
 
 }

@@ -380,7 +380,7 @@ MonoBehaviour:
   colliderPos: {fileID: 0}
   colliderLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 328
 --- !u!1 &8522465860321685530
 GameObject:
   m_ObjectHideFlags: 0

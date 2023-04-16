@@ -30,18 +30,10 @@ public class Bullet : MonoBehaviour
    
     }
 
-    // could change to on collision enter?
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hitSomething()) 
-        {
-            transform.position = new Vector2(1000, 1000);
-            Destroy(gameObject, 0.1f);
-        }   
-    }
-
-    private bool hitSomething() 
-    {
-        return Physics2D.OverlapCircle(colliderPos.position, 0.2f, colliderLayer);
+        Debug.Log("fuck");
+        transform.position = new Vector2(1000, 1000);
+        Destroy(gameObject, 0.1f);
     }
 }
