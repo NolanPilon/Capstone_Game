@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: -376415114058120707}
   m_Layer: 0
   m_Name: LongBulletRight
-  m_TagString: ParryBullet
+  m_TagString: Parry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
