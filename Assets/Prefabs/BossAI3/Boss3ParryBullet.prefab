@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 4511204462952703747}
   - component: {fileID: 4511204462952703746}
   - component: {fileID: 4093245426692351888}
-  - component: {fileID: 8373435922335073469}
+  - component: {fileID: 5032208058090536417}
   m_Layer: 0
   m_Name: Boss3ParryBullet
   m_TagString: Parry
@@ -360,7 +360,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.01
---- !u!114 &8373435922335073469
+--- !u!114 &5032208058090536417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,10 +369,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4511204462952703756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34869643db5a932489f11160efd2c4b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 99000da3aa1086c4baf7ca193368afc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderPos: {fileID: 4511204462952703744}
+  colliderPos: {fileID: 6195677168482113598}
   colliderLayer:
     serializedVersion: 2
     m_Bits: 8
