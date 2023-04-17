@@ -270,6 +270,7 @@ public class BossAI : MonoBehaviour
 
     void Die() 
     {
+        GameManager.progressPoint = 0;
         alive = false;
         SoundManager.Instance.PlayBossDeath();
         bossRB.velocity = Vector2.zero;

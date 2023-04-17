@@ -66,14 +66,15 @@ public class BossAI2Snake : MonoBehaviour
 
     private void move()
     {
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeHeadPos, speed * Time.deltaTime);
         transform.position = Vector2.MoveTowards(transform.position, ParryPos.position, speed * Time.deltaTime);
-        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeSitPos.position, speed * Time.deltaTime);
     }
 
     private void moveback()
     {
+        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeSitPos.position, speed * Time.deltaTime);
         transform.position = Vector2.MoveTowards(transform.position, InitialPos, speed * Time.deltaTime);
-        snakeHead.transform.position = Vector2.MoveTowards(snakeHead.transform.position, snakeHeadPos, speed * Time.deltaTime);
+        
     }
 
     private void ParryShoot()

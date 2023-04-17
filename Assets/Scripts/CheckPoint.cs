@@ -10,7 +10,9 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.respawnPoint = this.transform.position;
+            GameManager.progressPoint = NumProgressPoint;
+            GameManager.currentCheckpoint = this.gameObject.transform.position;
+            GameManager.respawnPoint = this.gameObject.transform.position;
             GameManager.progressPoint = NumProgressPoint;
         }
     }

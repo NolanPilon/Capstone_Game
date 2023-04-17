@@ -18,6 +18,8 @@ public class ParryBehavior : MonoBehaviour
     private float launchMultiplier = 3.5f;
     private Vector2 launchDir;
     private float holdTimer = 0;
+    private float parryCoolDown = 0;
+    private float parryCoolDownAmount = 0.3f;
 
     public bool canParry = false;
     public static bool inParry = false;
@@ -38,6 +40,12 @@ public class ParryBehavior : MonoBehaviour
         if (!canParry && !inParry) 
         {
             holdTimer = 1.0f;
+        }
+
+        //Stop parry spam possibly
+        if (parryCoolDown > 0) 
+        {
+            parryCoolDown -= Time.deltaTime;
         }
 
         ParryFunction();
@@ -67,6 +75,7 @@ public class ParryBehavior : MonoBehaviour
         if (collision.tag == "Parry")
         {
             //Store previous parry point
+            parryCoolDown = 0;
             storedParryObject = collision.gameObject;
             playerGlow.SetActive(false);
             bulletRb = null;
@@ -89,8 +98,9 @@ public class ParryBehavior : MonoBehaviour
         // If in range of projectile and space is pressed
         // Parry arrow shows up and time is slowed
         // When you let go hide the arrow and reset time
-        if (Input.GetKeyDown(KeyCode.Space) && canParry && !playerController.isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && canParry && !playerController.isGrounded() && parryCoolDown <= 0)
         {
+            parryCoolDown = parryCoolDownAmount;
             holdTimer = 1.0f;
             Time.timeScale = 0.1f;
             playerController.controlsEnabled = false;
@@ -98,7 +108,7 @@ public class ParryBehavior : MonoBehaviour
             playerRB.velocity = Vector2.zero;
             parryArrow.SetActive(true);
             inParry = true;
-            SoundManager.Instance.PlayQTE();
+            //SoundManager.Instance.PlayQTE();
         }
         else if (Input.GetKeyUp(KeyCode.Space) || !inParry || holdTimer <= 0)
         {
