@@ -53095,6 +53095,10 @@ PrefabInstance:
       propertyPath: EyeAttackPos
       value: 
       objectReference: {fileID: 1891013826}
+    - target: {fileID: 4497794723852966120, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5138096057865708170, guid: 0023fbddc82388e488de762b362c8db0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -54832,6 +54836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossDoor: {fileID: 1124375153}
+  bossDoorTrigger: {fileID: 1250441272}
   MainCam: {fileID: 1437828512}
   bossRoomPos: {fileID: 2057052200}
   camSize: 11

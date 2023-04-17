@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAI3Body : MonoBehaviour
@@ -27,6 +24,7 @@ public class BossAI3Body : MonoBehaviour
         if (hitWall())
         {
             BossAI3.Instance.velocity = -BossAI3.Instance.velocity;
+
             BossAI3.Instance.BossMove();
         }
 
@@ -49,7 +47,7 @@ public class BossAI3Body : MonoBehaviour
 
     private bool hitWall()
     {
-        return Physics2D.OverlapBox(transform.position, new Vector2(width, width), 0.0f, wallLayer);
+        return Physics2D.OverlapBox(transform.position, new Vector2(width * 2, width), 0.0f, wallLayer);
     }
 
     private bool hitPlayer()
