@@ -16,6 +16,8 @@ public class BossAI3Eye : MonoBehaviour
                     BossAI3.Instance.LightOfSight.SetActive(false);
                     CameraShake.Instance.OnShakeCameraPosition(0.4f, 0.2f);
 
+                    GameManager.parryCombo = 0;
+
                     BossAI3.Instance.target.GetComponent<PlayerControlls>().controlsEnabled = false;
                     Vector3 knockbackDir = (transform.position).normalized;
                     BossAI3.Instance.target.GetComponent<Rigidbody2D>().AddForce(knockbackDir * 25, ForceMode2D.Impulse);
