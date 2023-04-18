@@ -5,18 +5,17 @@ using UnityEngine.Rendering.Universal;
 public class LowerLights : MonoBehaviour
 {
     [SerializeField] Light2D globalLight;
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] Transform playerPos;
+
+    private void Update()
     {
-        if (collision.tag == "Player") 
+        if (playerPos.position.y < this.transform.position.y)
         {
-            if (globalLight.intensity > 0.9)
-            {
-                globalLight.intensity = 0.25f;
-            }
-            else 
-            {
-                globalLight.intensity = 0.98f;
-            }
+            globalLight.intensity = 0.25f;
+        }
+        else
+        {
+            globalLight.intensity = 0.98f;
         }
     }
 }

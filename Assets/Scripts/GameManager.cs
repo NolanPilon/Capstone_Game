@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     private static GameManager gameManager;
+    public static Vector3 currentCheckpoint;
     public static int parryCombo = 0;
     public static int playerHP;
     public static int collectables = 0;
@@ -27,20 +28,27 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return gameManager; } }
     void Awake()
     {
-        respawnPoint = spawnPoint.position;
-
         if (gameManager != null && gameManager != this)
         {
             Destroy(this.gameObject);
         }
-        else 
+        else
         {
             gameManager = this;
         }
 
+        if (progressPoint == 0)
+        {
+            respawnPoint = spawnPoint.position;
+        }
+        else 
+        {
+            respawnPoint = currentCheckpoint;
+        }
+
         playerHP = 3;
         collectables = 0;
-        progressPoint = 0;
+        //progressPoint = 0;
         playerHP = 3;
 
         BossDied = false;

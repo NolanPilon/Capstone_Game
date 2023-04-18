@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossAI2 : MonoBehaviour
 {
@@ -74,7 +76,7 @@ public class BossAI2 : MonoBehaviour
 
         if (motion[4])
         {
-            Die();
+            StartCoroutine(Die());
             GameManager.Instance.BossDied = true;
         }
     }
@@ -86,8 +88,11 @@ public class BossAI2 : MonoBehaviour
         return false;
     }
 
-    void Die()
+
+    public IEnumerator Die()
     {
-        Destroy(Boss[0], 2);
+        yield return new WaitForSecondsRealtime(1.5f);
+        SceneManager.LoadScene("DemoEnd");
+        //Destroy(Boss[0], 2);
     }
 }
