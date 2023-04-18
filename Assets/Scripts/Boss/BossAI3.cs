@@ -94,6 +94,7 @@ public class BossAI3 : MonoBehaviour
         {
             case Phases.Phase1:
                 GetComponent<BossAI3Shooting>().shootBullet();
+                MainCam.orthographicSize = 10.0f;
                 break;
             case Phases.Phase2:
                 EyeGoBack();
