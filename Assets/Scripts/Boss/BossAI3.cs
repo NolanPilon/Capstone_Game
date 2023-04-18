@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +16,7 @@ public class BossAI3 : MonoBehaviour
     public GameObject BossHandR;
     public GameObject BossHandL;
     public GameObject BossEye;
-    public Transform targetSpawner;
+    public GameObject LightOfSight;
     public Rigidbody2D rb;
     public float velocity = 5.0f;
 
@@ -29,10 +26,9 @@ public class BossAI3 : MonoBehaviour
 
 
     private Vector3 InitialEyePos;  //for go back eye function
-    private Vector3 InitialHandRPos;    // trigger to change velocity of left hand
-    private Vector3 InitialHandLPos;    // trigger to change velocity of right hand
+    private Vector3 PreviousHandRPos;    // trigger to change velocity of left hand
+    private Vector3 PreviousHandLPos;    // trigger to change velocity of right hand
     public Transform EyeAttackPos;  //Position of eye in Attack Phase
-    private Vector3 InitialBossPos; //for go back boss function
 
     // List of phase
     public enum Phases
@@ -41,6 +37,7 @@ public class BossAI3 : MonoBehaviour
         Phase2,
         Phase3,
         AttackPhase,
+        Die,
 
         Default
     }
@@ -53,22 +50,34 @@ public class BossAI3 : MonoBehaviour
 
     private void Start()
     {
-        BossHealth = 3;
         playerStat = target.GetComponent<PlayerCombatFunctions>();
-        InitialEyePos = BossEye.transform.position;
-        InitialBossPos = this.transform.position;
+        initialization();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BossHandL.activeSelf && BossHandR.activeSelf)
+        if (phase != Phases.Default)
         {
-            MainCam.transform.position = new Vector3(MainCam.transform.position.x, target.transform.position.y + 3.0f, -10.0f);
+            CameraMove();
         }
 
         healthValue = (float)(BossHealth / 3f);
         healthbar.fillAmount = healthValue;
+    }
+
+    public void initialization()
+    {
+        BossHandL.SetActive(false);
+        BossHandR.SetActive(false);
+        rb.gravityScale = 1.0f;
+        BossHealth = 3;
+        phase = Phases.Default;
+    }
+
+    public void CameraMove()
+    {
+        MainCam.transform.position = new Vector3(MainCam.transform.position.x, target.transform.position.y + 7.0f, -10.0f);
     }
 
     public void startPhase()
@@ -86,15 +95,17 @@ public class BossAI3 : MonoBehaviour
             case Phases.Phase3:
                 EyeGoBack();
                 GetComponent<BossAI3Shooting>().shootBullet();
-                InitialHandLPos = BossHandL.transform.position;
-                InitialHandRPos = BossHandR.transform.position;
                 HandCross();
                 break;
             case Phases.AttackPhase:
-                BossGoBack();
+                InitialEyePos = BossEye.transform.position;
+                PreviousHandLPos = BossHandL.transform.position;
+                PreviousHandRPos = BossHandR.transform.position;
                 rbZero();
                 EyeMove();
-                GetComponent<BossAI3Shooting>().ShootBulletEye();
+                break;
+            case Phases.Die:
+                Die();
                 break;
             default:
                 break;
@@ -111,17 +122,16 @@ public class BossAI3 : MonoBehaviour
     public void EyeMove()
     {
         BossEye.transform.position = EyeAttackPos.position;
+
+        GetComponent<BossAI3Shooting>().ShootBulletEye();
+        LightOfSight.SetActive(true);
     }
 
     public void EyeGoBack()
     {
-        BossEye.transform.position = InitialEyePos;
+        BossEye.GetComponent<RectTransform>().transform.position = InitialEyePos;
     }
 
-    public void BossGoBack()
-    {
-        this.transform.position = InitialBossPos;
-    }
 
     public void BossMove()
     {
@@ -141,14 +151,14 @@ public class BossAI3 : MonoBehaviour
             return;
         }
 
-        if (BossHandR.transform.position.x == InitialHandRPos.x && BossHandL.transform.position.x == InitialHandLPos.x)
+        if (BossHandR.transform.position.x == PreviousHandRPos.x && BossHandL.transform.position.x == PreviousHandLPos.x)
         {
             Invoke("HandCross", 0);
             return;
         }
 
-        BossHandR.transform.position = Vector2.MoveTowards(BossHandR.transform.position, InitialHandRPos, 2 * Time.deltaTime);
-        BossHandL.transform.position = Vector2.MoveTowards(BossHandL.transform.position, InitialHandLPos, 2 * Time.deltaTime);
+        BossHandR.transform.position = Vector2.MoveTowards(BossHandR.transform.position, PreviousHandRPos, 0.5f * Time.deltaTime);
+        BossHandL.transform.position = Vector2.MoveTowards(BossHandL.transform.position, PreviousHandLPos, 0.5f * Time.deltaTime);
 
         Invoke("HandGoBack", 0);
     }
@@ -160,15 +170,22 @@ public class BossAI3 : MonoBehaviour
             return;
         }
 
-        if (BossHandR.transform.position.x == InitialHandLPos.x && BossHandL.transform.position.x == InitialHandRPos.x)
+        if (BossHandR.transform.position.x == PreviousHandLPos.x && BossHandL.transform.position.x == PreviousHandRPos.x)
         {
             Invoke("HandGoBack", 0);
             return;
         }
 
-        BossHandR.transform.position = Vector2.MoveTowards(BossHandR.transform.position, InitialHandLPos, 2 * Time.deltaTime);
-        BossHandL.transform.position = Vector2.MoveTowards(BossHandL.transform.position, InitialHandRPos, 2 * Time.deltaTime);
+        BossHandR.transform.position = Vector2.MoveTowards(BossHandR.transform.position, PreviousHandLPos, 0.5f * Time.deltaTime);
+        BossHandL.transform.position = Vector2.MoveTowards(BossHandL.transform.position, PreviousHandRPos, 0.5f * Time.deltaTime);
 
         Invoke("HandCross", 0);
+    }
+
+    public void Die()
+    {
+        SoundManager.Instance.PlayBossDeath();
+        Destroy(gameObject, 2);
+        //GameManager.Instance.BossDied = true;
     }
 }

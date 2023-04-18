@@ -1,13 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAI3Laser : MonoBehaviour
 {
     [SerializeField] LineRenderer lightOfSight;
     [SerializeField] float rotspeed;
-    RaycastHit hitInfo;
+    [SerializeField] LayerMask LayerDetection;
+    float hitDistance = 5f;
+    RaycastHit hit;
+
+    public void OnEnable()
+    {
+        shootLaser();
+    }
 
     public void shootLaser()
     {
@@ -15,7 +19,20 @@ public class BossAI3Laser : MonoBehaviour
 
         transform.Rotate(rotspeed * Vector3.forward * Time.deltaTime);
 
-        DrawRay(transform.position, transform.position + transform.right * 5);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, 5.0f, LayerDetection);
+
+        Debug.DrawRay(transform.position, transform.right * 5.0f, Color.blue);
+
+        if (hitInfo.collider != null)
+        {
+            if (hitInfo.collider.CompareTag("Player"))
+            {
+                Debug.Log("Player attacked");
+                BossAI3.Instance.playerStat.takeDamage(BossAI3.Instance.target.transform.position - this.transform.position);
+            }
+        }
+
+        DrawRay(transform.position, transform.position + transform.right * 5.0f);
 
         Invoke("shootLaser", 0);
     }
