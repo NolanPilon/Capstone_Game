@@ -22,6 +22,14 @@ public class BossAI2Buffalo : MonoBehaviour
         InitialMove();
     }
 
+    private void Update()
+    {
+        if (startmove)
+        {
+            move();
+        }
+    }
+
     private void Initailization()
     {
         startmove = false;
@@ -30,18 +38,17 @@ public class BossAI2Buffalo : MonoBehaviour
         rigid.velocity = Vector2.zero;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.name == "Tilemap")
+        if (collision.collider.name == "Tilemap")
         {
             if (!startmove)
             {
-                move();
                 startmove = true;
             }
         }
 
-        if (collision.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
             Initailization();
             gameObject.SetActive(false);
