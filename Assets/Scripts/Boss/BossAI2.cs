@@ -8,6 +8,7 @@ public class BossAI2 : MonoBehaviour
     public static BossAI2 Instance => instance;
 
     [SerializeField] private GameObject[] Boss; //[0] snake [1] wolf [2] buffalo [3] vulture
+
     public enum Phases
     {
         snake,
