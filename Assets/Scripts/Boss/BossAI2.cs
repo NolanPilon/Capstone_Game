@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,14 +7,20 @@ public class BossAI2 : MonoBehaviour
     public static BossAI2 Instance => instance;
 
     [SerializeField] private GameObject[] Boss; //[0] snake [1] wolf [2] buffalo [3] vulture
-    public bool[] motion = new bool[5]; //trigger the motions
-                                        //motion[0] : snake
-                                        //motion[1] : wolf
-                                        //motion[2] : buffalo
-                                        //motion[3] : vulture
-                                        //motion[4] : died
+    public enum Phases
+    {
+        snake,
+        wolf,
+        buffalo,
+        vulture,
+        died,
 
-    private bool start = false; // check the boss mob start
+        nothing
+    }
+
+    public Phases phase;
+
+    public bool start; // check the boss mob start (BossAI2Start.cs)
     public GameObject target;   // player
     public GameObject boundary;
     private float height;
@@ -30,6 +34,8 @@ public class BossAI2 : MonoBehaviour
 
     public PlayerCombatFunctions playerStat;               //for take damage function
 
+    public float distance;
+
     private BossAI2()
     {
         instance = this;
@@ -38,11 +44,13 @@ public class BossAI2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        start = false;
         height = boundary.GetComponent<RectTransform>().rect.height * boundary.GetComponent<RectTransform>().localScale.y;
         width = boundary.GetComponent<RectTransform>().rect.width * boundary.GetComponent<RectTransform>().localScale.x;
         LeftPosBD = boundary.GetComponent<RectTransform>().rect.position.x - (width / 2);
         RightPosBD = boundary.GetComponent<RectTransform>().rect.position.x + (width / 2);
         playerStat = target.GetComponent<PlayerCombatFunctions>();
+        phase = Phases.nothing;
     }
 
     // Update is called once per frame
@@ -50,38 +58,42 @@ public class BossAI2 : MonoBehaviour
     {
         if (TargetInRange(Boss[0]) && !start)
         {
-            motion[1] = true;
+            phase = Phases.wolf;
+            startPhase();
             start = true;
-        }
-        else
-        {
-            if (motion[1])
-            {
-                Boss[1].SetActive(true);
-            }
-            else if (motion[2])
-            {
-                Boss[2].SetActive(true);
-            }
-            else if (motion[3])
-            {
-                Boss[3].SetActive(true);
-            }
         }
 
         healthValue = (float)(BossHealth / 3f);
         healthbar.fillAmount = healthValue;
+    }
 
-        if (motion[4])
+    public void startPhase()
+    {
+        switch(phase)
         {
-            Die();
-            GameManager.Instance.BossDied = true;
+            case Phases.snake:
+                Boss[0].GetComponent<BossAI2Snake>().StartSnake();
+                break;
+            case Phases.wolf:
+                Boss[1].SetActive(true);
+                break;
+            case Phases.buffalo:
+                Boss[2].SetActive(true);
+                break;
+            case Phases.vulture:
+                Boss[3].SetActive(true);
+                break;
+            case Phases.died:
+                Die();
+                GameManager.Instance.BossDied = true;
+                break;
+            default: break;
         }
     }
 
     bool TargetInRange(GameObject boss)
     {
-        if (Vector2.Distance(boss.transform.position, target.transform.position) < 10) //Distance bet player and boss is less than 10
+        if (Vector2.Distance(boss.transform.position, target.transform.position) < distance) //Distance bet player and boss is less than 10
             return true;
         return false;
     }

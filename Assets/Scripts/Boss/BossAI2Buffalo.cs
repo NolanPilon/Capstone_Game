@@ -7,7 +7,14 @@ using UnityEngine;
 public class BossAI2Buffalo : MonoBehaviour
 {
     public float speed = 2;
-    bool startmove = false;
+    bool startmove;
+    Vector2 InitialPos;
+
+    private void Start()
+    {
+        InitialPos = this.transform.position;
+        startmove = false;
+    }
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -15,39 +22,45 @@ public class BossAI2Buffalo : MonoBehaviour
         InitialMove();
     }
 
-    private void Update()
+    private void Initailization()
     {
-        if (startmove)
-        {
-            move();
-        }
+        startmove = false;
+        this.transform.position = InitialPos;
+        Rigidbody2D rigid = this.GetComponent<Rigidbody2D>();
+        rigid.velocity = Vector2.zero;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.name == "Tilemap")
+        if (collision.name == "Tilemap")
         {
-            startmove = true;
-        }
-        else if (collision.collider.CompareTag("Player"))
-        {
-            gameObject.SetActive(false);
-            BossAI2.Instance.motion[2] = false;
-            BossAI2.Instance.motion[0] = true;
-            BossAI2Snake.motionIndex = 3;
-            BossAI2.Instance.playerStat.takeDamage(collision.transform.position - this.transform.position);
+            if (!startmove)
+            {
+                move();
+                startmove = true;
+            }
         }
 
+        if (collision.CompareTag("Player"))
+        {
+            Initailization();
+            gameObject.SetActive(false);
+            BossAI2Snake.motionIndex = 2;
+            BossAI2.Instance.playerStat.takeDamage(collision.transform.position - this.transform.position);
+            BossAI2.Instance.phase = BossAI2.Phases.snake;
+            BossAI2.Instance.startPhase();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == BossAI2.Instance.boundary)
         {
+            Initailization();
             gameObject.SetActive(false);
-            BossAI2.Instance.motion[2] = false;
-            BossAI2.Instance.motion[0] = true;
-            BossAI2Snake.motionIndex = 3;
+            BossAI2Snake.motionIndex = 2;
+            BossAI2.Instance.phase = BossAI2.Phases.snake;
+            BossAI2.Instance.startPhase();
         }
     }
 

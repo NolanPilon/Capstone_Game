@@ -1,29 +1,34 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BossAI2Wolf : MonoBehaviour
 {
-    private float speed;
+    Vector2 InitalPos;
 
+    private void Start()
+    {
+        InitalPos = this.transform.position;
+    }
     // Start is called before the first frame update
     private void OnEnable()
     {
         InitialMove();
     }
 
+    private void Initialization()
+    {
+        this.transform.position = InitalPos;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
+            Initialization();
             gameObject.SetActive(false);
-            BossAI2.Instance.motion[1] = false;
-            BossAI2.Instance.motion[0] = true;
-            BossAI2Snake.motionIndex = 2;
+            BossAI2Snake.motionIndex = 1;
             BossAI2.Instance.playerStat.takeDamage(collision.transform.position - this.transform.position);
+            BossAI2.Instance.phase = BossAI2.Phases.snake;
+            BossAI2.Instance.startPhase();
         }
         else if (collision.collider.name == "Tilemap")
         {
@@ -35,10 +40,11 @@ public class BossAI2Wolf : MonoBehaviour
     {
         if (collision.gameObject == BossAI2.Instance.boundary)
         {
+            Initialization();
             gameObject.SetActive(false);
-            BossAI2.Instance.motion[1] = false;
-            BossAI2.Instance.motion[0] = true;
-            BossAI2Snake.motionIndex = 2;
+            BossAI2Snake.motionIndex = 1;
+            BossAI2.Instance.phase = BossAI2.Phases.snake;
+            BossAI2.Instance.startPhase();
         }
     }
 
