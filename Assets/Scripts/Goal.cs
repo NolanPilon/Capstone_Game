@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
 
     void LoadNextScene(string sceneName) 
     {
+        GameManager.progressPoint = 0;
         SceneManager.LoadScene(sceneName);
     }
 }

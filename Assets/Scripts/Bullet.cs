@@ -30,9 +30,12 @@ public class Bullet : MonoBehaviour
    
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.position = new Vector2(1000, 1000);
-        Destroy(gameObject, 0.1f);
+        if (collision.tag != "Enemy") 
+        {
+            transform.position = new Vector2(1000, 1000);
+            Destroy(gameObject, 0.1f);
+        }
     }
 }

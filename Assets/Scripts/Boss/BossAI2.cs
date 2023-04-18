@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossAI2 : MonoBehaviour
 {
@@ -98,7 +99,8 @@ public class BossAI2 : MonoBehaviour
         return false;
     }
 
-    void Die()
+
+    public void Die()
     {
         SoundManager.Instance.PlayBossDeath();
         Destroy(Boss[0], 2);
