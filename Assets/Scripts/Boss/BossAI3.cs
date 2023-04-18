@@ -30,6 +30,8 @@ public class BossAI3 : MonoBehaviour
     private Vector3 PreviousHandLPos;    // trigger to change velocity of right hand
     public Transform EyeAttackPos;  //Position of eye in Attack Phase
 
+    private Vector2 InitialPos; //Spawn point
+
     // List of phase
     public enum Phases
     {
@@ -46,6 +48,11 @@ public class BossAI3 : MonoBehaviour
     private BossAI3()
     {
         instance = this;
+    }
+
+    private void Awake()
+    {
+        InitialPos = new Vector2 (872, 51);
     }
 
     private void Start()
@@ -68,6 +75,7 @@ public class BossAI3 : MonoBehaviour
 
     public void initialization()
     {
+        this.transform.position = InitialPos;
         BossHandL.SetActive(false);
         BossHandR.SetActive(false);
         rb.gravityScale = 1.0f;
@@ -77,7 +85,7 @@ public class BossAI3 : MonoBehaviour
 
     public void CameraMove()
     {
-        MainCam.transform.position = new Vector3(MainCam.transform.position.x, target.transform.position.y + 7.0f, -10.0f);
+        MainCam.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 7.0f, -10.0f);
     }
 
     public void startPhase()
@@ -86,6 +94,7 @@ public class BossAI3 : MonoBehaviour
         {
             case Phases.Phase1:
                 GetComponent<BossAI3Shooting>().shootBullet();
+                MainCam.orthographicSize = 10.0f;
                 break;
             case Phases.Phase2:
                 EyeGoBack();
@@ -186,6 +195,6 @@ public class BossAI3 : MonoBehaviour
     {
         SoundManager.Instance.PlayBossDeath();
         Destroy(gameObject, 2);
-        //GameManager.Instance.BossDied = true;
+        GameManager.Instance.BossDied = true;
     }
 }
