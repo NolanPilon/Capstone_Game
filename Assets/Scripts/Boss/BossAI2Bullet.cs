@@ -7,8 +7,9 @@ public class BossAI2Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (hitSomething()) 
+        if (hitSomething() && BossAI2.Instance.phase != BossAI2.Phases.vulture) 
         {
+            transform.position = new Vector2(1000, 1000);
             Destroy(gameObject, 0.1f);
         }   
     }
