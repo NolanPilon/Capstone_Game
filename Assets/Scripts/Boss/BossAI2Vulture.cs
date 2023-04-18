@@ -1,19 +1,17 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class BossAI2Vulture : MonoBehaviour
 {
     public float speed = 5;
-    Rigidbody2D rigid;
+    [SerializeField] private Rigidbody2D rigid;
     private Vector2 dirVec;
+    private Vector2 InitialPos;
 
     private void Start()
     {
+        InitialPos = this.transform.position;
         dirVec = new Vector2(1, 0);
-        rigid = this.GetComponent<Rigidbody2D>();
     }
 
     // Start is called before the first frame update
@@ -25,7 +23,20 @@ public class BossAI2Vulture : MonoBehaviour
 
     private void Update()
     {
-        move();
+        if (BossAI2.Instance.phase == BossAI2.Phases.vulture)
+        {
+            move();
+        }
+        else if (BossAI2.Instance.phase == BossAI2.Phases.snake)
+        {
+            Initialization();
+        }
+    }
+
+    private void Initialization()
+    {
+        this.transform.position = InitialPos;
+        dirVec = new Vector2(1, 0);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,20 +45,22 @@ public class BossAI2Vulture : MonoBehaviour
         {
             dirVec = -1 * dirVec;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            move();
         }
     }
 
-    private void move()
+    public void move()
     {
-        rigid.velocity = dirVec.normalized * speed;
+        rigid.velocity = dirVec.normalized * 5;
     }
 
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(10);
+        
+        BossAI2Snake.motionIndex = 3;
+        BossAI2.Instance.phase = BossAI2.Phases.snake;
+        BossAI2.Instance.startPhase();
         gameObject.SetActive(false);
-        BossAI2.Instance.motion[3] = false;
-        BossAI2.Instance.motion[0] = true;
-        BossAI2Snake.motionIndex = 4;
     }
 }

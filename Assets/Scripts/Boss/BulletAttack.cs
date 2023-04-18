@@ -11,12 +11,12 @@ public class BulletAttack : MonoBehaviour
 
     public void ShootBullet()
     {
-        bullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
-        
-        bullet.transform.position = transform.position;
-        bullet.transform.rotation = Quaternion.identity;
+        GameObject bulletClone = Instantiate(bullet, this.transform.position, this.transform.rotation);
 
-        Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
+        bulletClone.transform.position = transform.position;
+        bulletClone.transform.rotation = Quaternion.identity;
+
+        Rigidbody2D rigid = bulletClone.GetComponent<Rigidbody2D>();
         Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 10 * curPatternCount / maxPatternCount), -1);
         rigid.AddForce(dirVec.normalized * speed, ForceMode2D.Impulse);
 
@@ -24,6 +24,7 @@ public class BulletAttack : MonoBehaviour
 
         if (!gameObject.activeSelf)
         {
+            curPatternCount = 0;
             return;
         }
         else if (curPatternCount < maxPatternCount)
