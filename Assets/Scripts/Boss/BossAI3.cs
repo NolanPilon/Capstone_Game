@@ -85,7 +85,7 @@ public class BossAI3 : MonoBehaviour
 
     public void CameraMove()
     {
-        MainCam.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10.0f);
+        MainCam.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 7.0f, -10.0f);
     }
 
     public void startPhase()
