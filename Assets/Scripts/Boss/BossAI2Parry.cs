@@ -4,7 +4,6 @@ public class BossAI2Parry : MonoBehaviour
 {
     [SerializeField] private Transform colliderPos;
     [SerializeField] private LayerMask colliderLayer;
-    [SerializeField] private LayerMask playerLayer;
 
     private void Update()
     {
