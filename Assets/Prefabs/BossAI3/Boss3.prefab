@@ -464,7 +464,7 @@ MonoBehaviour:
   BossEye: {fileID: 520678009876601503}
   LightOfSight: {fileID: 438226047806994509}
   rb: {fileID: 4497794723852966120}
-  velocity: 5
+  velocity: 3
   BossHealth: 3
   healthbar: {fileID: 0}
   EyeAttackPos: {fileID: 0}
