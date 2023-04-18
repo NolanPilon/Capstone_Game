@@ -21,6 +21,8 @@ public class LevelEnd : MonoBehaviour
 
     public Animator transition;
 
+    [SerializeField] Timer timer;
+
     private void Start()
     {
         PlayerName = DataManager.instance.nowPlayer.name;
@@ -29,18 +31,24 @@ public class LevelEnd : MonoBehaviour
 
     private void OnEnable()
     {
-        BestTime = PlayerPrefs.GetInt("BestScore " + PlayerName + " " + NowLevel.ToString(), 5);
+        timer.timerIsRuning = false;
+
+        NowTime = timer.min * 60 + (int)timer.sec;
 
         GameManager.Instance.updateTotalCollectables(GameManager.collectables);
 
+        GetBestTime();
+    }
+
+    private void GetBestTime()
+    {
+        BestTime = PlayerPrefs.GetInt("BestScore " + PlayerName + " " + NowLevel.ToString(), NowTime);
         UpdateValue();
     }
 
     private void UpdateValue()
     {
-        //NowTime = timer;  //Need to Update after timer UI included
-
-        if (NowTime > BestTime)
+        if (NowTime <= BestTime)
         {
             BestTime = NowTime;
             PlayerPrefs.SetInt("BestScore " + PlayerName + " " + NowLevel.ToString(), this.BestTime);
@@ -54,8 +62,11 @@ public class LevelEnd : MonoBehaviour
 
     private void DisplayValue()
     {
-        bestTime.text = BestTime.ToString();
-        nowTime.text = NowTime.ToString();
+        int min = BestTime / 60;
+        float sec = BestTime % 60;
+
+        bestTime.text = string.Format("{0:D2}:{1:D2}", min, (int)sec);
+        nowTime.text = string.Format("{0:D2}:{1:D2}", timer.min, (int)timer.sec);
         combo.text = Combo.ToString();
         collectible.text = Collectible.ToString();
     }
