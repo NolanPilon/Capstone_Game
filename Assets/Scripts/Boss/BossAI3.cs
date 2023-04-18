@@ -195,6 +195,6 @@ public class BossAI3 : MonoBehaviour
     {
         SoundManager.Instance.PlayBossDeath();
         Destroy(gameObject, 2);
-        //GameManager.Instance.BossDied = true;
+        GameManager.Instance.BossDied = true;
     }
 }

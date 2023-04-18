@@ -116,10 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e068f45f18c1b9e47bdd349d8016260f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderPos: {fileID: 8301248127051353147}
-  colliderLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &8458438706219327064
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +188,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.33748665, g: 0.8471717, b: 0.9056604, a: 0.53333336}
   m_FlipX: 0
