@@ -104,7 +104,7 @@ public class BossAI2Snake : MonoBehaviour
             {
                 TimeOut = false;
                 BossAI2.Instance.BossHealth--;
-
+                SoundManager.Instance.PlayBossHit();
                 moveback();
             }
             else

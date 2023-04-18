@@ -100,6 +100,7 @@ public class BossAI2 : MonoBehaviour
 
     void Die()
     {
+        SoundManager.Instance.PlayBossDeath();
         Destroy(Boss[0], 2);
     }
 }
